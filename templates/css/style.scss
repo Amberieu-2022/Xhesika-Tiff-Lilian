@@ -1,0 +1,167 @@
+@import 'reset'; 
+
+.row-limit-size {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    
+} 
+
+body{
+    background-image: url('../img/slider/background.jpg');
+    background-repeat: no-repeat;
+    background-position:top center;
+}
+
+//HEADER PAGE UTILISATEUR
+
+.titre-h1 {
+    font-family: 'Cinzel';
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 20px;
+    margin-top: 70px;
+}
+.justify-header {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+//FOOTER PAGE UTILISATEUR 
+.footer-logo{
+    display: block;
+    margin: 0 auto;
+}
+.justify-footer{
+    display: flex;
+    justify-content: center;
+}
+.reseaux-sociaux{
+    margin: 20px 50px;
+} 
+.menu-footer{
+    display: block;
+    margin: 0 auto;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    a{
+        text-align: center;
+        text-decoration: none;
+        font-family: 'Montserrat';
+        color: black;
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+    
+    }
+    a:hover{
+        color: #b65325;
+    }
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+}
+
+footer{
+    background-color: #9DE1BC;
+    padding: 50px 0 10px 0;
+}
+
+// MEDIA QUERY PAGE UTILISATEUR______________________________
+// M/Q FOOTER
+@media screen and (max-width: 900px) {
+    .reseaux-sociaux{
+        width: 35px;
+        height: 35px;
+    }
+    .menu-footer{
+        a{
+            font-size: .8rem;
+        }
+    }
+    .footer-logo{
+        width: 400px;
+    }
+    .copyright{
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width: 630px){
+    .reseaux-sociaux{
+        width: 25px;
+        height: 25px;
+        margin: 20px 30px;
+    }
+    
+    .menu-footer{
+        a{
+            font-size: .6rem;
+        }
+    }
+    .copyright{
+        font-size: .7rem;
+    }
+    // MEDIA QUERY HEADER UTILISATEUR
+    .justify-header img{
+        width: 400px;
+    }
+    .titre-h1{
+        font-size: 1.5rem;
+        letter-spacing: 12px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .justify-header img{
+        width: 300px;
+    }
+    .menu-footer{
+        ul{
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 35px;
+        }
+        a{
+            line-height: 0;
+        }
+        
+    }
+    .absolut{
+        display: block;
+        position: absolute;
+        top: 35px;
+        left: 20px;
+    }
+
+    .reseaux-sociaux{
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+    }
+
+    footer { 
+        padding-top: 10px;
+        position: relative;
+        height: 150px;
+    }
+    .footer-logo {
+        width: 150px;
+        position: absolute;
+        top: 60px;
+        left: 110px;
+
+    }
+    .copyright{
+        position: absolute;
+        bottom: 5px;
+        left: calc(50% - 95px);
+    }
+}
