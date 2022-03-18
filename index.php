@@ -93,16 +93,92 @@ require_once './templates/header.php';
     </section>
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
+    
     <aside class="form-filter">
         <form action="#" method="GET">
-            <label for="">Filtrer par </label> <br>
-            <label for="">Categorie(s)</label>
-            <div class="categorie">
-                
+            <label for="" class="label-category">Filtrer par </label> <br> <br>
+
+            <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
+            <div id="categories">
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Chambre</label> <input type="checkbox">
+                </div>
+                <div class="category-room">
+                    <label for=""  class="label-form-filter">Appartement</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Maison</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Villa</label> <input type="checkbox">
+                </div> <br>
             </div>
+
+            <label for="" class="label-category">Chambre(s) <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"> </label>
+            <div id="categories">
+                <div class="category-room">
+                    <label for="" class="label-form-filter">0</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">1</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">2</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">3+</label> <input type="checkbox">
+                </div><br>
+            </div>
+
+            <label for="" class="label-category">Couchage(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
+            <div id="categories">
+                <div class="category-room">
+                    <label for="" class="label-form-filter">1-2</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">3-4</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">5-6</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">7+</label> <input type="checkbox">
+                </div><br>
+            </div>     
+
+            <label for="" class="label-category">Option(s)  <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
+            <div id="categories">
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Piscine</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Jardin</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Parking</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">Animaux</label> <input type="checkbox">
+                </div> <br>
+            </div>
+            <label for="" class="label-category"> Prix  /  nuit   <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
+            <div id="categories">
+                <div class="category-room">
+                    <label for="" class="label-form-filter">0 - 50€</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">51 - 150€</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">151 - 300€</label> <input type="checkbox"> 
+                </div>
+                <div class="category-room">
+                    <label for="" class="label-form-filter">301€ +</label> <input type="checkbox">
+                </div>
+            </div>
+            <button class="btn-util btn-filtrer">Valider</button>
         </form>
     </aside>
-    
 </main>
 <?php
 
