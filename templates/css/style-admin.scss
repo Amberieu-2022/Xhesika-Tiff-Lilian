@@ -166,7 +166,46 @@ ul{
         padding: 30px 50px;
     }
 
-}    
+}
+
+//Modal
+
+.confirm {
+    display: none;
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    border-radius: 15px;
+    position: sticky;
+    left: 30%;
+    top: 10%;
+}
+
+.font-modal {
+    color: rgb(0, 240, 0);
+    text-align: center;
+}
+
+.verif{
+    margin-top: 50px;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+#yes, #no{
+    width: 100px;
+    height: 40px;
+    margin-top: 50px;
+    color: black;
+    border: 2px solid rgb(0, 255, 0);
+}
+
+#yes:active, #no:active{
+    margin-top: 52px;
+}
 
 // MEDIA QUERY HEADER________________________________________________
 @media screen and (max-width: 1060px) {
@@ -270,12 +309,4 @@ ul{
     
 
 }
-
-
-
-
-
-
-
-
 
