@@ -1,6 +1,12 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
+
 require_once '../templates/header-admin.php';
+
 ?>
 
 <main>
@@ -85,6 +91,34 @@ require_once '../templates/header-admin.php';
         </form>
 
     </section>
+
+    <!-- Modal de confirmation d'effacement des gîtes -->
+
+    <div class="confirm">
+        <p class="font-modal verif">Voulez-vous vraiment supprimer ce gîte ?</p>
+        <div class="flex-around">
+            <button id="yes">OUI !</button>
+            <button id="no">NON !</button>
+        </div>
+    </div>
+
+    <!-- Liste des gites -->
+
+    <h1>
+        Liste de vos gites
+    </h1>
+
+    <button>
+        <a href="ajout.php">Ajouter un nouveau gîte</a>
+    </button>
+
+    <p>Vous avez actuellement <kbd id="nb-posts">X</kbd> gîtes en base</p>
+
+    <ul id="list-gites">
+
+    </ul>
+
+    <script src="main-admin.js"></script>
 </main>
 
 <?php
