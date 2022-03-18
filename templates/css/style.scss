@@ -20,12 +20,99 @@ body{
     font-size: 3rem;
     text-align: center;
     letter-spacing: 20px;
-    margin-top: 70px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 .justify-header {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+}
+
+// FORMULAIRE PAGE INDEX UTILISATEUR
+.form-page-client{
+    max-width: 800px;
+    width: 80%;
+    margin: 50px auto 280px auto;
+    padding: 30px;
+    border: none;
+    background-color: white;
+    border-radius: 30px 30px;
+    box-shadow: 0px 0px 30px #7c7c7c;
+    box-sizing: border-box;
+
+}
+.titre-form-client{
+    font-size: 2rem;
+    font-family: 'Cinzel';
+    letter-spacing: 10px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.label-client{
+    font-size: 1rem;
+    font-family: 'Cinzel';
+    font-weight: 500;
+    letter-spacing: 3px;
+    width: 150px;
+}
+.btn-util{
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #9DE1BC;
+    border-radius: 2px;
+    padding: 15px 50px;
+    cursor: pointer;
+    font-family: 'Cinzel';
+    font-size: 1rem;
+    letter-spacing: 4px;
+    align-items: center;
+    box-shadow: 0 0 10px #7c7c7c;
+}
+.input-local{
+    border: 2px solid #9DE1BC;
+    border-radius: 5px 5px;
+    width: 480px;
+    height: 30px;
+}
+.location{
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+}
+.date-placeholder{
+    border: 2px solid #9DE1BC;
+    border-radius: 5px;
+    color: #7c7c7c;
+}
+.first-flex{
+    display: flex;
+    justify-content: space-around;
+}
+.nb-personnes{
+    width: 40px;
+    height: 30px;
+    border: 2px solid #9DE1BC;
+}
+// MAIN PAGE UTILISATEUR
+
+.titre-past-form{
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.form-filter{
+    z-index: 9999;
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    margin-left: 30px;
+    width: 300px;
+    height: 90%;
+    border: 2px solid #9DE1BC;
 }
 
 //FOOTER PAGE UTILISATEUR 
@@ -95,6 +182,23 @@ footer{
     }
 }
 @media screen and (max-width: 630px){
+    .label-client{
+        font-size: .5rem;
+    }
+    .btn-util{
+        font-size: .6rem;
+        width: 120px;
+        height: 40px;
+        padding: 5px;
+    }
+    .form-page-client{
+        max-width: 600px;
+        width: 80%;
+    }
+
+    .titre-form-client{
+        font-size: 1.2rem;
+    }
     .reseaux-sociaux{
         width: 25px;
         height: 25px;
@@ -118,10 +222,33 @@ footer{
         letter-spacing: 12px;
     }
 }
+
 @media screen and (max-width: 450px) {
     .justify-header img{
         width: 300px;
     }
+    .location{
+        display: flex;
+        justify-content: center;
+        .input-local{
+            width: 150px;
+            height: 15px;
+        }
+    }
+    .btn-util{
+        font-size: .5rem;
+
+    }
+    .label-client{
+        font-size: .4rem;
+    }
+    .date-placeholder{
+        height: 15px;
+    }
+    .nb-personnes{
+        height: 15px;
+    }
+
     .menu-footer{
         ul{
             display: block;
@@ -164,4 +291,5 @@ footer{
         bottom: 5px;
         left: calc(50% - 95px);
     }
+
 }
