@@ -167,6 +167,68 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 100px;
+  letter-spacing: 5px;
+}
+
+.form-filter {
+  z-index: 9999;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  width: 200px;
+  height: 90%;
+  border: 2px solid #9DE1BC;
+}
+
+.label-category {
+  border-bottom: 2px solid #9DE1BC;
+  border-top: 2px solid #9DE1BC;
+  font-size: 1.2rem;
+  font-family: 'Montserrat';
+  display: block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.label-form-filter {
+  font-size: 1rem;
+  font-family: 'Montserrat';
+}
+
+.btn-filtrer {
+  font-family: 'Montserrat';
+  height: 50px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 20px;
+}
+
+.category-room {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+#btn-summary {
+  cursor: pointer;
+  float: right;
+  height: 20px;
+  line-height: 30px;
+}
+
+.titre-past-form {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 .form-filter {
@@ -179,9 +241,13 @@ body {
           justify-content: left;
   padding: 20px;
   margin-left: 30px;
-  width: 300px;
+  width: 200px;
   height: 90%;
   border: 2px solid #9DE1BC;
+}
+
+#categories {
+  display: none;
 }
 
 .footer-logo {

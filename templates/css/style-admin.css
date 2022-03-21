@@ -96,14 +96,13 @@ table {
       -ms-flex-align: center;
           align-items: center;
   display: block;
-  margin: 0 auto;
+  margin: 50px auto;
   background-color: white;
   border: 2px solid #9DE1BC;
   border-radius: 5px 5px;
   font-size: 1.5rem;
   color: #A2A7D9;
   padding: 8px 50px;
-  margin-top: 50px;
   cursor: pointer;
 }
 
