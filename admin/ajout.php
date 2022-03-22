@@ -3,58 +3,71 @@
 require_once '../templates/header-admin.php';
 
 ?>
-<h1>Ajouter un nouveau gîte</h1>
-<form action="#" method="POST" enctype='multipart/form-data'>
+<h1 class="nb-gite-modal">AJOUTER UN NOUVEAU GÎTE</h1>
+<form action="#" method="POST" enctype='multipart/form-data' class="form-ajout-new-gite">
 
-    <label for="name_gite">
+    <label class="label-ajout" for="name_gite">
         Nom du gîte :
     </label>
-    <input type="text" name="name_gite" id="name_gite" required>
+    <input class="input-ajout" type="text" name="name_gite" id="name_gite" required>
 
     <br><br>
 
-    <label for="location_gite">
+    <label class="label-ajout" for="location_gite">
         Adresse du gîte :
     </label>
-    <input type="text" name="location_gite" id="location_gite" required>
+    <input class="input-ajout" type="text" name="location_gite" id="location_gite" required>
 
     <br><br>
 
-    <label for="profil_gite">
-        Image du gîte :
+    <label class="label-ajout" for="profil_gite">
+        Ajouter un image :
     </label>
-    <input type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
-
+    <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
     <br><br>
-
-    <label for="desc_gite">
-        Description du gîte :
-    </label>
-    <textarea name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'artcile" required></textarea>
-
-    <br><br>
-
-    <label for="nbr_sleeping">
+    
+    <label class="label-ajout" for="nbr_sleeping">
         Nombre de couchage :
     </label>
-    <input type="number" name="nbr_sleeping" id="nbr_sleeping" min="1" required>
+    <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1" required>
 
-    <br><br>
-
-    <label for="nbr_bedroom">
+    <br> <br>
+    <label class="label-ajout" for="nbr_bedroom">
         Nombre de chambre :
     </label>
-    <input type="number" name="nbr_bedroom" id="nbr_bedroom" min="1" required>
-
-    <br><br>
-
-    <label for="nbr_bedroom">
+    <input class="input-ajout input-nb-add" type="number" name="nbr_bedroom" id="nbr_bedroom" min="1" required>
+    <br> <br>
+    <label class="label-ajout" for="nbr_bedroom">
         Nombre de salle de bain :
     </label>
-    <input type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" required>
+    <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" required>
 
     <br><br>
-    <button type="submit" name="submit">Valider la création
+    <label for="type" class="label-ajout">Categorie</label> <br>
+            <div class="first-flex flex-2">
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Chambre </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Appartement </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Maison </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Villa </label>
+            </div>
+            <br>
+            <label for="option" class="label-ajout"> Option(s) </label> <br>
+            <div class="first-flex flex-2">
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Piscine </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Jardin </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label>
+            </div>
+            <br>
+    <label class="label-ajout" for="desc_gite">
+        Description du gîte :
+    </label>
+    <textarea class="input-ajout descript-in" name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'artcile" required></textarea>
+
+    
+
+    <br><br>
+    <button class="btn-valid-ajout" type="submit" name="submit">Valider la création
     </button>
 
 

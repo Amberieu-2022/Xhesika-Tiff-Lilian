@@ -6,11 +6,10 @@
     margin: 0 auto;
     
 } 
-
-body{
-    background-image: url('../img/slider/background.jpg');
-    background-repeat: no-repeat;
-    background-position:top center;
+.background-main-user{
+    position: absolute;
+    top: 0;
+    z-index: -9999;
 }
 
 //HEADER PAGE UTILISATEUR
@@ -117,7 +116,6 @@ body{
 }
 .label-category{
     border-bottom: 2px solid #9DE1BC;
-    border-top: 2px solid #9DE1BC;
     font-size: 1.2rem;
     font-family: 'Montserrat';
     display: block;
@@ -139,7 +137,7 @@ body{
     justify-content: space-between;
     padding-bottom: 10px;
 }
-#btn-summary{
+.btn-summary{
     cursor: pointer;
     float: right;
     height: 20px;
@@ -162,8 +160,74 @@ body{
     height: 90%;
     border: 2px solid #9DE1BC;
 }
-#categories{
+// #categories, #categoriesRoom, #categoriesHead, #categoriesOption, #categoriesPrice{
+//     display: none;
+// }
+.categories{
     display: none;
+}
+// RESERVATION UTILISATEUR
+.reservation-utilisateur{
+    background: linear-gradient(90deg, rgb(147,239,189),rgb(112, 158, 189),#6d72af 95%);
+}
+.titre-resa-user{
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.titre-logement{
+    font-size: 1.2rem;
+    font-family: 'Montserrat';
+    text-align: center;
+    padding-top: 50px;
+    letter-spacing: 6px;
+}
+.description-resa-user{
+    font-size: 1rem;
+    font-family: 'Roboto Slab';
+    text-align: center;
+    padding-top: 20px;
+}
+.equipements{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+.equip-flex{
+    display: block;
+    width: 200px;
+}
+.flex-btw{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.equip-figcap{
+    font-size: 1rem;
+    font-family: 'Roboto Slab';
+}
+.padd-option{
+    width: 120px;
+    padding-left: 5px;
+    padding-bottom: 20px;
+}
+// FORMULAIRE D'ENVOIE DE RESERVATION USER
+.form-envoie-resa{
+    background-color: white;
+    border: 2px solid #9DE1BC;
+    max-width: 600px;
+    width: 90%;
+    height: 400px;
+    border-radius: 30px;
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+    
 }
 
 //FOOTER PAGE UTILISATEUR 
@@ -212,7 +276,9 @@ footer{
     background-color: #9DE1BC;
     padding: 50px 0 10px 0;
 }
-
+.show{
+    display: block !important;
+}
 // MEDIA QUERY PAGE UTILISATEUR______________________________
 // M/Q FOOTER
 @media screen and (max-width: 900px) {
@@ -230,6 +296,11 @@ footer{
     }
     .copyright{
         font-size: .8rem;
+    }
+}
+@media screen and (max-width:800px) {
+    .titre-resa-user{
+        font-size: 1.5rem;
     }
 }
 @media screen and (max-width: 630px){
@@ -264,6 +335,11 @@ footer{
     .copyright{
         font-size: .7rem;
     }
+    .titre-resa-user{
+        font-size: 1.2rem;
+    }
+
+
     // MEDIA QUERY HEADER UTILISATEUR
     .justify-header img{
         width: 400px;
@@ -273,7 +349,11 @@ footer{
         letter-spacing: 12px;
     }
 }
-
+@media screen and (max-width:500px) {
+    .titre-resa-user{
+        font-size: 1rem;
+    }
+}
 @media screen and (max-width: 450px) {
     .justify-header img{
         width: 300px;

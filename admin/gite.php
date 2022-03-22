@@ -11,10 +11,11 @@ require_once '../templates/header-admin.php';
 
 <main>
     <h2 class="titre-page-gestion">VOS GÎTES</h2>
+    <p class="nb-gite-modal">Vous avez actuellement <kbd id="nb-posts">X</kbd> gîtes en base</p>
 
     <!-- FORMULAIRE DU PAGE GESTION GITES -->
     <form action="#" method="GET" class="form-add-search">
-        <button type="submit" class="btn-ajout-gite">Ajouter un gîte</button>
+        <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un nouveau gîte</a></button>
         <input type="text" name="nom" id="nom" placeholder=" Recherche par nom" class="input-p-ajout" required>
         <button type="submit" class="btn-ajout-gite">Rechercher</button>
 
@@ -25,8 +26,8 @@ require_once '../templates/header-admin.php';
         <h2 class="titre-form-search">RECHERCHE AVANCÉE</h2>
         <form action="#" method="GET" class="first-form">
             <div class="first-flex">
-                <label class="label-no"> NOMBRE DE COUCHAGES </label>
-                <select name="nb-personnes" id="">
+                <label class="label-no"> Nombre de couchages </label>
+                <select name="nb-personnes" id="" class="input-numer">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -43,8 +44,8 @@ require_once '../templates/header-admin.php';
                     <option value="14">14</option>
                     <option value="15">15</option>
                 </select>
-                <label class="label-no"> NOMBRE DE SALLE DE BAIN </label>
-                <select name="nb-bathroom" id="">
+                <label class="label-no"> Nombre de salle de bain </label>
+                <select name="nb-bathroom" id="" class="input-numer">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -53,8 +54,8 @@ require_once '../templates/header-admin.php';
                     <option value="6">6</option>
                 </select>
 
-                <label class="label-no"> NOMBRE DE CHAMBRES </label>
-                <select name="nb-room" id="">
+                <label class="label-no"> Nombre de chambres </label>
+                <select name="nb-room" id="" class="input-numer">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -98,26 +99,22 @@ require_once '../templates/header-admin.php';
         <p class="font-modal verif">Voulez-vous vraiment supprimer ce gîte ?</p>
         <div class="flex-around">
             <button id="yes">OUI !</button>
-            <button id="no">NON !</button>
+            <button id="no">NON </button>
         </div>
     </div>
-
+    
     <!-- Liste des gites -->
 
-    <h1>
+    <h1 class="list-gite-modal">
         Liste de vos gites
     </h1>
 
-    <button>
-        <a href="ajout.php">Ajouter un nouveau gîte</a>
-    </button>
+    <div class="list-style-ul">
+        
+        <ul id="list-gites">
 
-    <p>Vous avez actuellement <kbd id="nb-posts">X</kbd> gîtes en base</p>
-
-    <ul id="list-gites">
-
-    </ul>
-
+        </ul>
+    </div>
     <script src="main-admin.js"></script>
 </main>
 

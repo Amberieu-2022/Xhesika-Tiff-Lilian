@@ -53,10 +53,10 @@ table {
   margin: 0 auto;
 }
 
-body {
-  background-image: url("../img/slider/background.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
+.background-main-user {
+  position: absolute;
+  top: 0;
+  z-index: -9999;
 }
 
 .titre-h1 {
@@ -185,7 +185,6 @@ body {
 
 .label-category {
   border-bottom: 2px solid #9DE1BC;
-  border-top: 2px solid #9DE1BC;
   font-size: 1.2rem;
   font-family: 'Montserrat';
   display: block;
@@ -216,7 +215,7 @@ body {
   padding-bottom: 10px;
 }
 
-#btn-summary {
+.btn-summary {
   cursor: pointer;
   float: right;
   height: 20px;
@@ -246,8 +245,87 @@ body {
   border: 2px solid #9DE1BC;
 }
 
-#categories {
+.categories {
   display: none;
+}
+
+.reservation-utilisateur {
+  background: -webkit-gradient(linear, left top, right top, from(#93efbd), color-stop(#709ebd), color-stop(95%, #6d72af));
+  background: linear-gradient(90deg, #93efbd, #709ebd, #6d72af 95%);
+}
+
+.titre-resa-user {
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.titre-logement {
+  font-size: 1.2rem;
+  font-family: 'Montserrat';
+  text-align: center;
+  padding-top: 50px;
+  letter-spacing: 6px;
+}
+
+.description-resa-user {
+  font-size: 1rem;
+  font-family: 'Roboto Slab';
+  text-align: center;
+  padding-top: 20px;
+}
+
+.equipements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 30px;
+}
+
+.equip-flex {
+  display: block;
+  width: 200px;
+}
+
+.flex-btw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.equip-figcap {
+  font-size: 1rem;
+  font-family: 'Roboto Slab';
+}
+
+.padd-option {
+  width: 120px;
+  padding-left: 5px;
+  padding-bottom: 20px;
+}
+
+.form-envoie-resa {
+  background-color: white;
+  border: 2px solid #9DE1BC;
+  max-width: 600px;
+  width: 90%;
+  height: 400px;
+  border-radius: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .footer-logo {
@@ -319,6 +397,10 @@ footer {
   padding: 50px 0 10px 0;
 }
 
+.show {
+  display: block !important;
+}
+
 @media screen and (max-width: 900px) {
   .reseaux-sociaux {
     width: 35px;
@@ -332,6 +414,12 @@ footer {
   }
   .copyright {
     font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .titre-resa-user {
+    font-size: 1.5rem;
   }
 }
 
@@ -363,12 +451,21 @@ footer {
   .copyright {
     font-size: .7rem;
   }
+  .titre-resa-user {
+    font-size: 1.2rem;
+  }
   .justify-header img {
     width: 400px;
   }
   .titre-h1 {
     font-size: 1.5rem;
     letter-spacing: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .titre-resa-user {
+    font-size: 1rem;
   }
 }
 

@@ -15,7 +15,7 @@ function giteDisplay() {
             let listDom = ''
 
             for (let data of datas) {
-                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/' + data.name_simple_gite + '/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-del" data-id="' + data.id_gite + '">Supprimer</a></li>'
+                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/' + data.name_simple_gite + '/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-del" data-id="' + data.id_gite + '"><img src="../templates/img/icon/btn-delete.png" alt="icone de bouton supprimer"></a></li>'
                 console.log(data)
             }
 

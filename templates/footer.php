@@ -23,7 +23,7 @@
 
     </footer>
 
-    
+    <script src="./templates/js/user/main-user.js"></script>
     </body>
 
     </html>

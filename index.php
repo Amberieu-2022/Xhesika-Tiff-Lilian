@@ -4,6 +4,9 @@ require_once './templates/header.php';
 
 ?>
 <main>
+    <figure class="background-main-user">
+        <img src="./templates/img/slider/background.jpg" alt="background">
+    </figure>
     <h1 class="titre-h1">Bienvenue</h1>
     <!-- FORMULAIRE UTILISATEUR : TROUVER VOTRE GITE  -->
     <section class="form-page-client">
@@ -98,9 +101,9 @@ require_once './templates/header.php';
         <form action="#" method="GET">
             <label for="" class="label-category">Filtrer par </label> <br> <br>
 
-            <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
-            <div id="categories">
-                <div class="category-room">
+            <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" class="btn-summary"></label> 
+            <div class="categories">
+                <div id="category-room">
                     <label for="" class="label-form-filter">Chambre</label> <input type="checkbox">
                 </div>
                 <div class="category-room">
@@ -114,8 +117,8 @@ require_once './templates/header.php';
                 </div> <br>
             </div>
 
-            <label for="" class="label-category">Chambre(s) <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"> </label>
-            <div id="categories">
+            <label for="" class="label-category">Chambre(s) <img src="./templates/img/icon/button.png" alt="button" class="btn-summary"> </label>
+            <div class="categories">
                 <div class="category-room">
                     <label for="" class="label-form-filter">0</label> <input type="checkbox"> 
                 </div>
@@ -130,8 +133,8 @@ require_once './templates/header.php';
                 </div><br>
             </div>
 
-            <label for="" class="label-category">Couchage(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-            <div id="categories">
+            <label for="" class="label-category">Couchage(s)<img src="./templates/img/icon/button.png" alt="button" class="btn-summary"></label>
+            <div class="categories">
                 <div class="category-room">
                     <label for="" class="label-form-filter">1-2</label> <input type="checkbox"> 
                 </div>
@@ -146,8 +149,8 @@ require_once './templates/header.php';
                 </div><br>
             </div>     
 
-            <label for="" class="label-category">Option(s)  <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-            <div id="categories">
+            <label for="" class="label-category">Option(s)  <img src="./templates/img/icon/button.png" alt="button" class="btn-summary"></label>
+            <div class="categories">
                 <div class="category-room">
                     <label for="" class="label-form-filter">Piscine</label> <input type="checkbox"> 
                 </div>
@@ -161,8 +164,8 @@ require_once './templates/header.php';
                     <label for="" class="label-form-filter">Animaux</label> <input type="checkbox">
                 </div> <br>
             </div>
-            <label for="" class="label-category"> Prix  /  nuit   <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-            <div id="categories">
+            <label for="" class="label-category"> Prix  /  nuit   <img src="./templates/img/icon/button.png" alt="button" class="btn-summary"></label>
+            <div class="categories">
                 <div class="category-room">
                     <label for="" class="label-form-filter">0 - 50€</label> <input type="checkbox"> 
                 </div>
