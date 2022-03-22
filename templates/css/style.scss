@@ -122,8 +122,10 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
 .label-form-filter{
     font-size: 1rem;
+    padding-top: 5px;
     font-family: 'Montserrat';
 }
 .btn-filtrer{
@@ -136,12 +138,13 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
-.btn-summary{
-    cursor: pointer;
+#btn-summary, #btn-summaryR, #btn-summaryP, #btn-summaryO, #btn-summaryN{
     float: right;
     height: 20px;
     line-height: 30px;
+    cursor: pointer;
 }
 .titre-past-form{
     font-family: 'Montserrat';
@@ -160,11 +163,20 @@
     height: 90%;
     border: 2px solid #9DE1BC;
 }
-// #categories, #categoriesRoom, #categoriesHead, #categoriesOption, #categoriesPrice{
-//     display: none;
-// }
-.categories{
+.section-padding{
+    padding-bottom: 30px;
+}
+#categories, #categoriesR, #categoriesP, #categoriesO, #categoriesN{
     display: none;
+}
+// DESCRIPTION GITE 
+.description-gite{
+    font-family: 'Roboto Slab';
+    font-size: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+
 }
 // RESERVATION UTILISATEUR
 .reservation-utilisateur{
@@ -182,9 +194,14 @@
 .titre-logement{
     font-size: 1.2rem;
     font-family: 'Montserrat';
-    text-align: center;
     padding-top: 50px;
     letter-spacing: 6px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(82, 80, 80);
+    padding-bottom: 10px;
+    text-align: center;
 }
 .description-resa-user{
     font-size: 1rem;
@@ -196,6 +213,7 @@
     display: flex;
     justify-content: space-around;
     padding-top: 30px;
+    margin-bottom: 50px;
 }
 .equip-flex{
     display: block;
@@ -216,6 +234,57 @@
     padding-left: 5px;
     padding-bottom: 20px;
 }
+.btn-btn{
+    width: 200px;
+    border: 2px solid #9DE1BC;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat';
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.btn-btn:hover{
+    background-color: #9DE1BC;
+    box-shadow: inset 0 0 7px #7c7c7c;
+}
+// SLIDER
+#slider {
+    padding-top: 5%;
+    display: flex;
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+#slide {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#left, #right{
+    position: absolute;
+    top: calc(55% - 50px);
+    cursor: pointer;
+    z-index: 999999;
+}
+#right{
+    right: 20px;
+}
+#left{
+    left: 20px;
+}
+
+#left>img, #right>img {
+    display: block;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
 // FORMULAIRE D'ENVOIE DE RESERVATION USER
 .form-envoie-resa{
     background-color: white;
@@ -227,9 +296,25 @@
     align-items: center;
     margin: 0 auto;
     display: block;
-    
+    padding: 50px;
 }
-
+.around{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.input-resa{
+    width: 400px;
+    border: 2px solid #9DE1BC;
+    border-radius: 5px;
+}
+.nb-resa{
+    width: 200px;
+}
+.date-input-resa{
+    border: 2px solid #9DE1BC;
+    border-radius: 5px;
+}
 //FOOTER PAGE UTILISATEUR 
 .footer-logo{
     display: block;
@@ -303,6 +388,17 @@ footer{
         font-size: 1.5rem;
     }
 }
+@media screen and (max-width: 745px) {
+    .form-envoie-resa{
+        width: 500px;
+    }
+    .input-resa{
+        width: 300px;
+    }
+    .label-form-filter{
+        font-size: .8rem;
+    }
+}
 @media screen and (max-width: 630px){
     .label-client{
         font-size: .5rem;
@@ -348,11 +444,42 @@ footer{
         font-size: 1.5rem;
         letter-spacing: 12px;
     }
+    // PAGE RESERVATION/ EQUIPEMENTS
+    .equip-figcap{
+        font-size: .8rem;
+    }
+    .form-envoie-resa{
+        width: 370px;
+    }
+    .input-resa{
+        width: 200px;
+    }
+    .label-form-filter{
+        font-size: .6rem;
+    }
 }
 @media screen and (max-width:500px) {
     .titre-resa-user{
         font-size: 1rem;
     }
+    .equip-figcap{
+        font-size: .5rem;
+    }
+    .form-envoie-resa{
+        width: 300px;
+        padding: 25px;
+    }
+    .input-resa{
+        width: 150px;
+    }
+    .label-form-filter{
+        font-size: .5rem;
+    }
+    .btn-btn{
+        font-size: .8rem;
+        width: 100px;
+    }
+    
 }
 @media screen and (max-width: 450px) {
     .justify-header img{
@@ -421,6 +548,9 @@ footer{
         position: absolute;
         bottom: 5px;
         left: calc(50% - 95px);
+    }
+    .date-input-resa{
+        width: 70px;
     }
 
 }

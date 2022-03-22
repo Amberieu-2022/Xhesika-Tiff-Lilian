@@ -353,6 +353,7 @@ li.gites {
 
 .form-ajout-new-gite {
   border: 2px solid #9DE1BC;
+  border-radius: 20px;
   max-width: 700px;
   width: 80%;
   margin: 50px auto;
@@ -375,12 +376,12 @@ li.gites {
 }
 
 .descript-in {
-  height: 300px;
+  height: 200px;
 }
 
 .btn-valid-ajout {
   font-family: 'Montserrat';
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid #9DE1BC;
   cursor: pointer;
   padding: 5px 20px;
@@ -389,6 +390,12 @@ li.gites {
           align-items: center;
   display: block;
   margin: 10px auto;
+}
+
+.btn-valid-ajout:hover {
+  background-color: #9DE1BC;
+  -webkit-box-shadow: inset 0 0 7px #7c7c7c;
+          box-shadow: inset 0 0 7px #7c7c7c;
 }
 
 @media screen and (max-width: 1060px) {

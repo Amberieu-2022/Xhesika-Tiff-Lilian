@@ -24,6 +24,7 @@
     </footer>
 
     <script src="./templates/js/user/main-user.js"></script>
+    <script src="./templates/js/user/main-user-resa.js"></script>
     </body>
 
     </html>
