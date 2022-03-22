@@ -118,7 +118,7 @@ require_once '../templates/header-admin.php';
 
     </ul>
 
-    <script src="main-admin.js"></script>
+    
 </main>
 
 <?php

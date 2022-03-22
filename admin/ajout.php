@@ -155,10 +155,12 @@ if (isset($_POST['submit'])) {
                     $ref = $finalString . "_" . $date . "_" . $i;
                     move_uploaded_file($_FILES['myimg']['tmp_name'][$i], "../img/gite/" . $ref . "." . $extensionUpload);
 
-                    require_once 'ajout-image.php';
+                    
                     $name_image =  $ref . "." . $extensionUpload;
+                    
                     var_dump($name_image);
                     var_dump($idGite);
+                    require_once 'ajout-image.php';
                 }
             }
         }

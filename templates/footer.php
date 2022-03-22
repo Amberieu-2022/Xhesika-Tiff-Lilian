@@ -22,8 +22,7 @@
         </div>
 
     </footer>
-
-    
+    <script src="./templates/js/user/main.js"></script>
     </body>
 
     </html>

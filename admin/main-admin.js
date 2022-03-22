@@ -16,7 +16,7 @@ function giteDisplay() {
 
             for (let data of datas) {
                 listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/' + data.name_simple_gite + '/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-del" data-id="' + data.id_gite + '">Supprimer</a></li>'
-                console.log(data)
+                // console.log(data)
             }
 
             listGites.innerHTML = listDom;

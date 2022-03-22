@@ -14,8 +14,8 @@ require_once 'select-filtre-user.php';
         <form action="#" method="GET">
 
             <div class="location">
-                <label class="label-client" for="search">DESTINATION</label>
-                <input type="search" placeholder=" Ecrivez votre destination" class="input-local" name="search">
+                <label class="label-client" for="location_gite">DESTINATION</label>
+                <input type="location_gite" placeholder=" Ecrivez votre destination" class="input-local" name="location_gite">
             </div>
 
             <div class="location">
@@ -74,46 +74,44 @@ require_once 'select-filtre-user.php';
             <br>
             <label for="type" class="label-client">Type de logement</label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="lodging[]" value="Chambre" class="input-option">
-                <label class="label-client"> Chambre </label>
+                <input type="checkbox" name="name_categ[]" value="Chambre" class="input-option" id="name_categ">
+                <label class="label-client" for="name_categ"> Chambre </label>
 
-                <input type="checkbox" name="lodging[]" value="Appartement" class="input-option">
-                <label class="label-client"> Appartement </label>
+                <input type="checkbox" name="name_categ[]" value="Appartement" class="input-option" id="name_categ">
+                <label class="label-client" for="name_categ"> Appartement </label>
 
-                <input type="checkbox" name="lodging[]" value="Maison" class="input-option">
-                <label class="label-client"> Maison </label>
+                <input type="checkbox" name="name_categ[]" value="Maison" class="input-option" id="name_categ">
+                <label class="label-client" for="name_categ"> Maison </label>
 
-                <input type="checkbox" name="lodging[]" value="Villa" class="input-option">
-                <label class="label-client"> Villa </label>
+                <input type="checkbox" name="name_categ[]" value="Villa" class="input-option" id="name_categ">
+                <label class="label-client" for="name_categ"> Villa </label>
             </div>
             <br>
-            <label for="option" class="label-client"> Option(s) </label> <br>
+            <label for="name_suppl" class="label-client"> Option(s) </label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="option[]" value="Piscine" class="input-option">
+                <input type="checkbox" name="name_suppl[]" value="Piscine" class="input-option">
                 <label class="label-client"> Piscine </label>
 
-                <input type="checkbox" name="option[]" value="Jardin" class="input-option">
+                <input type="checkbox" name="name_suppl[]" value="Jardin" class="input-option">
                 <label class="label-client"> Jardin </label>
 
-                <input type="checkbox" name="option[]" value="Parking" class="input-option">
+                <input type="checkbox" name="name_suppl[]" value="Parking" class="input-option">
                 <label class="label-client"> Parking </label>
 
-                <input type="checkbox" name="option[]" value="Animaux" class="input-option">
+                <input type="checkbox" name="name_suppl[]" value="Animaux" class="input-option">
                 <label class="label-client"> Animaux acceptée </label>
             </div>
             <br>
 
             <button type="submit" name="submit" class="btn-util">Rechercher </button>
-
-
         </form>
     </section>
+    <!-- Affichage résultat recherche gite -->
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
 
-    
-    <?php echo "\n" . $resultatSearch ?>
-    
+    <ul id="result-gites"></ul>
+
     <aside class="form-filter">
         <form action="#" method="GET">
             <label for="" class="label-category">Filtrer par </label> <br> <br>
@@ -121,18 +119,18 @@ require_once 'select-filtre-user.php';
             <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
             <div id="categories">
                 <div class="category-room">
-                    <label for="lodging" class="label-form-filter">Chambre</label> <input type="checkbox" name="lodging">
+                    <label for="name_categ" class="label-form-filter">Chambre</label> <input type="checkbox" name="name_categ">
                 </div>
                 <div class="category-room">
-                    <label for="lodging"  class="label-form-filter">Appartement</label> <input type="checkbox" name="lodging"> 
+                    <label for="name_categ"  class="label-form-filter">Appartement</label> <input type="checkbox" name="name_categ"> 
                 </div>
                 <div class="category-room">
-                    <label for="lodging" class="label-form-filter">Maison</label> 
-                    <input type="checkbox" name="lodging"> 
+                    <label for="name_categ" class="label-form-filter">Maison</label> 
+                    <input type="checkbox" name="name_categ"> 
                 </div>
                 <div class="category-room">
-                    <label for="lodging" class="label-form-filter">Villa</label> 
-                    <input type="checkbox" name="lodging">
+                    <label for="name_categ" class="label-form-filter">Villa</label> 
+                    <input type="checkbox" name="name_categ">
                 </div> <br>
             </div>
 
@@ -212,7 +210,7 @@ require_once 'select-filtre-user.php';
         </form>
     </aside>
 </main>
-<?php
 
+<?php
 require_once './templates/footer.php';
 ?>
