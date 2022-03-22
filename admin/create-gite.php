@@ -14,4 +14,5 @@ $req->bindParam(':nbr_bedroom', $nbr_bedroom, PDO::PARAM_INT);
 $req->bindParam(':nbr_bathroom', $nbr_bathroom, PDO::PARAM_INT);
 
 $req->execute();
-echo 'Les données ont bien été récup';
+
+$idGite = $db->lastInsertId();

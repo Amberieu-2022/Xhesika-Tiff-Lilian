@@ -21,9 +21,16 @@ require_once '../templates/header-admin.php';
     <br><br>
 
     <label for="profil_gite">
-        Image du gîte :
+        Image de profil :
     </label>
     <input type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
+
+    <br><br>
+
+    <label for="image_gite">
+        Image du gîte :
+    </label>
+    <input type="file" name="myimg[]" multiple accept="image/png, image/jpeg, image/jpg" required>
 
     <br><br>
 
@@ -62,8 +69,10 @@ require_once '../templates/header-admin.php';
 </form>
 <?php
 
+// Photo Profil Gite
 if (isset($_POST['submit'])) {
     $finalString;
+    $ref;
     //On vérifie que le fichier a été envoyé
 
     if (isset($_FILES['profil_gite']) and $_FILES['profil_gite']['error'] == 0) {
@@ -102,26 +111,16 @@ if (isset($_POST['submit'])) {
 
                 $finalString = str_replace($searchString, $replaceString, $minuscule);
 
-                //On crée le nouveau dossier s'il n'existe pas
-
-                $newDir = '../img/' . $finalString;
-
-                if (!file_exists($newDir)) {
-                    mkdir($newDir, 0777, true);
-                }
-
                 //On récupère date et heure 
 
                 $date = date('dmyhis');
 
                 //On créer le nouveau nom du fichier
 
-                $ref = $finalString . '_' . $date;
-                var_dump($finalString);
-                var_dump($ref);
+                $ref = $finalString . '_' . $date . '_pdp';
                 //On déplace le fichier dans le dossier de destination
 
-                move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/' . $finalString . '/' . $ref . '.' . $extensionUpload);
+                move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/pdp/' . $ref . '.' . $extensionUpload);
             }
         }
     }
@@ -129,7 +128,7 @@ if (isset($_POST['submit'])) {
     $name_gite = $_POST['name_gite'];
     $name_simple_gite = $finalString;
     $location_gite = $_POST['location_gite'];
-    $profil_gite  = $finalString . '_' . date('dmyhis') . '.' . $extensionUpload;
+    $profil_gite  = $ref . '.' . $extensionUpload;
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bedroom = $_POST['nbr_bedroom'];
@@ -139,10 +138,32 @@ if (isset($_POST['submit'])) {
 
     //Connexion à la BDD
     require_once 'create-gite.php';
-    header('Location: gite.php');
-    var_dump($name_gite);
-}
+    // header('Location: gite.php');
+    var_dump($idGite);
+    for ($i = 0; $i < count($_FILES['myimg']['name']); $i++) {
+        if (isset($_FILES['myimg']['name'][$i]) && $_FILES['myimg']['error'][$i] == 0) {
+            if (isset($_FILES['myimg']['size'][$i]) <= 1000000) {
+                $infosFichier = pathinfo($_FILES['myimg']['name'][$i]);
+                $extensionUpload = $infosFichier['extension'];
+                $extensionsAutorisees = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
+                if (in_array($extensionUpload, $extensionsAutorisees)) {
+                    $date = date('dmyhis');
+                    $minuscule = strtolower($_POST['name_gite']);
+                    $searchString = " ";
+                    $replaceString = "";
+                    $finalString = str_replace($searchString, $replaceString, $minuscule);
+                    $ref = $finalString . "_" . $date . "_" . $i;
+                    move_uploaded_file($_FILES['myimg']['tmp_name'][$i], "../img/gite/" . $ref . "." . $extensionUpload);
 
+                    require_once 'ajout-image.php';
+                    $name_image =  $ref . "." . $extensionUpload;
+                    var_dump($name_image);
+                    var_dump($idGite);
+                }
+            }
+        }
+    }
+}
 
 ?>
 
