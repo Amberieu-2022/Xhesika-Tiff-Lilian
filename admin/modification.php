@@ -24,32 +24,33 @@ require_once '../templates/header-admin.php';
         Modifier l'image  :
     </label>
     <input class="label-ajout" type="file" name="profil_gite" accept="image/png, image/jpeg, image/jpg">
+    <div class="modif-nb-gite">
+        <br><br>
+        <label class="label-ajout" for="nbr_sleeping">
+            Nombre de couchage :
+        </label>
+        <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1">
 
-    <br><br>
-    <label class="label-ajout" for="nbr_sleeping">
-        Nombre de couchage :
-    </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1">
+        <br><br>
 
-    <br><br>
+        <label class="label-ajout" for="nbr_bedroom">
+            Nombre de chambre :
+        </label>
+        <input class="input-ajout input-nb-add" type="number" name="nbr_bedroom" id="nbr_bedroom" min="1">
 
-    <label class="label-ajout" for="nbr_bedroom">
-        Nombre de chambre :
-    </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_bedroom" id="nbr_bedroom" min="1">
+        <br><br>
 
-    <br><br>
-
-    <label class="label-ajout" for="nbr_bedroom">
-        Nombre de salle de bain :
-    </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1">
-    <input type="hidden" name="id_gite" id="id_gite" value="">
-    <br><br>
+        <label class="label-ajout" for="nbr_bedroom">
+            Nombre de salle de bain :
+        </label>
+        <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1">
+        <input type="hidden" name="id_gite" id="id_gite" value="">
+        <br><br>
+    </div>    
     <label class="label-ajout" for="desc_gite">
         Description du gîte :
     </label>
-    <textarea class="input-ajout descript-in" name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'artcile"></textarea>
+    <textarea class="input-ajout descript-in" name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'article"></textarea>
 
     <br> <br>
     <input class="btn-valid-ajout" type="submit" name="submit" value="Valider la modification">

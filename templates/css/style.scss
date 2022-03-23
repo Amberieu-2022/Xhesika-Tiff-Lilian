@@ -6,10 +6,12 @@
     margin: 0 auto;
     
 } 
-.background-main-user{
+.background-main-user img{
     position: absolute;
     top: 0;
     z-index: -9999;
+    max-width:fit-content;
+    width: 100%;
 }
 
 //HEADER PAGE UTILISATEUR
@@ -145,13 +147,6 @@
     height: 20px;
     line-height: 30px;
     cursor: pointer;
-}
-.titre-past-form{
-    font-family: 'Montserrat';
-    font-weight: 300;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 100px;
 }
 .form-filter{
     z-index: 9999;
@@ -291,7 +286,7 @@
     border: 2px solid #9DE1BC;
     max-width: 600px;
     width: 90%;
-    height: 400px;
+    height: 350px;
     border-radius: 30px;
     align-items: center;
     margin: 0 auto;
@@ -382,10 +377,37 @@ footer{
     .copyright{
         font-size: .8rem;
     }
+    .titre-past-form{
+        font-size: 1.5rem;
+    }
+    .input-local{
+        width: 400px;
+    }
+    .form-page-client{
+        margin: 50px auto;
+    }
 }
 @media screen and (max-width:800px) {
     .titre-resa-user{
         font-size: 1.5rem;
+    }
+    .titre-past-form{
+        font-size: 1.2rem;
+    }
+    .titre-h1{
+        font-size: 2rem;
+        margin: 30px auto;
+    }
+    .input-local{
+        width: 360px;
+        height: 15px;
+        line-height: 20px;
+    }
+    .titre-form-client{
+        font-size: 1.5rem;
+    }
+    .label-client{
+        font-size: .9rem;
     }
 }
 @media screen and (max-width: 745px) {
@@ -398,20 +420,40 @@ footer{
     .label-form-filter{
         font-size: .8rem;
     }
+    .justify-header img{
+        width: 400px;
+    }
+    .titre-h1{
+        font-size: 1.5rem;
+    }
+    .titre-form-client{
+        font-size: 1.2rem;
+    }
+    .label-client{
+        font-size: .7rem;
+    }
+    .nb-personnes{
+        height: 25px;
+    }
 }
 @media screen and (max-width: 630px){
     .label-client{
         font-size: .5rem;
+        height: 20px;
     }
     .btn-util{
         font-size: .6rem;
         width: 120px;
         height: 40px;
         padding: 5px;
+        margin-top: 10px;
     }
     .form-page-client{
         max-width: 600px;
         width: 80%;
+    }
+    .nb-personnes{
+        height: 20px;
     }
 
     .titre-form-client{
@@ -434,15 +476,20 @@ footer{
     .titre-resa-user{
         font-size: 1.2rem;
     }
-
-
+    .form-page-client{
+        margin: 20px auto;
+    }
+    .titre-past-form{
+        font-size: 1rem;
+    }
     // MEDIA QUERY HEADER UTILISATEUR
     .justify-header img{
-        width: 400px;
+        width: 250px;
     }
     .titre-h1{
-        font-size: 1.5rem;
+        font-size: .8rem;
         letter-spacing: 12px;
+        margin: 20px auto;
     }
     // PAGE RESERVATION/ EQUIPEMENTS
     .equip-figcap{
@@ -456,6 +503,9 @@ footer{
     }
     .label-form-filter{
         font-size: .6rem;
+    }
+    .titre-form-client{
+        font-size: .8rem;
     }
 }
 @media screen and (max-width:500px) {
@@ -479,18 +529,41 @@ footer{
         font-size: .8rem;
         width: 100px;
     }
+    .titre-form-client{
+        font-size: .7rem;
+    }
+    .first-flex{
+        display: block;
+
+    }
+    .flex-2{
+        display: block;
+        margin: 10px auto;
+        padding-right: 50px;
+    }
     
+    .label-client{
+        float: left;
+    }
+    .nb-personnes{
+        float: right;
+    }
+    .input-option{
+        float: right;
+    }
+    .label-nb-op{
+        float: left;
+    }
 }
 @media screen and (max-width: 450px) {
     .justify-header img{
         width: 300px;
     }
     .location{
-        display: flex;
-        justify-content: center;
+        padding: 5px 0 10px 0;
         .input-local{
             width: 150px;
-            height: 15px;
+            height: 10px;
         }
     }
     .btn-util{
@@ -499,9 +572,11 @@ footer{
     }
     .label-client{
         font-size: .4rem;
+        padding-right: 10px;
     }
     .date-placeholder{
         height: 15px;
+        margin-top: 5px;
     }
     .nb-personnes{
         height: 15px;
@@ -553,4 +628,9 @@ footer{
         width: 70px;
     }
 
+}
+@media screen and (max-width:400px) {
+    .footer-logo{
+        left: 80px;
+    }
 }

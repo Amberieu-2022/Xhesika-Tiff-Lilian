@@ -15,7 +15,7 @@ require_once './templates/header.php';
 
             <div class="location">
                 <label class="label-client">DESTINATION</label>
-                <input type="text" placeholder=" Ecrivez votre destination" class="input-local">
+                <input type="text" class="input-local">
             </div>
 
             <div class="location">
@@ -74,18 +74,18 @@ require_once './templates/header.php';
             <br>
             <label for="type" class="label-client">Type de logement</label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Chambre </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Appartement </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Maison </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Villa </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Chambre </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Appartement </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Maison </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Villa </label>
             </div>
             <br>
             <label for="option" class="label-client"> Option(s) </label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Piscine </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Jardin </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Parking </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client"> Animaux acceptée </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Piscine </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Jardin </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Parking </label>
+                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-client label-nb-op"> Animaux acceptée </label>
             </div>
             <br>
 

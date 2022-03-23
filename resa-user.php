@@ -103,27 +103,27 @@ require_once './templates/header.php';
                 <label for="" class="label-form-filter">PRENOM</label>
                 <input type="text" class="input-resa" required>
             </div>
-            <br><br>
+            <br>
             <div class="flex-btw">
                 <label for="" class="label-form-filter">NOM</label>
                 <input type="text" class="input-resa" required>
             </div>
-            <br><br>
+            <br>
             <div class="flex-btw">
                 <label for="email" class="label-form-filter">E-MAIL</label>
                 <input type="email" size="30" placeholder="xxxxx@gmail.com" class="input-resa" required>
             </div>
-            <br><br>
+            <br>
             <div class="flex-btw">
                 <label for="" class="label-form-filter">TÉLÉPHONE</label>
                 <input type="tel" class="input-resa" placeholder="06 00 00 00 00" required>
             </div>
-            <br><br>
+            <br>
             <div class="flex-btw">
                 <label for="" class="label-form-filter">NOMBRE DE VOYAGEUR</label>
                 <input type="number" min="1" class="input-resa nb-resa" required>
             </div>
-            <br><br>
+            <br>
 
             <label for="" class="label-form-filter">DATE DE RESERVATION</label> <br>
             <div class="flex-btw around">

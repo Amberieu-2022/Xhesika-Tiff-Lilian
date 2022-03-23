@@ -45,18 +45,18 @@ require_once '../templates/header-admin.php';
     <br><br>
     <label for="type" class="label-ajout">Categorie</label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Chambre </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Appartement </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Maison </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Villa </label>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Chambre </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Appartement </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Maison </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Villa </label></div>
             </div>
             <br>
             <label for="option" class="label-ajout"> Option(s) </label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Piscine </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Jardin </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Piscine </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Jardin </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label></div>
+                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label></div>
             </div>
             <br>
     <label class="label-ajout" for="desc_gite">
