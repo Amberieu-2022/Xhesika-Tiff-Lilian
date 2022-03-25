@@ -1,7 +1,10 @@
 <?php
 
 require_once '../templates/header-admin.php';
-
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
 ?>
 
 <form action="#" method="POST" enctype='multipart/form-data'>

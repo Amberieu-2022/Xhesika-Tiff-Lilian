@@ -22,7 +22,7 @@
         </div>
 
     </footer>
-    <script src="./templates/js/user/main.js"></script>
+    <script src="./resa-user.js"></script>
     </body>
 
     </html>

@@ -3,10 +3,10 @@
 giteDisplay();
 
 function giteDisplay() {
-    const listGites = document.getElementById('list-gites')
+    const resultGites = document.getElementById('result-gites')
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', './select-gite.php', true);
+    xhr.open('GET', './select-form-user.php', true);
 
     xhr.onreadystatechange = function () {
 
@@ -19,7 +19,7 @@ function giteDisplay() {
                 // console.log(data)
             }
 
-            listGites.innerHTML = listDom;
+            resultGites.innerHTML = listDom;
 
             showModal();
 
@@ -85,8 +85,8 @@ function deleteGite(id) {
     })
 }
 
-// function countGite() {
+function countGite() {
     
-//     return document.getElementsByClassName('gites').length;
+    return document.getElementsByClassName('gites').length;
 
-// }
+}

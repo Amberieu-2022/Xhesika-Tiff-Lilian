@@ -5,7 +5,10 @@ require_once '../templates/header-admin.php';
 require_once '../templates/footer-admin.php';
 require_once '../connect.php';
 
-
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
 
 if(isset($_POST['submit'])){
     $start_date_reserv = ['start_date_reserv'];

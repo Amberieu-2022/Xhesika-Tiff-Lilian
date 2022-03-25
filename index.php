@@ -110,7 +110,9 @@ require_once 'select-filtre-user.php';
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
 
-    <ul id="result-gites"></ul>
+    <ul id="result-gites">
+        
+    </ul>
 
     <aside class="form-filter">
         <form action="#" method="GET">

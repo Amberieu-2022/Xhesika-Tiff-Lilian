@@ -2,6 +2,10 @@
 
 require_once '../templates/header-admin.php';
 
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
 ?>
 <h1>Ajouter un nouveau gîte</h1>
 <form action="#" method="POST" enctype='multipart/form-data'>
@@ -61,6 +65,33 @@ require_once '../templates/header-admin.php';
     <input type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" required>
 
     <br><br>
+
+    <label for="id_categ">Type de logement :</label>
+    <select name="id_categ" id="categ">
+        <option value="1">Chambre</option>
+        <option value="2">Appartement</option>
+        <option value="3">Maison</option>
+        <option value="4">Villa</option>
+    </select>
+    
+
+    <br><br>
+    
+    <label class="label-no1"> Option(s) </label> <br>
+        <div class="first-flex flex-2">
+            <input type="checkbox" name="id_suppl[]" value="1" class="input-option">
+            <label class="label-no" for="id_suppl"> Piscine </label>
+
+            <input type="checkbox" name="id_suppl[]" value="2" class="input-option">
+            <label class="label-no" for="id_suppl"> Jardin </label>
+
+            <input type="checkbox" name="id_suppl[]" value="3" class="input-option">
+            <label class="label-no" for="id_suppl"> Parking </label>
+
+            <input type="checkbox" name="id_suppl[]" value="4" class="input-option">
+            <label class="label-no" for="id_suppl"> Animaux acceptée </label>
+        </div>
+
     <button type="submit" name="submit">Valider la création
     </button>
 
@@ -124,7 +155,9 @@ if (isset($_POST['submit'])) {
             }
         }
     }
-    // $id_gite = $_POST['id_gite'];
+    
+    $id_categ = $_POST['id_categ'];
+    // $id_suppl = $_POST['id_suppl'];
     $name_gite = $_POST['name_gite'];
     $name_simple_gite = $finalString;
     $location_gite = $_POST['location_gite'];
@@ -133,13 +166,17 @@ if (isset($_POST['submit'])) {
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bedroom = $_POST['nbr_bedroom'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
+    
 
     echo 'Les données ont bien été récup';
+  
+
 
     //Connexion à la BDD
     require_once 'create-gite.php';
     // header('Location: gite.php');
-    var_dump($idGite);
+    var_dump($name_gite);
+    // var_dump($idGite);
     for ($i = 0; $i < count($_FILES['myimg']['name']); $i++) {
         if (isset($_FILES['myimg']['name'][$i]) && $_FILES['myimg']['error'][$i] == 0) {
             if (isset($_FILES['myimg']['size'][$i]) <= 1000000) {
@@ -158,11 +195,24 @@ if (isset($_POST['submit'])) {
                     
                     $name_image =  $ref . "." . $extensionUpload;
                     
-                    var_dump($name_image);
-                    var_dump($idGite);
+                    
                     require_once 'ajout-image.php';
                 }
             }
+        }
+    }
+      
+   if(!empty($_POST['id_suppl'])){
+        foreach($_POST['id_suppl'] as $value){
+            echo "Lavaleur récupérer est : .$value";
+            var_dump($idGite);
+            var_dump($value);
+            $req = $db->prepare('INSERT INTO gite_option (`id_gite`, `id_suppl`) VALUES (:id_gite, :id_suppl)');
+
+            $req->bindParam('id_gite', $idGite, PDO::PARAM_STR);
+            $req->bindParam('id_suppl', $value, PDO::PARAM_STR);
+            $req->execute();
+
         }
     }
 }

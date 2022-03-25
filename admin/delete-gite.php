@@ -5,7 +5,7 @@
 
     $id = $_POST['id_gite'];
  
-    $req = $db->prepare('DELETE FROM `gite` WHERE id_gite = :id');
+    $req = $db->prepare('DELETE FROM `cottages` WHERE id_gite = :id');
 
     $req->bindParam(':id', $id, PDO::PARAM_STR);
 
