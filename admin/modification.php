@@ -26,25 +26,20 @@ require_once '../templates/header-admin.php';
     <input class="label-ajout" type="file" name="profil_gite" accept="image/png, image/jpeg, image/jpg">
     <div class="modif-nb-gite">
         <br><br>
-        <label class="label-ajout" for="nbr_sleeping">
-            Nombre de couchage :
-        </label>
-        <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1">
+        <div id="modif-nb-ch">
+            <label class="label-ajout" for="nbr_sleeping">
+                Nombre de couchage :
+            </label>
+            <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1">
 
-        <br><br>
+            <br><br>
 
-        <label class="label-ajout" for="nbr_bedroom">
-            Nombre de chambre :
-        </label>
-        <input class="input-ajout input-nb-add" type="number" name="nbr_bedroom" id="nbr_bedroom" min="1">
-
-        <br><br>
-
-        <label class="label-ajout" for="nbr_bedroom">
-            Nombre de salle de bain :
-        </label>
-        <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1">
-        <input type="hidden" name="id_gite" id="id_gite" value="">
+            <label class="label-ajout" for="nbr_bedroom">
+                Nombre de salle de bain :
+            </label>
+            <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1">
+            <input type="hidden" name="id_gite" id="id_gite" value="">
+        </div>    
         <br><br>
     </div>    
     <label class="label-ajout" for="desc_gite">

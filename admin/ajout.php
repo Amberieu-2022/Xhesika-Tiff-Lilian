@@ -33,11 +33,6 @@ require_once '../templates/header-admin.php';
 
     <br> <br>
     <label class="label-ajout" for="nbr_bedroom">
-        Nombre de chambre :
-    </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_bedroom" id="nbr_bedroom" min="1" required>
-    <br> <br>
-    <label class="label-ajout" for="nbr_bedroom">
         Nombre de salle de bain :
     </label>
     <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" required>

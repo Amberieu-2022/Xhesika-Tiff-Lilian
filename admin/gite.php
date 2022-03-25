@@ -54,37 +54,24 @@ require_once '../templates/header-admin.php';
                     <option value="6">6</option>
                 </select>
 
-                <label class="label-no"> Nombre de chambres </label>
-                <select name="nb-room" id="" class="input-numer">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
 
             </div>
             <br>
 
             <label for="type" class="label-no1">Type de logement</label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Chambre </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Appartement </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Maison </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Villa </label>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Chambre </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Appartement </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Maison </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Villa </label></div>
             </div>
             <br>
             <label for="option" class="label-no1"> Option(s) </label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Piscine </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Jardin </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Parking </label>
-                <input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Animaux acceptée </label>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Piscine </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Jardin </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Parking </label></div>
+                <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Animaux acceptée </label></div>
             </div>
             <br>
 

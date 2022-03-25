@@ -56,7 +56,7 @@ table {
 .background-main-user img {
   position: absolute;
   top: 0;
-  z-index: -9999;
+  z-index: -1;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -79,6 +79,7 @@ table {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 30px;
+  z-index: 1;
 }
 
 .form-page-client {
@@ -107,8 +108,7 @@ table {
   font-size: 1rem;
   font-family: 'Cinzel';
   font-weight: 500;
-  letter-spacing: 3px;
-  width: 150px;
+  letter-spacing: 2px;
 }
 
 .btn-util {
@@ -132,7 +132,7 @@ table {
   border: 2px solid #9DE1BC;
   border-radius: 5px 5px;
   width: 480px;
-  height: 30px;
+  height: 20px;
 }
 
 .location {
@@ -163,6 +163,16 @@ table {
   width: 40px;
   height: 30px;
   border: 2px solid #9DE1BC;
+  border-radius: 5px;
+}
+
+.formulaire-type-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .titre-past-form {
@@ -259,9 +269,9 @@ table {
   text-align: center;
 }
 
-.reservation-utilisateur {
-  background: -webkit-gradient(linear, left top, right top, from(#93efbd), color-stop(#709ebd), color-stop(95%, #6d72af));
-  background: linear-gradient(90deg, #93efbd, #709ebd, #6d72af 95%);
+.body-resa {
+  background: -webkit-gradient(linear, left bottom, left top, from(#93efbd), color-stop(#709ebd), color-stop(95%, #6d72af));
+  background: linear-gradient(360deg, #93efbd, #709ebd, #6d72af 95%);
 }
 
 .titre-resa-user {
@@ -491,7 +501,7 @@ table {
 }
 
 footer {
-  background-color: #9DE1BC;
+  background-color: linear-gradient(360deg, #93efbd, #73dac0);
   padding: 50px 0 10px 0;
 }
 
@@ -544,7 +554,7 @@ footer {
     font-size: 1.5rem;
   }
   .label-client {
-    font-size: .9rem;
+    font-size: 1rem;
   }
 }
 
@@ -568,7 +578,7 @@ footer {
     font-size: 1.2rem;
   }
   .label-client {
-    font-size: .7rem;
+    font-size: .8rem;
   }
   .nb-personnes {
     height: 25px;
@@ -577,8 +587,8 @@ footer {
 
 @media screen and (max-width: 630px) {
   .label-client {
-    font-size: .5rem;
-    height: 20px;
+    padding: 5px;
+    letter-spacing: 0;
   }
   .btn-util {
     font-size: .6rem;
@@ -590,6 +600,7 @@ footer {
   .form-page-client {
     max-width: 600px;
     width: 80%;
+    margin: 20px auto;
   }
   .nb-personnes {
     height: 20px;
@@ -611,11 +622,25 @@ footer {
   .titre-resa-user {
     font-size: 1.2rem;
   }
-  .form-page-client {
-    margin: 20px auto;
-  }
   .titre-past-form {
     font-size: 1rem;
+  }
+  .formulaire-type-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .type-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .justify-header img {
     width: 250px;
@@ -666,26 +691,6 @@ footer {
   .titre-form-client {
     font-size: .7rem;
   }
-  .first-flex {
-    display: block;
-  }
-  .flex-2 {
-    display: block;
-    margin: 10px auto;
-    padding-right: 50px;
-  }
-  .label-client {
-    float: left;
-  }
-  .nb-personnes {
-    float: right;
-  }
-  .input-option {
-    float: right;
-  }
-  .label-nb-op {
-    float: left;
-  }
 }
 
 @media screen and (max-width: 450px) {
@@ -696,15 +701,11 @@ footer {
     padding: 5px 0 10px 0;
   }
   .location .input-local {
-    width: 150px;
+    width: 120px;
     height: 10px;
   }
   .btn-util {
     font-size: .5rem;
-  }
-  .label-client {
-    font-size: .4rem;
-    padding-right: 10px;
   }
   .date-placeholder {
     height: 15px;
@@ -757,6 +758,12 @@ footer {
 @media screen and (max-width: 400px) {
   .footer-logo {
     left: 80px;
+  }
+  .location .input-local {
+    width: 100px;
+  }
+  .label-client {
+    font-size: .6rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
