@@ -20,9 +20,10 @@ require_once 'select-filtre-user.php';
 
             <div class="location">
                 <label for="start_date_reserv" class="label-client">ARRIVÉE</label>
-                <input type="date" value="" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
+                <input type="date" min="<?= date('Y-m-d')?>" value="<?= date('Y-m-d')?>" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
+
                 <label for="end_date_reserv" class="label-client"> DEPART</label>
-                <input type="date" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
+                <input type="date" min="<?= date('Y-m-d', strtotime('+1 day'))?>"  max="<?= date('Y-m-d', strtotime('+3 months'))?>" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
             </div>
 
 
@@ -111,27 +112,27 @@ require_once 'select-filtre-user.php';
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
 
     <ul id="result-gites">
-        
+
     </ul>
 
     <aside class="form-filter">
         <form action="#" method="GET">
             <label for="" class="label-category">Filtrer par </label> <br> <br>
 
-            <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
+            <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
             <div id="categories">
                 <div class="category-room">
                     <label for="name_categ" class="label-form-filter">Chambre</label> <input type="checkbox" name="name_categ">
                 </div>
                 <div class="category-room">
-                    <label for="name_categ"  class="label-form-filter">Appartement</label> <input type="checkbox" name="name_categ"> 
+                    <label for="name_categ" class="label-form-filter">Appartement</label> <input type="checkbox" name="name_categ">
                 </div>
                 <div class="category-room">
-                    <label for="name_categ" class="label-form-filter">Maison</label> 
-                    <input type="checkbox" name="name_categ"> 
+                    <label for="name_categ" class="label-form-filter">Maison</label>
+                    <input type="checkbox" name="name_categ">
                 </div>
                 <div class="category-room">
-                    <label for="name_categ" class="label-form-filter">Villa</label> 
+                    <label for="name_categ" class="label-form-filter">Villa</label>
                     <input type="checkbox" name="name_categ">
                 </div> <br>
             </div>
@@ -139,19 +140,19 @@ require_once 'select-filtre-user.php';
             <label for="" class="label-category">Chambre(s) <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"> </label>
             <div id="categories">
                 <div class="category-room">
-                    <label for="nbr_bedroom" class="label-form-filter">0</label> 
-                    <input type="checkbox" name="nbr_bedroom"> 
+                    <label for="nbr_bedroom" class="label-form-filter">0</label>
+                    <input type="checkbox" name="nbr_bedroom">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_bedroom" class="label-form-filter">1</label> 
-                    <input type="checkbox" name="nbr_bedroom"> 
+                    <label for="nbr_bedroom" class="label-form-filter">1</label>
+                    <input type="checkbox" name="nbr_bedroom">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_bedroom" class="label-form-filter">2</label> 
-                    <input type="checkbox" name="nbr_bedroom"> 
+                    <label for="nbr_bedroom" class="label-form-filter">2</label>
+                    <input type="checkbox" name="nbr_bedroom">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_bedroom" class="label-form-filter">3+</label> 
+                    <label for="nbr_bedroom" class="label-form-filter">3+</label>
                     <input type="checkbox" name="nbr_bedroom">
                 </div><br>
             </div>
@@ -159,52 +160,52 @@ require_once 'select-filtre-user.php';
             <label for="" class="label-category">Couchage(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
             <div id="categories">
                 <div class="category-room">
-                    <label for="nbr_sleeping" class="label-form-filter">1-2</label> 
-                    <input type="checkbox" name="nbr_sleeping"> 
+                    <label for="nbr_sleeping" class="label-form-filter">1-2</label>
+                    <input type="checkbox" name="nbr_sleeping">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_sleeping" class="label-form-filter">3-4</label> 
-                    <input type="checkbox" name="nbr_sleeping"> 
+                    <label for="nbr_sleeping" class="label-form-filter">3-4</label>
+                    <input type="checkbox" name="nbr_sleeping">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_sleeping" class="label-form-filter">5-6</label> 
-                    <input type="checkbox" name="nbr_sleeping"> 
+                    <label for="nbr_sleeping" class="label-form-filter">5-6</label>
+                    <input type="checkbox" name="nbr_sleeping">
                 </div>
                 <div class="category-room">
-                    <label for="nbr_sleeping" class="label-form-filter">7+</label> 
+                    <label for="nbr_sleeping" class="label-form-filter">7+</label>
                     <input type="checkbox" name="nbr_sleeping">
                 </div><br>
-            </div>     
+            </div>
 
-            <label for="" class="label-category">Option(s)  <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
+            <label for="" class="label-category">Option(s) <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
             <div id="categories">
                 <div class="category-room">
-                    <label for="option" class="label-form-filter">Piscine</label> <input type="checkbox" name="option"> 
+                    <label for="option" class="label-form-filter">Piscine</label> <input type="checkbox" name="option">
                 </div>
                 <div class="category-room">
-                    <label for="option" class="label-form-filter">Jardin</label> 
-                    <input type="checkbox" name="option"> 
+                    <label for="option" class="label-form-filter">Jardin</label>
+                    <input type="checkbox" name="option">
                 </div>
                 <div class="category-room">
-                    <label for="option" class="label-form-filter">Parking</label> <input type="checkbox" name="option"> 
+                    <label for="option" class="label-form-filter">Parking</label> <input type="checkbox" name="option">
                 </div>
                 <div class="category-room">
                     <label for="option" class="label-form-filter">Animaux</label> <input type="checkbox" name="option">
                 </div> <br>
             </div>
-            <label for="" class="label-category"> Prix  /  nuit   <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
+            <label for="" class="label-category"> Prix / nuit <img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
             <div id="categories">
                 <div class="category-room">
-                    <label for="price_reserv" class="label-form-filter">0 - 50€</label> <input type="checkbox" name="price_reserv"> 
+                    <label for="price_reserv" class="label-form-filter">0 - 50€</label> <input type="checkbox" name="price_reserv">
                 </div>
                 <div class="category-room">
-                    <label for="price_reserv" class="label-form-filter">51 - 150€</label> <input type="checkbox" name="price_reserv"> 
+                    <label for="price_reserv" class="label-form-filter">51 - 150€</label> <input type="checkbox" name="price_reserv">
                 </div>
                 <div class="category-room">
-                    <label for="price_reserv" class="label-form-filter">151 - 300€</label> <input type="checkbox" name="price_reserv"> 
+                    <label for="price_reserv" class="label-form-filter">151 - 300€</label> <input type="checkbox" name="price_reserv">
                 </div>
                 <div class="category-room">
-                    <label for="price_reserv" class="label-form-filter">301€ +</label> 
+                    <label for="price_reserv" class="label-form-filter">301€ +</label>
                     <input type="checkbox" name="price_reserv">
                 </div>
             </div>

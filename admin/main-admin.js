@@ -15,7 +15,7 @@ function giteDisplay() {
             let listDom = ''
 
             for (let data of datas) {
-                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/' + data.name_simple_gite + '/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-del" data-id="' + data.id_gite + '">Supprimer</a></li>'
+                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="./img/pdp/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-mod" data-id="' + data.id_gite + '">Modifier </a><a href="#" class="btn-del" data-id="' + data.id_gite + '"> Supprimer</a></li>'
                 // console.log(data)
             }
 
@@ -85,8 +85,8 @@ function deleteGite(id) {
     })
 }
 
-// function countGite() {
+function countGite() {
     
-//     return document.getElementsByClassName('gites').length;
+    return document.getElementsByClassName('gites').length;
 
-// }
+}
