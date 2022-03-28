@@ -144,8 +144,9 @@
                     <input type="number" min="1" class="input-resa nb-resa" required>
                 </div>
                 <br>
-
-                <label for="" class="label-form-filter">DATE DE RESERVATION</label> <br>
+                <div class="flex-btw">
+                    <label for="" class="label-form-filter">DATE DE RESERVATION</label> <br>
+                </div>
                 <div class="flex-btw around">
                     <label for="" class="label-form-filter">ARRIVÉE</label>
                     <input type="date" class="date-input-resa" required>
@@ -154,6 +155,11 @@
 
                 </div>
                 <br><br><input type="submit" class="btn-btn">
+                <div class="flex-btw">
+                    <p class="prix-formulaire">
+                        Prix TTC : 154€
+                    </p>
+                </div>
 
             </form>
         </section>

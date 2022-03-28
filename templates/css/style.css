@@ -49,7 +49,7 @@ table {
 
 .row-limit-size {
   max-width: 1200px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -238,21 +238,6 @@ table {
   cursor: pointer;
 }
 
-.form-filter {
-  z-index: 9999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  padding: 20px;
-  margin-left: 30px;
-  width: 200px;
-  height: 90%;
-  border: 2px solid #9DE1BC;
-}
-
 .section-padding {
   padding-bottom: 30px;
 }
@@ -266,7 +251,7 @@ table {
   font-size: 1rem;
   padding-top: 20px;
   padding-bottom: 20px;
-  text-align: center;
+  text-align: justify;
 }
 
 .body-resa {
@@ -416,8 +401,9 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 20px;
 }
 
@@ -434,6 +420,11 @@ table {
 .date-input-resa {
   border: 2px solid #9DE1BC;
   border-radius: 5px;
+}
+
+.prix-formulaire {
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
 }
 
 .footer-logo {
@@ -509,6 +500,139 @@ footer {
   display: block !important;
 }
 
+#main-user-gite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1600px;
+}
+
+#main-user-gite .gites {
+  max-width: 1000px;
+  width: 95%;
+  margin-right: 150px;
+  height: 280px;
+  list-style-type: none;
+  position: relative;
+}
+
+#main-user-gite .gites:after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  width: 45%;
+  height: 1px;
+  right: 17%;
+  margin-top: 30px;
+}
+
+#main-user-gite .gites .titre-page-user {
+  font-family: 'Montserrat';
+  font-size: 1.8rem;
+  margin-left: 20px;
+}
+
+#main-user-gite .gites .titre-lieu-p-user {
+  font-size: 1.2rem;
+  font-family: 'Montserrat';
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+#main-user-gite .img-para-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px;
+}
+
+#main-user-gite .img-para-user .description-main-page {
+  font-family: 'Roboto Slab';
+  text-align: justify;
+}
+
+#main-user-gite .img-div-gite {
+  margin-right: 50px;
+}
+
+#main-user-gite .button-index-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#main-user-gite .button-index-user .btn-reserver-user {
+  background-color: transparent;
+  border: 2px solid #9DE1BC;
+  cursor: pointer;
+  width: 200px;
+  font-family: 'Cinzel';
+  font-weight: 500;
+}
+
+#main-user-gite .button-index-user .btn-reserver-user a {
+  text-decoration: none;
+  color: black;
+}
+
+#main-user-gite .button-index-user .btn-reserver-user:hover {
+  background-color: #9DE1BC;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+#main-user-gite .button-index-user .user-gite-prix {
+  font-size: .9rem;
+  font-family: 'Roboto Slab';
+}
+
+@media screen and (max-width: 1305px) {
+  .gites {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+  .gites .img-para-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gites .img-para-user .img-div-gite {
+    width: 200px;
+    height: 70%;
+  }
+  #main-user-gite {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .reseaux-sociaux {
     width: 35px;
@@ -582,6 +706,18 @@ footer {
   }
   .nb-personnes {
     height: 25px;
+  }
+  .gites {
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  #main-user-gite .gites {
+    padding-bottom: 65px;
+  }
+  #main-user-gite .gites .titre-page-user {
+    font-size: 1.2rem;
   }
 }
 
@@ -665,6 +801,21 @@ footer {
   .titre-form-client {
     font-size: .8rem;
   }
+  .gites {
+    padding-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 589px) {
+  .gites {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .gites {
+    padding-bottom: 110px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -690,6 +841,15 @@ footer {
   }
   .titre-form-client {
     font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 457px) {
+  .gites {
+    padding-bottom: 130px;
+  }
+  .gites .btn-reserver-user {
+    max-width: 150px;
   }
 }
 
@@ -764,6 +924,12 @@ footer {
   }
   .label-client {
     font-size: .6rem;
+  }
+  .section-padding {
+    width: 100%;
+  }
+  .gites {
+    margin-bottom: 100px;
   }
 }
 /*# sourceMappingURL=style.css.map */

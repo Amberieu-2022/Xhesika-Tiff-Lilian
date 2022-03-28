@@ -269,10 +269,16 @@ li.gites{
     border-radius: 5px;
 }
 .input-nb-add{
-    width: 30px;
+    width: 40px;
 }
 .descript-in{
     height: 200px;
+    max-width: 600px;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+
 }
 .btn-valid-ajout{
     font-family: 'Montserrat';
@@ -292,6 +298,13 @@ li.gites{
     background-color: #9DE1BC;
     box-shadow: inset 0 0 7px #6d72af;
 }
+.ajout-lab-in{
+    display: flex;
+    margin-top: 10px;
+    .label-ajout{
+        padding-left: 30px;
+    }
+}
 // MEDIA QUERY HEADER________________________________________________
 @media screen and (max-width: 1060px) {
     // MEDIA QUERY FORMULAIRE CONNEXION
@@ -304,6 +317,7 @@ li.gites{
     }
     .titre-page-gestion{
         font-size: 1.5rem;
+        margin-top: 2px;
     }
     .confirm{
         left: 20%;
@@ -347,10 +361,7 @@ li.gites{
     .btn-connect{
         font-size: 1.2rem;
     }
-    // .flex-2{
-    //     justify-content: center;
-    //     align-items: center;
-    // }
+    
     
     
 }
@@ -396,6 +407,10 @@ li.gites{
         width: 30px;
         margin: 5px 10px;
     }
+    .descript-in{
+        max-width: 600px;
+        width: 95%;
+    }
     
 }
 @media screen and (max-width:600px) {
@@ -424,7 +439,6 @@ li.gites{
         height: 20px;
     }
     
-
 }
 @media screen and (max-width: 570px) {
     .confirm{
@@ -435,7 +449,7 @@ li.gites{
         font-size: .8rem;
     }
     .form-ajout-new-gite{
-        padding: 40px 20px;
+        padding: 40px 40px;
     }
     .input-connect{
         height: 15px;
@@ -451,9 +465,6 @@ li.gites{
     }
     .btn-valid-ajout{
         font-size: .8rem;
-    }
-    .form-ajout-new-gite{
-        padding-left: 50px;
     }
 }
 @media screen and (max-width: 432px) {
@@ -481,6 +492,7 @@ li.gites{
     }
     .titre-page-gestion{
         font-size: 1.1rem;
+        margin-top: 50px;
     }
     .id-connect{
         font-size: .5rem;

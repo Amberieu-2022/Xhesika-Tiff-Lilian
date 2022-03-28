@@ -21,42 +21,81 @@ require_once '../templates/header-admin.php';
     <br><br>
 
     <label class="label-ajout" for="profil_gite">
-        Ajouter un image :
+        Ajouter un image de profil :
     </label>
     <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
     <br><br>
+
+    <label class="label-ajout" for="profil_gite">
+        Ajouter des images du gîte :
+    </label>
+    <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
+    <br><br>
+
     
     <label class="label-ajout" for="nbr_sleeping">
         Nombre de couchage :
     </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_sleeping" id="nbr_sleeping" min="1" required>
+    <select name="nbr_sleeping" id="nbr_sleeping" type="number" class="input-ajout input-nb-add">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+    </select>
 
     <br> <br>
     <label class="label-ajout" for="nbr_bedroom">
         Nombre de salle de bain :
     </label>
-    <input class="input-ajout input-nb-add" type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" required>
-
-    <br><br>
-    <label for="type" class="label-ajout">Categorie</label> <br>
-            <div class="first-flex flex-2">
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Chambre </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Appartement </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Maison </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Villa </label></div>
-            </div>
-            <br>
-            <label for="option" class="label-ajout"> Option(s) </label> <br>
-            <div class="first-flex flex-2">
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Piscine </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Jardin </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label></div>
-                <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label></div>
-            </div>
-            <br>
+    <select name="nbr_bathroom" id="nbr_bathroom" type="number" class="input-ajout input-nb-add">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+    </select>
+    <br>
+    <label for="type" class="label-ajout">Categorie</label>
+    <br>
+    <div class="first-flex flex-2">
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Chambre </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Appartement </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Maison </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Villa </label></div>
+    </div>
+    <br>
+    <label for="option" class="label-ajout"> Option(s) </label> <br>
+    <div class="first-flex flex-2">
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Piscine </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Jardin </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label></div>
+        <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label></div>
+    </div>
+    <br>
     <label class="label-ajout" for="desc_gite">
         Description du gîte :
-    </label>
+    </label> <br> <br>
     <textarea class="input-ajout descript-in" name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'artcile" required></textarea>
 
     

@@ -83,14 +83,14 @@ require_once './templates/header.php';
     </section>
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
-    <div class="main-user-gite">
+    <div id="main-user-gite">
         <aside class="form-filter">
             <form action="#" method="GET">
                 <label for="" class="label-category">Filtrer par </label> <br> <br>
 
                 <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
                 <div id="categories">
-                    <div id="category-room">
+                    <div class="category-room">
                         <label for="" class="label-form-filter">Chambre</label> <input type="checkbox">
                     </div>
                     <div class="category-room">
@@ -104,7 +104,7 @@ require_once './templates/header.php';
                     </div> <br>
                 </div>
 
-                <label for="" class="label-category">Chambre(s) <img src="./templates/img/icon/button.png" alt="button" id="btn-summaryR"> </label>
+                <label for="" class="label-category">Salle de bain <img src="./templates/img/icon/button.png" alt="button" id="btn-summaryR"> </label>
                 <div id="categoriesR">
                     <div class="category-room">
                         <label for="" class="label-form-filter">0</label> <input type="checkbox"> 
@@ -170,19 +170,22 @@ require_once './templates/header.php';
             </form>
         </aside>
         <li class="gites">
-            <h2>LA PETITE MAISON DANS LA PRAIRIE</h2>
-            <h3>Amberieu-en-bugey</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur obcaecati ad voluptatum quidem,
-                iure ipsa minima ullam recusandae omnis corporis architecto sit, quasi vero libero voluptatem explicabo laboriosam
-                debitis commodi? Quas, inventore? Sapiente eius, exercitationem nemo recusandae quisquam architecto incidunt. Eos 
-                voluptatem cupiditate mollitia adipisci dolorem veritatis deserunt nihil, perspiciatis consequatur explicabo, error 
-                recusandae maxime a exercitationem minus labore aliquid? Quas tenetur culpa soluta delectus perferendis, perspiciatis
-                ad asperiores quam laudantium, molestias natus praesentium rem, odit aliquam dolorum ratione aperiam! Officiis
-                suscipit provident laborum, minus molestias, quos iste in aspernatur voluptas eligendi autem quibusdam accusantium aperiam. Illo, quidem id!
-            </p>
-            <img src="./templates/img/slider/chamb.jpg" alt="photo de la gite">
-            <p></p>
+            <h2 class="titre-page-user">LA PETITE MAISON DANS LA PRAIRIE</h2>
+            <h3 class="titre-lieu-p-user">Amberieu-en-bugey</h3>
+            <div class="img-para-user">
+                <img src="./templates/img/slider/room-gite.jpg" alt="photo de la gite" class="img-div-gite">
+                <p class="description-main-page">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur obcaecati ad
+                    voluptatum quidem,iure ipsa minima ullam recusandae omnis corporis architecto sit, quasi 
+                    vero libero voluptatem explicabo laboriosambr debitis commodi? 
+                </p>
+                
+            </div>
+            
+            <div class="button-index-user">
+                <p class="user-gite-prix">Prix / nuit : 54€</p>
+                <button class="btn-reserver-user"><a href="./resa-user.php">RESERVER</a></button> 
+            </div>
         </li>
     </div>
 
