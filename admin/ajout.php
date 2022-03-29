@@ -75,7 +75,7 @@ require_once '../templates/header-admin.php';
         <option value="14">14</option>
         <option value="15">15</option>
     </select>
-    <br>
+    <br><br>
     <label for="type" class="label-ajout">Categorie</label>
     <br>
     <div class="first-flex flex-2">
@@ -92,7 +92,7 @@ require_once '../templates/header-admin.php';
         <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Parking </label></div>
         <div class="ajout-lab-in"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-ajout"> Animaux acceptée </label></div>
     </div>
-    <br>
+    <br> <br>
     <label class="label-ajout" for="desc_gite">
         Description du gîte :
     </label> <br> <br>

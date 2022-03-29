@@ -2,7 +2,7 @@
 
 require_once '../templates/header-admin.php';
 
-require_once '../templates/footer-admin.php';
+
 require_once '../connect.php';
 
 
@@ -18,55 +18,99 @@ if(isset($_POST['submit'])){
 }
 ?>
 <!-- HTML -->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <style>
-        html, body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-        font-size: 14px;
-        }
+<main id="main-resa-admin">
+    <h2 class="titre-reservation-ad">Reservations</h2>
+    <!-- TABLEAUX DE RESERVATION ADMIN -->
+    <div id="resa-admin-list" class="row-limit-size">
+        
+       <table id="table-resa">
+            <tr>
+                <td id="td">Gîte</td>
+                <td id="td">Nom / Prénom</td>
+                <td id="td">Nb de voyageurs</td>
+                <td id="td">Nb de nuits</td>
+                <td id="td">Date arrivée</td>
+                <td id="td">Date départ</td>
+                <td id="td">E-mail</td>
+                <td id="td">Téléphone</td>
+                <td id="td">Prix</td>
+            </tr>
+            <tr>
+                <td id="td">Maison de Prairie</td>
+                <td id="td">Eduard Veronique</td>
+                <td id="td">2</td>
+                <td id="td">7</td>
+                <td id="td">22/07/2022</td>
+                <td id="td">30/07/2022</td>
+                <td id="td">vero@gmail.com</td>
+                <td id="td">0656987412</td>
+                <td id="td">365€</td>
+            </tr>
+            <tr>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+                <td id="td"> </td>
+            </tr>
+       </table>
+       <table id="table-resa-responsive">
+           <tr>
+            <td id="td-responsive">Gîte</td> 
+            <td id="td-responsive">Maison de prairie </td>  
+           </tr>
+           <tr> 
+               <td id="td-responsive">Nom / Prenom  </td>
+               <td id="td-responsive">Eduard Veronique</td>
+               
+            </tr>
+            <tr>
+                <td id="td-responsive">Nb de voyageurs  </td>
+                <td id="td-responsive"> 2</td>
+            </tr>
+            <tr>
+                <td id="td-responsive"> Nb de nuits </td>
+                <td id="td-responsive"> 7</td>
+            </tr>
+            <tr>
+                <td id="td-responsive"> Date arrivée </td>
+                <td id="td-responsive"> 22/07/2022</td>
+            </tr>
+            <tr>
+                <td id="td-responsive">Date départ </td>
+                <td id="td-responsive"> 30/07/2022</td>
+            </tr>
+            <tr>
+                <td id="td-responsive"> E-mail  </td>
+                <td id="td-responsive"> vero@gmail.com</td>
+            </tr>
+            <tr>
+                <td id="td-responsive"> Téléphone  </td>
+                <td id="td-responsive"> 0656987412</td>
+            </tr>
+            <tr>
+                <td id="td-responsive">Prix  </td>
+                <td id="td-responsive">  365€</td>
+            </tr>
+            <tr>
+                <td id="td-responsive"> </td>
+                <td id="td-responsive"> </td>
+            </tr>
+       </table>
+    </div>
 
-        #calendar {
-        max-width: 1100px;
-        margin: 40px auto;
-        }
-    </style>
-    <body>
-        <form action="#" method="POST">
-            
-            <label for="start_date_reserv" class="calendar-for-style">Date et heure d'arrivé</label>
+</main>
+ 
 
-            <input type="date"  name="start_date_reserv" id="start_date_reserv" value="2022-03-18"
-            min="2022-03-18" max="2025-03-18">
+<script src="./resa_calendar.js"></script>
 
-            <!-- <input type="time" name="heure_debut" id="heure_debut"> -->
-
-            <br><br><br><br>
-
-            <label class="calendar-for-style" for="end_date_reserv">Date et heure de départ </label>
-
-            <input type="date" name="end_date_reserv" id="end_date_reserv" value="2022-03-18"
-            min="2022-03-18" max="2025-03-18">
-
-            <!-- <input type="time" name="heure_fin" id="heure_fin"> -->
-
-
-            <input type="submit" name="submit">
-
-
-        </form>
-        <script src="./resa_calendar.js"></script>
-    </body>
-</html>
-
+<?php
+    require_once '../templates/footer-admin.php';
+?>
 <!-- onfocus 
 ?php  echo date("Y-m-d",strtotime("+1 years")); ?>
 ?php  echo date("Y-m-d",strtotime("+1 years")); ?>

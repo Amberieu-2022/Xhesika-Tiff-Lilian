@@ -5,7 +5,7 @@
     background: linear-gradient(90deg, rgb(147,239,189),rgb(112, 158, 189),#6d72af 95%);
 }
 .form-connexion{
-    margin: 50px auto;
+    margin: 150px auto;
     max-width: 800px;
     width: 80%;
     border: 2px solid #9DE1BC;
@@ -305,6 +305,45 @@ li.gites{
         padding-left: 30px;
     }
 }
+
+// TABLEAUX PAGE RESERVATION ADMIN 
+#resa-admin-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    #table-resa{
+        border-collapse: collapse;
+        display: block;
+        #td{
+            border: 2px solid #9DE1BC;
+            padding: 10px;
+            font-size: 1rem;
+            font-family: 'Montserrat';
+            
+        }
+    }
+    #table-resa-responsive{
+        border-collapse: collapse;
+        display: none;
+        
+        #td-responsive{
+            border: 2px solid #9DE1BC;
+            padding: 10px;
+            font-size: 1rem;
+            font-family: 'Montserrat';
+            width: 600px;
+        }
+    }
+
+}
+.titre-reservation-ad{
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+}
 // MEDIA QUERY HEADER________________________________________________
 @media screen and (max-width: 1060px) {
     // MEDIA QUERY FORMULAIRE CONNEXION
@@ -323,12 +362,28 @@ li.gites{
         left: 20%;
     }
 }
+@media screen and (max-width:965px) {
+    #td{
+        font-size: .8rem;
+    }
+    #resa-admin-list{
+        #table-resa{
+            display: none;
+        }
+        #table-resa-responsive{
+            display: block;
+        }
+    }
+}
 @media screen and (max-width: 1025px) {
     .form-add-search{
         padding-bottom: 30px;
     }
     .titre-form-connexion{
         font-size: 1.6rem;
+    }
+    .titre-reservation-ad{
+        font-size: 1.5rem;
     }
 }
 @media screen and (max-width: 800px) {
@@ -372,7 +427,10 @@ li.gites{
     }
     .type-option{
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        .label-no{
+            margin-left: 30px;
+        }
     }
 }
 @media screen and (max-width:665px){
@@ -514,6 +572,10 @@ li.gites{
     .btn-connect{
         font-size: .8rem;
         padding: 2px 8px;
+    }
+    .titre-reservation-ad{
+        margin-top: 50px;
+        font-size: 1.2rem;
     }
 }
 

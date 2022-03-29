@@ -15,8 +15,8 @@ function giteDisplay() {
             let listDom = ''
 
             for (let data of datas) {
-                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/' + data.name_simple_gite + '/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-del" data-id="' + data.id_gite + '"><img src="../templates/img/icon/btn-delete.png" alt="icone de bouton supprimer"></a></li>'
-                console.log(data)
+                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><p>' + data.desc_gite + '</p><a href="../admin/modification.php"><img src="../templates/img/icon/btn-modif.png" alt="icone de bouton modification"></a><a href="#" class="btn-del" data-id="' + data.id_gite + '"><img src="../templates/img/icon/btn-delete.png" alt="icone de bouton supprimer/poubelle"></a></li>'
+                // console.log(data)
             }
 
             listGites.innerHTML = listDom;

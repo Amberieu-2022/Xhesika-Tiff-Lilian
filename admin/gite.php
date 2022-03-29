@@ -18,7 +18,7 @@ require_once '../templates/header-admin.php';
         <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un nouveau gîte</a></button>
         <input type="text" name="nom" id="nom" placeholder=" Recherche par nom" class="input-p-ajout" required>
         <button type="submit" class="btn-ajout-gite">Rechercher</button>
-
+        
     </form>
 
     <!-- FORMULAIRE RECHERCHE AVANCEE  -->

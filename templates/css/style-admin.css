@@ -53,7 +53,7 @@ table {
 }
 
 .form-connexion {
-  margin: 50px auto;
+  margin: 150px auto;
   max-width: 800px;
   width: 80%;
   border: 2px solid #9DE1BC;
@@ -425,6 +425,52 @@ li.gites {
   padding-left: 30px;
 }
 
+#resa-admin-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+#resa-admin-list #table-resa {
+  border-collapse: collapse;
+  display: block;
+}
+
+#resa-admin-list #table-resa #td {
+  border: 2px solid #9DE1BC;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+}
+
+#resa-admin-list #table-resa-responsive {
+  border-collapse: collapse;
+  display: none;
+}
+
+#resa-admin-list #table-resa-responsive #td-responsive {
+  border: 2px solid #9DE1BC;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  width: 600px;
+}
+
+.titre-reservation-ad {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
+}
+
 @media screen and (max-width: 1060px) {
   #logo img {
     width: 300px;
@@ -442,12 +488,27 @@ li.gites {
   }
 }
 
+@media screen and (max-width: 965px) {
+  #td {
+    font-size: .8rem;
+  }
+  #resa-admin-list #table-resa {
+    display: none;
+  }
+  #resa-admin-list #table-resa-responsive {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 1025px) {
   .form-add-search {
     padding-bottom: 30px;
   }
   .titre-form-connexion {
     font-size: 1.6rem;
+  }
+  .titre-reservation-ad {
+    font-size: 1.5rem;
   }
 }
 
@@ -495,9 +556,13 @@ li.gites {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .type-option .label-no {
+    margin-left: 30px;
   }
 }
 
@@ -632,6 +697,10 @@ li.gites {
   .btn-connect {
     font-size: .8rem;
     padding: 2px 8px;
+  }
+  .titre-reservation-ad {
+    margin-top: 50px;
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=style-admin.css.map */
