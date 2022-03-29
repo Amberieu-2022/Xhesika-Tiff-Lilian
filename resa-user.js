@@ -15,32 +15,34 @@ function giteDisplay() {
             let listDom = ''
 
             for (let data of datas) {
-                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="./img/pdp/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="#" class="btn-resa" data-id="' + data.id_gite + '">Reserver</a></li>'
-                // console.log(data.id_gite)
-                let idGite = data.id_gite;
-                console.log(idGite)
+                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="./img/pdp/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="./resa-user-form.php?id='+ data.id_gite+'"class="btn-resa">Reserver</a></li>'
+                console.log(data.id_gite)
+            
                 
             }
 
             resultGites.innerHTML = listDom;
 
            
-            reservation();
+            // reservation();
             // document.getElementById('nb-posts').innerHTML = countGite();
         }
     }
     xhr.send();
 }
 
-function reservation(){
-    const bntResa = document.getElementsByClassName('btn-resa');
+// let idGite = data.id_gite;
+                // console.log(idGite)
 
-    for(const element of bntResa){
-        element.addEventListener('click', function(e){
-            window.location.href = 'resa-user-form.php';
-        })
-    }
-}
+// function reservation(){
+//     const bntResa = document.getElementsByClassName('btn-resa');
+
+//     for(const element of bntResa){
+//         element.addEventListener('click', function(){
+//             window.location.href = '/resa-user-form.php';
+//         })
+//     }
+// }
 
 
 
