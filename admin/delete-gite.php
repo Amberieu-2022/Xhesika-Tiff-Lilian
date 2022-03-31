@@ -7,8 +7,13 @@
  
     $req = $db->prepare('DELETE FROM `cottages` WHERE id_gite = :id');
 
-    $req->bindParam(':id', $id, PDO::PARAM_STR);
+    $req->bindParam('id', $id, PDO::PARAM_STR);
 
     $req->execute();
 
-    // la même requête que sur le ajout.php sauf que sa sera un select
+    $reqImage = $db->prepare('DELETE FROM `image` WHERE id_gite = :id');
+
+    $reqImage->bindParam('id', $id, PDO::PARAM_STR);
+
+    $reqImage->execute();
+

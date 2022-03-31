@@ -22,7 +22,8 @@
         </div>
 
     </footer>
-    <script src="./resa-user.js"></script>
+
+    <script src="./index-user.js"></script>
     </body>
 
     </html>

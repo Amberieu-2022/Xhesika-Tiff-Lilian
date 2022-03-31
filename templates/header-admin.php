@@ -21,11 +21,11 @@
         <div class="row-limit-size">
             <nav class="menu">
                 <ul>
-                    <li class="li-header-admin"> <a class="lien" href="#">Gestion des gîtes</a></li>
+                    <li class="li-header-admin"> <a class="lien" href="../admin/gite.php">Gestion des gîtes</a></li>
                     <figure id="logo">
                         <img src="../templates/img/icon/logo.png" alt="L'image de logo de notre site des Gîtes." width="500px">
                     </figure>
-                    <li class="li-header-admin"> <a class="lien lien-right" href="#">Gestion des réservations</a></li>
+                    <li class="li-header-admin"> <a class="lien lien-right" href="../admin/resa-admin.php">Gestion des réservations</a></li>
                 </ul>
             </nav>
         </div>

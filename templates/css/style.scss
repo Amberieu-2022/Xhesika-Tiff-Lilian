@@ -2,15 +2,16 @@
 
 .row-limit-size {
     max-width: 1200px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
     
 } 
-
-body{
-    background-image: url('../img/slider/background.jpg');
-    background-repeat: no-repeat;
-    background-position:top center;
+.background-main-user img{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    max-width:fit-content;
+    width: 100%;
 }
 
 //HEADER PAGE UTILISATEUR
@@ -27,6 +28,7 @@ body{
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    z-index: 1;
 }
 
 // FORMULAIRE PAGE INDEX UTILISATEUR
@@ -53,8 +55,8 @@ body{
     font-size: 1rem;
     font-family: 'Cinzel';
     font-weight: 500;
-    letter-spacing: 3px;
-    width: 150px;
+    letter-spacing: 2px;
+    // width: 150px;
 }
 .btn-util{
     display: block;
@@ -73,7 +75,7 @@ body{
     border: 2px solid #9DE1BC;
     border-radius: 5px 5px;
     width: 480px;
-    height: 30px;
+    height: 20px;
 }
 .location{
     display: flex;
@@ -94,7 +96,14 @@ body{
     width: 40px;
     height: 30px;
     border: 2px solid #9DE1BC;
+    border-radius: 5px;
 }
+.formulaire-type-option{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 // MAIN PAGE UTILISATEUR
 
 .titre-past-form{
@@ -113,19 +122,21 @@ body{
     margin-bottom: 30px;
     width: 200px;
     height: 90%;
-    border: 2px solid #9DE1BC;
+    border: 3px solid #9DE1BC;
 }
+
 .label-category{
     border-bottom: 2px solid #9DE1BC;
-    border-top: 2px solid #9DE1BC;
     font-size: 1.2rem;
     font-family: 'Montserrat';
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
 .label-form-filter{
     font-size: 1rem;
+    padding-top: 5px;
     font-family: 'Montserrat';
 }
 .btn-filtrer{
@@ -138,34 +149,172 @@ body{
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
-#btn-summary{
-    cursor: pointer;
+#btn-summary, #btn-summaryR, #btn-summaryP, #btn-summaryO, #btn-summaryN{
     float: right;
     height: 20px;
     line-height: 30px;
+    cursor: pointer;
 }
-.titre-past-form{
-    font-family: 'Montserrat';
-    font-weight: 300;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 100px;
+
+.section-padding{
+    padding-bottom: 30px;
 }
-.form-filter{
-    z-index: 9999;
-    display: flex;
-    justify-content: left;
-    padding: 20px;
-    margin-left: 30px;
-    width: 200px;
-    height: 90%;
-    border: 2px solid #9DE1BC;
-}
-#categories{
+#categories, #categoriesR, #categoriesP, #categoriesO, #categoriesN{
     display: none;
 }
 
+// DESCRIPTION GITE 
+.description-gite{
+    font-family: 'Roboto Slab';
+    font-size: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: justify;
+
+}
+// RESERVATION UTILISATEUR
+.body-resa{
+    background: linear-gradient(360deg, rgb(147,239,189),rgb(112, 158, 189),rgb(162, 167, 217) 95%);
+}
+.titre-resa-user{
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.titre-logement{
+    font-size: 1.2rem;
+    font-family: 'Montserrat';
+    padding-top: 50px;
+    letter-spacing: 6px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(82, 80, 80);
+    padding-bottom: 10px;
+    text-align: center;
+}
+.description-resa-user{
+    font-size: 1rem;
+    font-family: 'Roboto Slab';
+    text-align: center;
+    padding-top: 20px;
+}
+.equipements{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    margin-bottom: 50px;
+}
+.equip-flex{
+    display: block;
+    width: 200px;
+}
+.flex-btw{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.equip-figcap{
+    font-size: 1rem;
+    font-family: 'Roboto Slab';
+}
+.padd-option{
+    width: 120px;
+    padding-left: 5px;
+    padding-bottom: 20px;
+}
+.btn-btn{
+    width: 200px;
+    border: 2px solid #9DE1BC;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat';
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.btn-btn:hover{
+    background-color: #9DE1BC;
+    box-shadow: inset 0 0 7px #7c7c7c;
+}
+// SLIDER
+#slider {
+    padding-top: 5%;
+    display: flex;
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+#slide {
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#left, #right{
+    position: absolute;
+    top: calc(55% - 50px);
+    cursor: pointer;
+    z-index: 999999;
+}
+#right{
+    right: 20px;
+}
+#left{
+    left: 20px;
+}
+
+#left>img, #right>img {
+    display: block;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+// FORMULAIRE D'ENVOIE DE RESERVATION USER
+.form-envoie-resa{
+    background-color: white;
+    border: 2px solid #9DE1BC;
+    max-width: 600px;
+    width: 90%;
+    height: 350px;
+    border-radius: 30px;
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+    padding: 50px;
+}
+.around{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.input-resa{
+    width: 400px;
+    border: 2px solid #9DE1BC;
+    border-radius: 5px;
+}
+.nb-resa{
+    width: 200px;
+}
+.date-input-resa{
+    border: 2px solid #9DE1BC;
+    border-radius: 5px;
+}
+.prix-formulaire{
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+}
 //FOOTER PAGE UTILISATEUR 
 .footer-logo{
     display: block;
@@ -209,11 +358,112 @@ body{
 }
 
 footer{
-    background-color: #9DE1BC;
+    background-color: linear-gradient(360deg, rgb(147,239,189), rgb(115, 218, 192)) ;
     padding: 50px 0 10px 0;
 }
+.show{
+    display: block !important;
+}
 
-// MEDIA QUERY PAGE UTILISATEUR______________________________
+#main-user-gite{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1600px;
+
+    .gites{
+        max-width: 1000px;
+        width: 95%;
+        height: 280px;
+        list-style-type: none;
+        position: relative;
+        margin-right: 150px;
+        
+        .titre-page-user{
+            font-family: 'Montserrat';
+            font-size: 1.8rem;
+            margin-left: 20px;
+        }
+        .titre-lieu-p-user{
+            font-size: 1.2rem;
+            font-family: 'Montserrat';
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+        
+    }
+    
+    .img-para-user{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        .description-main-page{
+            font-family: 'Roboto Slab';
+            text-align: justify;
+            
+        }
+    }
+    .img-div-gite{
+        margin-right: 50px;
+    }
+    .button-index-user{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 20px;
+        margin-left: 20px;
+
+        .btn-reserver-user {
+            background-color: transparent;
+            border: 2px solid #9DE1BC;
+            cursor: pointer;
+            width: 200px;
+            font-family: 'Cinzel';
+            font-weight: 500;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+        .btn-reserver-user:hover{
+            background-color: #9DE1BC;
+            transition: all .5s ease;
+        }
+        .user-gite-prix{
+            font-size: .9rem;
+            font-family: 'Roboto Slab';
+        }
+        
+    }
+    
+    
+}
+
+// MEDIA QUERY PAGE UTILISATEUR______________________________§§
+
+// MEDIA QUERY MAIN PAGE USER
+@media screen and (max-width: 1305px) {
+    #main-user-gite{
+        .gites{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            margin-right: 5px;
+            
+            .img-para-user{
+                display: flex;
+                flex-direction: column;
+                .img-div-gite{
+                    width: 200px;
+                    height: 70%;
+                }
+            }
+        }
+    }
+    
+}
+
+
+
 // M/Q FOOTER
 @media screen and (max-width: 900px) {
     .reseaux-sociaux{
@@ -231,20 +481,113 @@ footer{
     .copyright{
         font-size: .8rem;
     }
+    .titre-past-form{
+        font-size: 1.5rem;
+    }
+    .input-local{
+        width: 400px;
+    }
+    .form-page-client{
+        margin: 50px auto;
+    }
+    #main-user-gite{
+        .gites{
+            .titre-page-user{
+                font-size: 1.5rem;
+                
+            }
+        }
+    }
+    
 }
+@media screen and (max-width:800px) {
+    .titre-resa-user{
+        font-size: 1.5rem;
+    }
+    .titre-past-form{
+        font-size: 1.2rem;
+    }
+    .titre-h1{
+        font-size: 2rem;
+        margin: 30px auto;
+    }
+    .input-local{
+        width: 360px;
+        height: 15px;
+        line-height: 20px;
+    }
+    .titre-form-client{
+        font-size: 1.5rem;
+    }
+    .label-client{
+        font-size: 1rem;
+    }
+
+}
+@media screen and (max-width:765px) {
+    #main-user-gite{
+        .gites{
+            padding-bottom: 65px;
+            margin-right: 30px;
+            .titre-page-user{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+}
+    
+@media screen and (max-width: 745px) {
+    .form-envoie-resa{
+        width: 500px;
+    }
+    .input-resa{
+        width: 300px;
+    }
+    .label-form-filter{
+        font-size: .8rem;
+    }
+    .justify-header img{
+        width: 400px;
+    }
+    .titre-h1{
+        font-size: 1.5rem;
+    }
+    .titre-form-client{
+        font-size: 1.2rem;
+    }
+    .label-client{
+        font-size: .8rem;
+    }
+    .nb-personnes{
+        height: 25px;
+    }
+    .gites{
+        padding-bottom: 50px;
+        
+    }
+}
+
+
 @media screen and (max-width: 630px){
     .label-client{
-        font-size: .5rem;
+        padding: 5px;
+        letter-spacing: 0;
     }
     .btn-util{
         font-size: .6rem;
         width: 120px;
         height: 40px;
         padding: 5px;
+        margin-top: 10px;
     }
     .form-page-client{
         max-width: 600px;
         width: 80%;
+        margin: 20px auto;
+    }
+    .nb-personnes{
+        height: 20px;
     }
 
     .titre-form-client{
@@ -264,37 +607,143 @@ footer{
     .copyright{
         font-size: .7rem;
     }
+    .titre-resa-user{
+        font-size: 1.2rem;
+    }
+    
+    .titre-past-form{
+        font-size: 1rem;
+    }
+    // FORMULAIRE UTILISATEUR TYPE & OPTIONS
+    .formulaire-type-option{
+        display: flex;
+        flex-direction: column;
+    }
+    .type-option{
+        display: flex;
+        justify-content: space-between;
+        margin: 2px 50px;
+    }
+    
+    .prix-formulaire{
+        font-size: .9rem;
+    }
+
     // MEDIA QUERY HEADER UTILISATEUR
     .justify-header img{
-        width: 400px;
+        width: 250px;
     }
     .titre-h1{
-        font-size: 1.5rem;
+        font-size: .8rem;
         letter-spacing: 12px;
+        margin: 20px auto;
+    }
+    // PAGE RESERVATION/ EQUIPEMENTS
+    .equip-figcap{
+        font-size: .8rem;
+    }
+    .form-envoie-resa{
+        width: 370px;
+    }
+    .input-resa{
+        width: 200px;
+    }
+    .label-form-filter{
+        font-size: .6rem;
+    }
+    .titre-form-client{
+        font-size: .8rem;
+    }
+    #main-user-gite{
+        aside.form-filter{
+            .label-category{
+                width: 190px;
+            }
+        }
+
+        
+    }
+    .date-input-resa{
+        width: 100px;
+    }
+    
+}
+@media screen and (max-width: 586px) {
+    #main-user-gite{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        aside.form-filter{
+            width: 300px;
+            margin-left: 0;
+            .label-category{
+                width: 300px;
+            }
+        }
+
+        .gites{
+            margin-right: 0;
+        }
+        
     }
 }
-
+@media screen and (max-width:500px) {
+    .titre-resa-user{
+        font-size: 1rem;
+    }
+    .equip-figcap{
+        font-size: .5rem;
+    }
+    .form-envoie-resa{
+        width: 300px;
+        padding: 25px;
+    }
+    .input-resa{
+        width: 150px;
+    }
+    .label-form-filter{
+        font-size: .5rem;
+    }
+    .btn-btn{
+        font-size: .8rem;
+        width: 100px;
+    }
+    .titre-form-client{
+        font-size: .7rem;
+    }
+    .date-input-resa{
+        width: 80px;
+    }
+    
+    
+}
+@media screen and (max-width:457px) {
+    .gites{
+        padding-bottom: 130px;
+        .btn-reserver-user {
+            max-width: 150px;
+        }
+    }
+}
 @media screen and (max-width: 450px) {
     .justify-header img{
         width: 300px;
     }
     .location{
-        display: flex;
-        justify-content: center;
+        padding: 5px 0 10px 0;
         .input-local{
-            width: 150px;
-            height: 15px;
+            width: 120px;
+            height: 10px;
         }
     }
     .btn-util{
         font-size: .5rem;
-
     }
-    .label-client{
-        font-size: .4rem;
-    }
+    
     .date-placeholder{
         height: 15px;
+        margin-top: 5px;
     }
     .nb-personnes{
         height: 15px;
@@ -342,5 +791,46 @@ footer{
         bottom: 5px;
         left: calc(50% - 95px);
     }
-
+    .date-input-resa{
+        width: 75px;
+    }
+    .prix-formulaire{
+        font-size: .7rem;
+    }
 }
+@media screen and (max-width:400px) {
+    .footer-logo{
+        left: 80px;
+    }
+    .location{
+        .input-local{
+            width: 100px;
+        }
+    }
+    .label-client{
+        font-size: .6rem;
+    }
+    .section-padding{
+        width: 100%;
+    }
+    
+    #main-user-gite{
+        aside.form-filter{
+            width: 280px;
+            .label-category{
+                width: 280px;
+            }
+        }
+        .gites{
+            margin-bottom: 100px;
+            .titre-page-user{
+                font-size: 1rem;
+                
+            }
+            .titre-lieu-p-user{
+                font-size: .9rem;
+            }
+        }
+    }
+}
+
