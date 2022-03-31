@@ -23,7 +23,7 @@ function giteDisplay() {
 
             resultGites.innerHTML = listDom;
 
-           
+            reservCli();
             // reservation();
             // document.getElementById('nb-posts').innerHTML = countGite();
         }
@@ -31,78 +31,25 @@ function giteDisplay() {
     xhr.send();
 }
 
-// let idGite = data.id_gite;
-                // console.log(idGite)
-
-// function reservation(){
+// function reservCli(){
 //     const bntResa = document.getElementsByClassName('btn-resa');
-
-//     for(const element of bntResa){
-//         element.addEventListener('click', function(){
-//             window.location.href = '/resa-user-form.php';
-//         })
-//     }
+//    for (const element of bntResa){
+//        element.addEventListener('click', function (e){
+//         //    e.preventDefault();
+//            let idGite = this.dataset.id;
+//            recapResa(idGite);
+//        })
+//    }
 // }
 
-
-
-
-//Affichage de la modal
-
-// function showModal() {
-//     const btnDel = document.getElementsByClassName('btn-del');
-//     const confirm = document.getElementsByClassName('confirm');
-
-//     for (const element of btnDel) {
-//         element.addEventListener('click', function (e) {
-//             e.preventDefault();
-//             confirm[0].style.display = 'block';
-//             let idGite = this.dataset.id;
-//             deleteGite(idGite);
-//         })
-//     }
-// }
-
-//Fermeture de la modal
-
-// function hideModal() {
-//     const no = document.getElementById('no');
-//     const yes = document.getElementById('yes');
-//     const confirm = document.getElementsByClassName('confirm');
-
-//     no.addEventListener('click', function () {
-//         confirm[0].style.display = 'none';
-//     })
-
-//     yes.addEventListener('click', function () {
-//         confirm[0].style.display = 'none';
-//     })
-// }
-
-// //Suppression d'un gite
-
-// function deleteGite(id) {
-
-//     const yes = document.getElementById('yes');
-
-//     yes.addEventListener('click', function () {
-
-//         const xhr = new XMLHttpRequest();
-//         xhr.open('POST', './delete-gite.php', true);
-
-//         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-//         xhr.onreadystatechange = function () {
-//             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-//                 giteDisplay();
-//             }
+// function  recapResa(){
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('GET', './resa-user-form.php', true);
+//     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//     xhr.onreadystatechange = function () {
+//         if(this.readyState === XMLHttpRequest.DONE && this.status === 200){
+//             alert('hehe');
 //         }
-//         xhr.send('id_gite=' + id);
-//     })
-// }
-
-// function countGite() {
-    
-//     return document.getElementsByClassName('gites').length;
-
+//     }
+//     xhr.send('id_gite=' + id);
 // }

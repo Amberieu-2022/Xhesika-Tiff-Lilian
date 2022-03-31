@@ -71,61 +71,61 @@ if(isset($_FILES['profil_gite']) && $_FILES['profil_gite']['error'] == 0){
 
 //On vérifie le poids du fichier envoyé
 
-if (isset($_FILES['profil_gite']['size']) <= 1000000) {
-    
-    //on récupère les infos du fichier
-
-    $infosFichier = pathinfo($_FILES['profil_gite']['name']);
-
-    //On récupère l'extension du fichier
-
-    $extensionUpload = $infosFichier['extension'];
-
-    //On définit les extensions autorisées
-
-    $extensionsAutorisees = ['jpg', 'jpeg', 'png'];
-
-    //On test l'extension du fichier
-
-    if (in_array($extensionUpload, $extensionsAutorisees)) {
-
-        //On transforme le nom du gîte en minuscule
+    if (isset($_FILES['profil_gite']['size']) <= 1000000) {
         
-        $minuscule = strtolower($_POST['name_gite']);
+        //on récupère les infos du fichier
 
-        //On supprime les espaces du nom du gîte
+        $infosFichier = pathinfo($_FILES['profil_gite']['name']);
 
-        $searchString = " ";
+        //On récupère l'extension du fichier
 
-        $replaceString = "";
+        $extensionUpload = $infosFichier['extension'];
 
-        $finalString = str_replace($searchString, $replaceString, $minuscule);
-        var_dump($finalString);
+        //On définit les extensions autorisées
 
-        //On crée le nouveau dossier s'il n'existe pas
+        $extensionsAutorisees = ['jpg', 'jpeg', 'png'];
 
-        $newDir = '../img/' . $finalString;
+        //On test l'extension du fichier
 
-        if (!file_exists($newDir)){
-            mkdir($newDir, 0777, true);
+        if (in_array($extensionUpload, $extensionsAutorisees)) {
+
+            //On transforme le nom du gîte en minuscule
+            
+            $minuscule = strtolower($_POST['name_gite']);
+
+            //On supprime les espaces du nom du gîte
+
+            $searchString = " ";
+
+            $replaceString = "";
+
+            $finalString = str_replace($searchString, $replaceString, $minuscule);
+            var_dump($finalString);
+
+            //On crée le nouveau dossier s'il n'existe pas
+
+            $newDir = '../img/' . $finalString;
+
+            if (!file_exists($newDir)){
+                mkdir($newDir, 0777, true);
+            }
+            
+            //On récupère date et heure 
+
+            $date = date('dmyhis');
+
+            //On créer le nouveau nom du fichier
+
+            $ref = $finalString. '_' . $date;
+
+            var_dump($finalString);
+            var_dump($ref);
+            //On déplace le fichier dans le dossier de destination
+
+            move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/' . $finalString . '/' . $ref . '.' . $extensionUpload);
+            
         }
-        
-        //On récupère date et heure 
-
-        $date = date('dmyhis');
-
-        //On créer le nouveau nom du fichier
-
-        $ref = $finalString. '_' . $date;
-
-        var_dump($finalString);
-        var_dump($ref);
-        //On déplace le fichier dans le dossier de destination
-
-        move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/' . $finalString . '/' . $ref . '.' . $extensionUpload);
-        
     }
-}
 }
 
 $name_gite = $_POST['name_gite'];
