@@ -49,7 +49,7 @@ foreach ($option as $suppl) {
 if(!empty($opt)){
     $optUnique = array_unique($opt);
     $lenghtOptUnique = count($optUnique);
-    // var_dump($lenghtOptUnique);
+    // var_dump($optUnique);
 }
 
 if (!empty($optUnique)) {
@@ -147,19 +147,3 @@ if (!empty($optUnique)) {
 
     echo json_encode($reqGite->fetchAll(PDO::FETCH_ASSOC));
 }
-
-
-
-
-
-
-
-
-
- $req = $db->query('SELECT `id_gite`, `name_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bedroom`, `nbr_bathroom`, `price_night` FROM `cottages` ORDER BY `id_gite`  LIMIT 4');
-
- echo json_encode($req->fetchAll(PDO::FETCH_ASSOC));
-
-
- 
-?>

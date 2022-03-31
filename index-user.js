@@ -61,7 +61,7 @@ function giteDisplay() {
             
 
             for (let data of datas) {
-                listDom += '<li class="gites"><h2>' + data.name_gite + '</h2><p>' + data.location_gite + '</p><img src="../img/pdp/' + data.profil_gite + '" alt=""><p>' + data.desc_gite + '</p><a href="./modification.php?id=' + data.id_gite + '" class="btn-edit" data-id="' + data.id_gite + '">Modifier</a><a href="#" class="btn-del" data-id="' + data.id_gite + '">Supprimer</a></li>'
+                listDom += '<li class="gites"><h2 class="titre-page-user">' + data.name_gite + '</h2><h3 class="titre-lieu-p-user">' + data.location_gite + '</h3><div class="img-para-user"><img src=".img/pdp/' + data.profil_gite + '" alt="photo du gite" class="img-div-gite"><p class="description-main-page">' + data.desc_gite + '</p></div><div class="button-index-user"><p class="user-gite-prix">Prix / nuit : 54€</p><button class="btn-reserver-user"><a href="./resa-user.php?id=' + data.id_gite + '">RESERVER</a></button></div></li>'
             }
 
             listGites.innerHTML = listDom;
