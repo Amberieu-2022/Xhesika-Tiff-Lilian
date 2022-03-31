@@ -53,7 +53,7 @@ table {
 }
 
 .form-connexion {
-  margin: 50px auto;
+  margin: 150px auto;
   max-width: 800px;
   width: 80%;
   border: 2px solid #9DE1BC;
@@ -65,10 +65,10 @@ table {
 
 .titre-form-connexion {
   color: #A2A7D9;
-  font-size: 2.3rem;
+  font-size: 2rem;
   text-align: center;
   font-family: 'Montserrat';
-  padding-top: 2%;
+  padding: 3%;
 }
 
 .id-connect {
@@ -166,6 +166,11 @@ ul {
   border-radius: 5px 5px;
 }
 
+.btn-ajout-gite a {
+  text-decoration: none;
+  color: black;
+}
+
 .btn-ajout-gite:hover {
   background-color: #9DE1BC;
 }
@@ -231,8 +236,6 @@ ul {
 }
 
 .first-form .input-option {
-  width: 20px;
-  height: 20px;
   padding: 10px;
 }
 
@@ -245,24 +248,32 @@ ul {
 }
 
 .first-form .flex-2 {
-  padding: 30px 50px;
+  margin: 20px 0;
+}
+
+.first-form .input-numer {
+  width: 80px;
 }
 
 .confirm {
   display: none;
   width: 600px;
   height: 300px;
-  background-color: black;
+  background-color: white;
+  border: 2px solid #9DE1BC;
   border-radius: 15px;
   position: -webkit-sticky;
   position: sticky;
   left: 30%;
   top: 10%;
+  z-index: 9999;
 }
 
 .font-modal {
-  color: #00f000;
+  color: black;
   text-align: center;
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
 }
 
 .verif {
@@ -281,12 +292,183 @@ ul {
   width: 100px;
   height: 40px;
   margin-top: 50px;
+  font-family: 'Montserrat';
   color: black;
-  border: 2px solid lime;
+  border: 2px solid #9DE1BC;
+  font-size: 1rem;
 }
 
 #yes:active, #no:active {
   margin-top: 52px;
+}
+
+.nb-gite-modal {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 1.3rem;
+  padding-top: 50px;
+}
+
+.list-gite-modal {
+  padding: 30px;
+  font-size: 1.3rem;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.list-style-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+#list-gites {
+  display: inline-block;
+  max-width: 800px;
+  width: 95%;
+}
+
+li.gites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid #9DE1BC;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
+.form-ajout-new-gite {
+  border: 2px solid #9DE1BC;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 80%;
+  margin: 50px auto;
+  padding: 50px;
+}
+
+.label-ajout {
+  font-family: 'Montserrat';
+  padding-right: 20px;
+}
+
+.input-ajout {
+  width: 350px;
+  border: 2px solid #9DE1BC;
+  border-radius: 5px;
+}
+
+.input-nb-add {
+  width: 40px;
+}
+
+.descript-in {
+  height: 200px;
+  max-width: 600px;
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-valid-ajout {
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  border: 2px solid #9DE1BC;
+  cursor: pointer;
+  padding: 5px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: block;
+  margin: 10px auto;
+}
+
+#modif-nb-ch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-valid-ajout:hover {
+  background-color: #9DE1BC;
+  -webkit-box-shadow: inset 0 0 7px #6d72af;
+          box-shadow: inset 0 0 7px #6d72af;
+}
+
+.ajout-lab-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.ajout-lab-in .label-ajout {
+  padding-left: 30px;
+}
+
+#resa-admin-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+
+#resa-admin-list #table-resa {
+  border-collapse: collapse;
+  display: block;
+}
+
+#resa-admin-list #table-resa #td {
+  border: 2px solid #9DE1BC;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+}
+
+#resa-admin-list #table-resa-responsive {
+  border-collapse: collapse;
+  display: none;
+}
+
+#resa-admin-list #table-resa-responsive #td-responsive {
+  border: 2px solid #9DE1BC;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  width: 600px;
+}
+
+.titre-reservation-ad {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
 }
 
 @media screen and (max-width: 1060px) {
@@ -299,6 +481,22 @@ ul {
   }
   .titre-page-gestion {
     font-size: 1.5rem;
+    margin-top: 2px;
+  }
+  .confirm {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  #td {
+    font-size: .8rem;
+  }
+  #resa-admin-list #table-resa {
+    display: none;
+  }
+  #resa-admin-list #table-resa-responsive {
+    display: block;
   }
 }
 
@@ -307,13 +505,16 @@ ul {
     padding-bottom: 30px;
   }
   .titre-form-connexion {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
+  }
+  .titre-reservation-ad {
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 800px) {
   .titre-form-connexion {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   #logo img {
     position: absolute;
@@ -327,19 +528,41 @@ ul {
   .form-search {
     margin-top: 10px;
   }
+  .confirm {
+    left: 10%;
+  }
+  .label-ajout {
+    font-size: .9rem;
+  }
   .id-connect {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .btn-connect {
     font-size: 1.2rem;
   }
+}
+
+@media screen and (max-width: 700px) {
   .flex-2 {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .type-option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .type-option .label-no {
+    margin-left: 30px;
   }
 }
 
@@ -350,14 +573,85 @@ ul {
   .label-no1 {
     font-size: .8rem;
   }
+  .confirm {
+    width: 500px;
+  }
+  .input-ajout {
+    width: 250px;
+  }
+  .titre-form-connexion {
+    font-size: 1rem;
+  }
+  .id-connect {
+    font-size: 1rem;
+  }
+  .input-connect {
+    height: 20px;
+  }
+  .modif-nb-gite {
+    display: block;
+  }
+  .input-nb-add {
+    width: 30px;
+    margin: 5px 10px;
+  }
+  .descript-in {
+    max-width: 600px;
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .titre-form-connexion {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
   }
   .btn-connect {
     font-size: 1rem;
+    margin: 20px auto;
+    padding: 3px 10px;
+  }
+  .btn-ajout-gite {
+    margin-top: 30px 0;
+    font-size: .8rem;
+    padding: 0 40px;
+  }
+  .form-add-search {
+    display: block;
+    padding: 10px 5px;
+    margin-left: 10px;
+  }
+  .input-p-ajout {
+    width: 240px;
+    margin: 10px 30px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .confirm {
+    width: 400px;
+    left: 8%;
+  }
+  .font-modal {
+    font-size: .8rem;
+  }
+  .form-ajout-new-gite {
+    padding: 40px 40px;
+  }
+  .input-connect {
+    height: 15px;
+  }
+  .descript-in {
+    height: 150px;
+  }
+  #modif-nb-ch {
+    display: block;
+  }
+  .label-ajout {
+    font-size: .8rem;
+  }
+  .btn-valid-ajout {
+    font-size: .8rem;
   }
 }
 
@@ -382,9 +676,31 @@ ul {
   }
   .titre-page-gestion {
     font-size: 1.1rem;
+    margin-top: 50px;
   }
   .id-connect {
+    font-size: .5rem;
+  }
+  .confirm {
+    width: 300px;
+    height: 200px;
+  }
+  #yes, #no {
     font-size: .8rem;
+  }
+  .titre-form-connexion {
+    margin: 0 10px;
+  }
+  #modif-nb-ch {
+    height: 50px;
+  }
+  .btn-connect {
+    font-size: .8rem;
+    padding: 2px 8px;
+  }
+  .titre-reservation-ad {
+    margin-top: 50px;
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=style-admin.css.map */
