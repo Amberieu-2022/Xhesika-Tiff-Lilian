@@ -2,6 +2,10 @@
 
 require_once '../templates/header-admin.php';
 
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
 ?>
 <h1 class="nb-gite-modal">AJOUTER UN NOUVEAU GÎTE</h1>
 
@@ -183,6 +187,7 @@ if (isset($_POST['submit'])) {
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
+    
 
     //Connexion à la BDD
 

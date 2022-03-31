@@ -22,9 +22,10 @@ require_once './templates/header.php';
 
             <div class="location">
                 <label for="start_date_reserv" class="label-client">ARRIVÉE</label>
-                <input type="date" value="" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
+                <input type="date" min="<?= date('Y-m-d')?>" value="<?= date('Y-m-d')?>" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
+
                 <label for="end_date_reserv" class="label-client"> DEPART</label>
-                <input type="date" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
+                <input type="date" min="<?= date('Y-m-d', strtotime('+1 day'))?>"  max="<?= date('Y-m-d', strtotime('+3 months'))?>" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
             </div>
 
 
@@ -74,7 +75,7 @@ require_once './templates/header.php';
                 <label class="label-client"> Villa </label>
             </div>
             <br>
-            <label for="option" class="label-client"> Option(s) </label> <br>
+            <label for="name_suppl" class="label-client"> Option(s) </label> <br>
             <div class="first-flex flex-2">
                 <input type="checkbox" name="option[]" value="1" class="input-option">
                 <label class="label-client"> Piscine </label>
@@ -91,10 +92,9 @@ require_once './templates/header.php';
             <br>
 
             <button type="submit" name="submit" class="btn-util">Rechercher </button>
-
-
         </form>
     </section>
+    <!-- Affichage résultat recherche gite -->
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
     <ul id="list-gites-user"></ul>
@@ -245,7 +245,7 @@ require_once './templates/header.php';
     </form>
 
 </main>
-<?php
 
+<?php
 require_once './templates/footer.php';
 ?>
