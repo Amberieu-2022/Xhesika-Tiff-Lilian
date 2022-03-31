@@ -5,31 +5,33 @@ require_once '../templates/header-admin.php';
 ?>
 <h1 class="nb-gite-modal">AJOUTER UN NOUVEAU GÎTE</h1>
 <form action="#" method="POST" enctype='multipart/form-data' class="form-ajout-new-gite">
-
-    <label class="label-ajout" for="name_gite">
-        Nom du gîte :
-    </label>
-    <input class="input-ajout" type="text" name="name_gite" id="name_gite" required>
-
+    <div class="head-form-ajout">
+        <label class="label-ajout" for="name_gite">
+            Nom du gîte :
+        </label>
+        <input class="input-ajout" type="text" name="name_gite" id="name_gite" required>
+    </div>
+        <br>
+    <div class="head-form-ajout">
+        <label class="label-ajout" for="location_gite">
+            Adresse du gîte :
+        </label>
+        <input class="input-ajout" type="text" name="location_gite" id="location_gite" required>
+    </div>
     <br><br>
-
-    <label class="label-ajout" for="location_gite">
-        Adresse du gîte :
-    </label>
-    <input class="input-ajout" type="text" name="location_gite" id="location_gite" required>
-
+    <div class="head-form-ajout">
+        <label class="label-ajout" for="profil_gite">
+            Ajouter un image de profil :
+        </label>
+        <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
+    </div>
     <br><br>
-
-    <label class="label-ajout" for="profil_gite">
-        Ajouter un image de profil :
-    </label>
-    <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
-    <br><br>
-
-    <label class="label-ajout" for="profil_gite">
-        Ajouter des images du gîte :
-    </label>
-    <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
+    <div class="head-form-ajout">
+        <label class="label-ajout" for="profil_gite">
+            Ajouter des images du gîte :
+        </label>
+        <input class="label-ajout" type="file" name="profil_gite" multiple accept="image/png, image/jpeg, image/jpg" required>
+    </div>
     <br><br>
 
     

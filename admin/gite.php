@@ -15,10 +15,11 @@ require_once '../templates/header-admin.php';
 
     <!-- FORMULAIRE DU PAGE GESTION GITES -->
     <form action="#" method="GET" class="form-add-search">
-        <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un nouveau gîte</a></button>
-        <input type="text" name="nom" id="nom" placeholder=" Recherche par nom" class="input-p-ajout" required>
-        <button type="submit" class="btn-ajout-gite">Rechercher</button>
-        
+        <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un gîte</a></button>
+        <div class="div-search-btn">
+            <input type="text" name="nom" id="nom" placeholder=" Recherche par nom" class="input-p-ajout" required>
+            <button type="submit" class="btn-ajout-gite">Rechercher</button>
+        </div>
     </form>
 
     <!-- FORMULAIRE RECHERCHE AVANCEE  -->
@@ -58,7 +59,8 @@ require_once '../templates/header-admin.php';
             </div>
             <br>
 
-            <label for="type" class="label-no1">Type de logement</label> <br>
+            <label for="type" class="label-no1">Type de logement</label> 
+            <br>
             <div class="first-flex flex-2">
                 <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Chambre </label></div>
                 <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Appartement </label></div>
@@ -66,7 +68,8 @@ require_once '../templates/header-admin.php';
                 <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Villa </label></div>
             </div>
             <br>
-            <label for="option" class="label-no1"> Option(s) </label> <br>
+            <label for="option" class="label-no1"> Option(s) </label> 
+            <br>
             <div class="first-flex flex-2">
                 <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Piscine </label></div>
                 <div class="type-option"><input type="checkbox" name="gite[]" value="" class="input-option"><label class="label-no"> Jardin </label></div>
