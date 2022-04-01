@@ -49,7 +49,7 @@ foreach ($option as $suppl) {
 if(!empty($opt)){
     $optUnique = array_unique($opt);
     $lenghtOptUnique = count($optUnique);
-    // var_dump($lenghtOptUnique);
+    // var_dump($optUnique);
 }
 
 if (!empty($optUnique)) {

@@ -203,7 +203,6 @@ require_once './templates/header.php';
         }
 
         if (!empty($_GET['option'])) {
-            var_dump($_GET['option']);
             foreach ($_GET['option'] as $value) {
                 $option[] = $value;
             }
@@ -240,8 +239,6 @@ require_once './templates/header.php';
         <input type="hidden" id="option4" value="<?= (isset($option[3])) ? $option[3] : null ?>">
 
         <input type="hidden" id="search" value="<?=$searchByCity?>">
-
-        <?php var_dump($searchByCity); ?>
 
     </form>
 

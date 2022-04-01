@@ -17,3 +17,9 @@
 
     $reqImage->execute();
 
+    $reqOpt = $db->prepare('DELETE FROM `gite_option` WHERE id_gite = :id');
+
+    $reqOpt->bindParam('id', $id, PDO::PARAM_STR);
+
+    $reqOpt->execute();
+
