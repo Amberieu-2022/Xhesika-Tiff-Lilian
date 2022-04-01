@@ -504,9 +504,12 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 1600px;
 }
 
@@ -515,8 +518,6 @@ footer {
   width: 95%;
   height: 280px;
   list-style-type: none;
-  position: relative;
-  margin-right: 150px;
 }
 
 #main-user-gite .gites .titre-page-user {
@@ -800,7 +801,7 @@ footer {
     width: 200px;
   }
   .label-form-filter {
-    font-size: .6rem;
+    font-size: .7rem;
   }
   .titre-form-client {
     font-size: .8rem;
@@ -836,6 +837,10 @@ footer {
   #main-user-gite aside.form-filter .label-category {
     width: 300px;
   }
+  #main-user-gite aside.form-filter .category-room {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
   #main-user-gite .gites {
     margin-right: 0;
   }
@@ -850,13 +855,13 @@ footer {
   }
   .form-envoie-resa {
     width: 300px;
-    padding: 25px;
+    padding: 25px 5px;
   }
   .input-resa {
     width: 150px;
   }
   .label-form-filter {
-    font-size: .5rem;
+    font-size: .6rem;
   }
   .btn-btn {
     font-size: .8rem;
@@ -981,6 +986,9 @@ footer {
   }
   .titre-past-form {
     margin-bottom: 25px;
+  }
+  .form-envoie-resa {
+    width: 280px;
   }
 }
 

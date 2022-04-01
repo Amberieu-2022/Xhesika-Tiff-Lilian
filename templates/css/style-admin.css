@@ -834,6 +834,9 @@ li.gites {
   .first-flex .input-numer {
     width: 50px;
   }
+  .form-ajout-new-gite {
+    padding: 20px 20px;
+  }
 }
 
 @media screen and (max-width: 375px) {

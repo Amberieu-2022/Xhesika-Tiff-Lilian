@@ -84,8 +84,8 @@ require_once './templates/header.php';
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
     <div id="main-user-gite">
-        <aside class="form-filter">
-            <form action="#" method="GET">
+        <!-- <aside class="form-filter">
+            <form action="./index.php" method="POST">
                 <label for="" class="label-category">Filtrer par </label> <br> <br>
 
                 <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label> 
@@ -168,7 +168,7 @@ require_once './templates/header.php';
                 </div>
                 <button class="btn-util btn-filtrer">Valider</button>
             </form>
-        </aside>
+        </aside> -->
         <li class="gites">
             <h2 class="titre-page-user">LA PETITE MAISON DANS LA PRAIRIE</h2>
             <h3 class="titre-lieu-p-user">Amberieu-en-bugey</h3>
@@ -184,7 +184,7 @@ require_once './templates/header.php';
             
             <div class="button-index-user">
                 <p class="user-gite-prix">Prix / nuit : 54€</p>
-                <button class="btn-reserver-user"><a href="./resa-user.php">RESERVER</a></button> 
+                <button class="btn-reserver-user"><a href="./resa-user.php">RESERVER</a></button>
             </div>
         </li>
     </div>

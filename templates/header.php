@@ -16,7 +16,7 @@
     <div class="row-limit-size">
         <header >
             <figure class="justify-header">
-                <a href="#"><img src="./templates/img/icon/logo.png" alt="Logo du Site"></a>
+                <a href="./index.php"><img src="./templates/img/icon/logo.png" alt="Logo du Site"></a>
             </figure>
         </header>
     </div>    

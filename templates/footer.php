@@ -1,5 +1,5 @@
     <footer>
-        <figure class="row-limit-size"><a href="#"><img class="footer-logo" src="./templates/img/icon/logo.png" alt="Logo du site"></a></figure>
+        <figure class="row-limit-size"><a href="./index.php"><img class="footer-logo" src="./templates/img/icon/logo.png" alt="Logo du site"></a></figure>
         <div class="row-limit-size justify-footer absolut">
             <figure class="reseaux-s"><a href="#"><img class="reseaux-sociaux" src="./templates/img/icon/instagram1.png" alt="Logo d'instagram"></a></figure>
             <figure class="reseaux-s"><a href="#"><img class="reseaux-sociaux" src="./templates/img/icon/facebook1.png" alt="Logo du facebook"></a></figure>

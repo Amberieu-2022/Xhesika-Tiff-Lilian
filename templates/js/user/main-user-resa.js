@@ -1,7 +1,7 @@
 // MENU FORMULAIRE ASIDE PAGE RESERVATION USER
+
 const menu = document.getElementById('categories');
 const btn = document.getElementById("btn-summary");
-
     btn.addEventListener('click', function(){
         menu.classList.toggle('show');
     });

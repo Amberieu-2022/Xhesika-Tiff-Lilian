@@ -23,7 +23,7 @@
                 <ul>
                     <li class="li-header-admin"> <a class="lien" href="../admin/gite.php">Gestion des gîtes</a></li>
                     <figure id="logo">
-                        <img src="../templates/img/icon/logo.png" alt="L'image de logo de notre site des Gîtes." width="500px">
+                        <a href="../admin/gite.php"><img src="../templates/img/icon/logo.png" alt="L'image de logo de notre site des Gîtes." width="500px"></a>
                     </figure>
                     <li class="li-header-admin"> <a class="lien lien-right" href="../admin/resa-admin.php">Gestion des réservations</a></li>
                 </ul>

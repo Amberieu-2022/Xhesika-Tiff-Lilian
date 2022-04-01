@@ -367,7 +367,8 @@ footer{
 
 #main-user-gite{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     max-width: 1600px;
 
     .gites{
@@ -375,8 +376,6 @@ footer{
         width: 95%;
         height: 280px;
         list-style-type: none;
-        position: relative;
-        margin-right: 150px;
         
         .titre-page-user{
             font-family: 'Montserrat';
@@ -662,7 +661,7 @@ footer{
         width: 200px;
     }
     .label-form-filter{
-        font-size: .6rem;
+        font-size: .7rem;
     }
     .titre-form-client{
         font-size: .8rem;
@@ -691,6 +690,12 @@ footer{
             .label-category{
                 width: 300px;
             }
+            
+            .category-room{
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+            
         }
 
         .gites{
@@ -708,13 +713,13 @@ footer{
     }
     .form-envoie-resa{
         width: 300px;
-        padding: 25px;
+        padding: 25px 5px;
     }
     .input-resa{
         width: 150px;
     }
     .label-form-filter{
-        font-size: .5rem;
+        font-size: .6rem;
     }
     .btn-btn{
         font-size: .8rem;
@@ -853,7 +858,9 @@ footer{
     .titre-past-form{
         margin-bottom: 25px;
     }
-    
+    .form-envoie-resa{
+        width: 280px;
+    }
 }
 @media screen and (max-width:350px) {
     .footer-logo{
