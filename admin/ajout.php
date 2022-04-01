@@ -187,6 +187,8 @@ if (isset($_POST['submit'])) {
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
+
+    
     
 
     //Connexion à la BDD

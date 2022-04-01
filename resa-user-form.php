@@ -8,8 +8,8 @@ require_once './templates/header.php';
 ?>
 <section class="row-limit-size section-padding">
     <form action="#" method="GET" class="form-envoie-resa">
-        <?php 
-        if(isset($_GET['id'])){
+        <?php
+        if (isset($_GET['id'])) {
         ?>
             <input type="hidden" name="id_gite" value="<?= $_GET['id'] ?>">
         <?php } ?>
@@ -63,29 +63,99 @@ if (isset($_GET['submit'])) {
     $phone_client = $_GET['phone_client'];
     $mail_client = $_GET['mail_client'];
     $nbr_traveller = $_GET['nbr_traveller'];
-    
+
     // Date Réservation
     $start_date_reserv = $_GET['start_date_reserv'];
     $end_date_reserv = $_GET['end_date_reserv'];
     var_dump($start_date_reserv);
     var_dump($end_date_reserv);
 
+//     $debut_jour = 31;
+//     $debut_mois = 03;
+//     $debut_annee = 2022;
+
+//     $fin_jour = 30;
+//     $fin_mois = 06;
+//     $fin_annee = 2022;
+
+//    $debut_date = mktime(0, 0, 0, $debut_mois, $debut_jour, $debut_annee);
+//    $fin_date = mktime(0, 0, 0, $fin_mois, $fin_jour, $fin_annee);
+
+//     for($dt = $debut_date; $dt <= $fin_date; $dt+=86400)
+//     {
+//     echo date("d m Y.",$dt)."<br />" ;
 
 
-    // $start_nbr_nuit = new DateTime($_GET['start_date_reserv']);
-    // $start_nbr_nuit = DateTime::createFromFormat('D-M-Y', $_GET['start_date_reserv']);
-    // // echo $start_nbr_nuit->format('Y-m-d');
+//     }
+echo $today = date('Y-m-d');
+$today1 = getdate();
+print_r($today1);
+
+foreach($today1 as $dt){
+    echo $dt++;
+}
+
+// Envoie du mail de confirmation de la réservation
+
+// $destinataire = 'particulier.flore@hotmail.com';
+// $expediteur = 'contact@guesthouse.com';
+// $copie = 'contact@guesthouse.com';
+// $copie_cachee = 'contact@guesthouse.com';
+// $objet = 'Confirmation de reservation';
+// $headers = 'MIME-Version: 1.0' . "\n"; //Version du standard MIME utilisée dans le message
+// $headers .= 'Reply-To: ' .$expediteur. "\n"; //Mail de réponse
+// $headers .= 'From: "Nom_de_expediteur"<' .$expediteur. '>'."\n"; //Expediteur
+// $headers .= 'Delivered-to: ' .$destinataire."\n"; //Destinataire
+// $headers .= 'Cc: ' .$copie. "\n"; 
+// $headers .= 'Bcc: ' .$copie_cachee. "\n\n";
+// $message = "Bonjour " .$firstname_client. ", \n\n Nous sommes ravi de vous confirmer votre réservation sur le site de GUESTHOUSE. Vos dates de réservation sont les suivantes : " .$start_date_reserv. "au" .$end_date_reserv. ".\n\n GUESTHOUSE vous remercie de votre confiance !";
+
+// if(mail($destinataire, $objet, $message, $headers)) //Envoi du messgae
+// {
+//     echo 'Votre message à bien été envoyé.';
+// }else{
+//     echo 'Votre message n\'as pas pu être envoyé.';
+// }
+
+$dest = "particulier.flore@gmail.com";
+$sujet = "Ceci est un test";
+$message = "Ceci est un test de la fonction mail()";
+$header = "From: $dest";
+
+/* test 1 */
+$envoi = mail($dest, $sujet, $message, $header);
+
+if ($envoi == true)
+  echo "<p>Test 1 : la fonction mail() fonctionne. Un e-mail a ete envoye a l'adresse $dest.
+  <br />S'il ne vous parvient pas, il y a probablement un blocage au niveau du serveur SMTP de l'hebergeur</p>";
+else
+  echo "<p>Test 1 : l'envoi par la fonction PHP mail() ne fonctionne pas ou est desactivee</p>";
+
+/* test 2 */
+echo "<p>Test 2 : Si bool(false) le mail ne part pas
+<br />Si bool(true) l'e mail a bien ete envoye (donc il est bloque apres)</p>";
+var_dump(mail($dest, $sujet, $message, $header));
 
 
-    // $end_nbr_nuit = new DateTime($_GET['end_date_reserv']);
-    // $end_nbr_nuit = DateTime::createFromFormat('D-M-Y', $_GET['end_date_reserv']);
-    // $end_nbr_nuit->modify(' +1 day');
-    // // echo $end_nbr_nuit->format('D-M-Y');
 
-    // $interval = DateInterval::createFromDateString('1 day');
-    // $period = new DatePeriod($start_nbr_nuit, $interval, $end_nbr_nuit);
-    // var_dump($period);
 
+
+
+$req = $db->prepare('INSERT INTO bookings (`id_gite`, `id_client`, `dt`,`,`nbr_nuit`, `price_reserv`) VALUES (:id_gite, :id_client, :dt, :nbr_nuit, :price_reserv)');
+
+    $req->bindParam('id_gite', $idGite, PDO::PARAM_STR);
+    $req->bindParam('id_client', $idClient, PDO::PARAM_STR);
+    $req->bindParam('dt', $dt);
+    $req->bindParam('nbr_nuit', $nbr_nuit, PDO::PARAM_STR);
+    $req->bindParam('price_reserv', $price_reserv, PDO::PARAM_INT);
+    $req->execute();
+    
+
+    var_dump($idGite);
+
+
+
+   
 
 
 
@@ -107,35 +177,10 @@ if (isset($_GET['submit'])) {
     $req->bindParam('mail_client', $mail_client, PDO::PARAM_STR);
     $req->bindParam('nbr_traveller', $nbr_traveller, PDO::PARAM_INT);
     $req->execute();
-    
-    // if(!empty($_GET['start_date_reserv'] && $_GET['end_date_reserv'])){
-        // foreach ($period as $night){
-            // echo $night->format('Y-m-d');
-        
-            // $req = $db->prepare('SELECT `id_gite`, `price_night` FROM `cottages`');
-            // $req->bindParam('id_gite', $idGite, PDO::PARAM_STR);
-            // $req->execute();
+    $idClient = $db->lastInsertId();
+    var_dump($idClient);
 
 
-            // $req = $db->prepare('SELECT `id_client` FROM `customer`');
-            // $req->bindParam('id_client', $idClient, PDO::PARAM_STR);
-
-            $req = $db->prepare('INSERT INTO bookings (`id_gite`, `id_client`, `start_date_reserv`, `end_date_reserv`,`nbr_nuit`, `price_reserv`) VALUES (:id_gite, :id_client, 5, 15) RETURNING `id_client`');
-             echo 'Sa marche';
-
-            $req->bindParam('id_gite', $idGite, PDO::PARAM_STR);
-            $req->bindParam('id_client', $idClient, PDO::PARAM_STR);
-            $req->bindParam('start_date_reserv', $start_date_reserv, PDO::PARAM_STR);
-            $req->bindParam('end_date_reserv', $end_date_reserv, PDO::PARAM_STR);
-            $req->bindParam('nbr_nuit', $nbr_nuit, PDO::PARAM_INT);
-            $req->bindParam('price_reserv', $price_reserv, PDO::PARAM_INT);
-           
-            var_dump($idClient);
-            $idClient = $db->lastInsertId();
-            
-        // }
-        
-    // }
     
 }
 require_once './templates/footer.php';
