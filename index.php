@@ -133,6 +133,7 @@ require './connect.php';
 
     if (isset($_GET['destination'])) {
         $searchByCity = $_GET['destination'];
+        preg_match('~([a-zA-Z])(\s)([^0-9]+$)~', $searchByCity);
     } else {
         $searchByCity = null;
     }

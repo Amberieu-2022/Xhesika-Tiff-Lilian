@@ -70,6 +70,7 @@ function giteDisplay() {
                 listDom += '<li class="gites" data-id="12"><h2 class="titre-page-user">' + data.name_gite + '</h2><h3 class="titre-lieu-p-user">' + data.location_gite + '</h3><div class="img-para-user"><img class="img-gite-user-index" src="./img/pdp/' + data.profil_gite + '" alt="photo du gite" class="img-div-gite"><div class="right-index-user-gite"><p class="description-main-page">' + data.desc_gite + '</p><div class="button-index-user"><p class="user-gite-prix">Prix / nuit : ' + data.price_night + '</p><button class="btn-reserver-user"><a href="./resa-user-form.php?id=' + data.id_gite + '">RESERVER</a></button></div></div></div></li>'
 
                 giteSelection += '<input type="hidden" name="id_gite_selec[]" value="' + data.id_gite + '"></input>'
+
             }
 
             listGites.innerHTML = listDom;
