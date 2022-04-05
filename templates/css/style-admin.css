@@ -175,13 +175,6 @@ ul {
   background-color: #9DE1BC;
 }
 
-.input-p-ajout {
-  height: 25px;
-  width: 400px;
-  border: 2px solid #9DE1BC;
-  border-radius: 5px 5px;
-}
-
 .titre-form-search {
   font-size: 1.5rem;
   font-family: 'Montserrat';
@@ -191,20 +184,27 @@ ul {
 }
 
 .form-add-search {
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 50px 30px 20px 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 850px;
+  width: 95%;
+  padding-top: 50px;
 }
 
 .form-search {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-bottom: 50px;
   padding: 10px;
+}
+
+.div-search-btn .input-p-ajout {
+  height: 25px;
+  width: 400px;
+  border: 2px solid #9DE1BC;
+  border-radius: 5px 5px;
 }
 
 .first-form {
@@ -331,7 +331,7 @@ ul {
 
 #list-gites {
   display: inline-block;
-  max-width: 800px;
+  max-width: 1000px;
   width: 95%;
 }
 
@@ -349,6 +349,25 @@ li.gites {
   border-radius: 5px;
   padding: 10px;
   margin: 20px auto;
+}
+
+.btn-bin-modif {
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text-list-gite {
+  font-family: 'Montserrat';
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
 }
 
 .form-ajout-new-gite {
@@ -373,6 +392,15 @@ li.gites {
 
 .input-nb-add {
   width: 40px;
+}
+
+.head-form-ajout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .descript-in {
@@ -425,6 +453,12 @@ li.gites {
   padding-left: 30px;
 }
 
+.row-limit-size-resa-user {
+  max-width: 1400px;
+  width: 95%;
+  margin: 0 auto;
+}
+
 #resa-admin-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -443,11 +477,29 @@ li.gites {
   display: block;
 }
 
-#resa-admin-list #table-resa #td {
+#resa-admin-list #table-resa .td {
+  height: 40px;
+  text-align: center;
   border: 2px solid #9DE1BC;
-  padding: 10px;
   font-size: 1rem;
   font-family: 'Montserrat';
+  line-height: 40px;
+}
+
+#resa-admin-list #table-resa #td-s {
+  width: 80px;
+}
+
+#resa-admin-list #table-resa #td-m {
+  width: 100px;
+}
+
+#resa-admin-list #table-resa #td-l {
+  width: 150px;
+}
+
+#resa-admin-list #table-resa #td-xl {
+  width: 300px;
 }
 
 #resa-admin-list #table-resa-responsive {
@@ -488,6 +540,18 @@ li.gites {
   }
 }
 
+@media screen and (max-width: 1025px) {
+  .form-add-search {
+    padding-bottom: 30px;
+  }
+  .titre-form-connexion {
+    font-size: 1.6rem;
+  }
+  .titre-reservation-ad {
+    font-size: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 965px) {
   #td {
     font-size: .8rem;
@@ -500,15 +564,22 @@ li.gites {
   }
 }
 
-@media screen and (max-width: 1025px) {
-  .form-add-search {
-    padding-bottom: 30px;
+@media screen and (max-width: 925px) {
+  .btn-ajout-gite {
+    width: 150px;
+    font-size: .8rem;
   }
-  .titre-form-connexion {
-    font-size: 1.6rem;
+  .btn-ajout-gite a {
+    font-size: .8rem;
   }
-  .titre-reservation-ad {
-    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .div-search-btn .input-p-ajout {
+    width: 330px;
+  }
+  .div-search-btn .btn-ajout-gite {
+    width: 120px;
   }
 }
 
@@ -533,6 +604,9 @@ li.gites {
   }
   .label-ajout {
     font-size: .9rem;
+  }
+  .div-search-btn .input-p-ajout {
+    width: 230px;
   }
   .id-connect {
     font-size: 1.2rem;
@@ -564,12 +638,45 @@ li.gites {
   .type-option .label-no {
     margin-left: 30px;
   }
+  .first-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .first-flex .label-no {
+    padding-left: 0;
+  }
+  .form-add-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding: 10px 5px;
+    margin-left: 10px;
+  }
+  .div-search-btn .input-p-ajout {
+    width: 240px;
+    margin: 10px 10px 10px 30px;
+  }
+  .titre-form-search {
+    font-size: 1.2rem;
+  }
+  .btn-ajout-gite {
+    width: 180px;
+  }
 }
 
 @media screen and (max-width: 665px) {
-  .first-flex {
-    margin-bottom: 20px;
-  }
   .label-no1 {
     font-size: .8rem;
   }
@@ -592,8 +699,7 @@ li.gites {
     display: block;
   }
   .input-nb-add {
-    width: 30px;
-    margin: 5px 10px;
+    width: 40px;
   }
   .descript-in {
     max-width: 600px;
@@ -610,20 +716,30 @@ li.gites {
     margin: 20px auto;
     padding: 3px 10px;
   }
-  .btn-ajout-gite {
-    margin-top: 30px 0;
-    font-size: .8rem;
-    padding: 0 40px;
-  }
   .form-add-search {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     padding: 10px 5px;
     margin-left: 10px;
   }
-  .input-p-ajout {
+  .div-search-btn .input-p-ajout {
     width: 240px;
-    margin: 10px 30px;
-    height: 20px;
+    margin: 10px 10px 10px 30px;
+  }
+  .div-search-btn .btn-ajout-gite {
+    width: 120px;
+    margin-top: 30px 0;
+    margin-left: 0;
+    font-size: .8rem;
+    text-align: center;
   }
 }
 
@@ -649,9 +765,45 @@ li.gites {
   }
   .label-ajout {
     font-size: .8rem;
+    padding-right: 2px;
   }
   .btn-valid-ajout {
     font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .head-form-ajout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .label-ajout {
+    padding-bottom: 5px;
+  }
+  .label-no1 {
+    margin-top: 20px;
+  }
+  .first-flex .label-no {
+    font-size: .8rem;
+  }
+  .first-form {
+    padding: 10px;
+  }
+  .nb-gite-modal {
+    font-size: 1rem;
+    padding-top: 50px;
+  }
+  .div-search-btn .input-p-ajout {
+    width: 210px;
+    margin-left: 20px;
+  }
+  .btn-ajout-gite {
+    margin-left: 20px;
   }
 }
 
@@ -701,6 +853,40 @@ li.gites {
   .titre-reservation-ad {
     margin-top: 50px;
     font-size: 1.2rem;
+  }
+  .text-list-gite {
+    font-size: .8rem;
+  }
+  .div-search-btn .input-p-ajout {
+    width: 150px;
+  }
+  .first-flex .input-numer {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .titre-form-search {
+    font-size: .9rem;
+  }
+  .first-form .label-no1 {
+    font-size: 1rem;
+  }
+  .list-gite-modal {
+    padding-top: 0;
+  }
+  .nb-gite-modal {
+    font-size: .8rem;
+  }
+  .text-list-gite {
+    font-size: .6rem;
+  }
+  .div-search-btn .input-p-ajout {
+    width: 130px;
+  }
+  .div-search-btn .btn-ajout-gite {
+    font-size: .7rem;
+    width: 90px;
   }
 }
 /*# sourceMappingURL=style-admin.css.map */

@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 if ($ref == null || $extensionsUpload == null) {
 
-    $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping, `nbr_bathroom`= :nbr_bathroom WHERE `id_gite` = :id');
+    $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping, `nbr_bathroom`= :nbr_bathroom, `price_night` = :price_night WHERE `id_gite` = :id');
 
     $req->bindParam('id', $id, PDO::PARAM_STR);
     $req->bindParam('id_categ', $id_categ, PDO::PARAM_STR);
@@ -16,6 +16,7 @@ if ($ref == null || $extensionsUpload == null) {
     $req->bindParam('desc_gite', $desc_gite, PDO::PARAM_STR);
     $req->bindParam('nbr_sleeping', $nbr_sleeping, PDO::PARAM_INT);
     $req->bindParam('nbr_bathroom', $nbr_bathroom, PDO::PARAM_INT);
+    $req->bindParam('price_night', $price_night, PDO::PARAM_INT);
 
     $req->execute();
 
@@ -39,7 +40,7 @@ if ($ref == null || $extensionsUpload == null) {
     }
 } else {
     
-    $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `profil_gite` = :profil_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping,`nbr_bathroom`= :nbr_bathroom WHERE `id_gite` = :id');
+    $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `profil_gite` = :profil_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping,`nbr_bathroom`= :nbr_bathroom, `price_night` = :price_night WHERE `id_gite` = :id');
 
     $req->bindParam('id', $id, PDO::PARAM_STR);
     $req->bindParam('name_gite', $name_gite, PDO::PARAM_STR);
@@ -49,6 +50,7 @@ if ($ref == null || $extensionsUpload == null) {
     $req->bindParam('desc_gite', $desc_gite, PDO::PARAM_STR);
     $req->bindParam('nbr_sleeping', $nbr_sleeping, PDO::PARAM_INT);
     $req->bindParam('nbr_bathroom', $nbr_bathroom, PDO::PARAM_INT);
+    $req->bindParam('price_night', $price_night, PDO::PARAM_INT);
 
     $req->execute();
 
