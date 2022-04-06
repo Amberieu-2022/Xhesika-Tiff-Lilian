@@ -32,12 +32,15 @@ if (!isset($_SESSION['adminId'])) {
 
     <br><br>
 
-    <label for="image_gite">
+    <label class="label-ajout" for="image_gite">
         Ajouter des images pour votre gîte :
     </label>
-    <input type="file" name="myimg[]" multiple accept="image/png, image/jpeg, image/jpg" required>
+    <input class="label-ajout" type="file" name="myimg[]" multiple accept="image/png, image/jpeg, image/jpg" required>
 
     <br><br>
+
+    <label class="label-ajout" for="price_night">Prix par nuit en €</label>
+    <input type="number" name="price_night">
 
     <label class="label-ajout" for="nbr_sleeping">
         Nombre de couchage :
@@ -187,8 +190,7 @@ if (isset($_POST['submit'])) {
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
-
-    
+    $price_night = $_POST['price_night'];
     
 
     //Connexion à la BDD
@@ -265,11 +267,11 @@ if (isset($_POST['submit'])) {
     if(!empty($_POST['option'])){
         foreach($_POST['option'] as $value){
 
-            $req = $db->prepare('INSERT INTO gite_option (`id_gite`, `id_suppl`) VALUES (:id_gite, :id_suppl)');
+            $reqOpt = $db->prepare('INSERT INTO gite_option (`id_gite`, `id_suppl`) VALUES (:id_gite, :id_suppl)');
 
-            $req->bindParam('id_gite', $idGite, PDO::PARAM_STR);
-            $req->bindParam('id_suppl', $value, PDO::PARAM_STR);
-            $req->execute();
+            $reqOpt->bindParam('id_gite', $idGite, PDO::PARAM_STR);
+            $reqOpt->bindParam('id_suppl', $value, PDO::PARAM_STR);
+            $reqOpt->execute();
         }
     }
 

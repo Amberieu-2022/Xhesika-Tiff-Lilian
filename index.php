@@ -2,6 +2,7 @@
 
 require_once './templates/header.php';
 
+require './connect.php';
 
 ?>
 <main>
@@ -11,10 +12,10 @@ require_once './templates/header.php';
         <h2 class="titre-form-client">TROUVEZ VOTRE GÎTE</h2>
 
         <form action="#" method="GET">
-        <div class="location">
+            <div class="location">
                 <label class="label-client" for="destination">DESTINATION</label>
                 <input type="search" placeholder="Choisissez votre destination" class="input-local" name="destination">
-                <input type="submit" name="submit-city">
+
             </div>
         </form>
         <p class="titre-form-client">OU</p>
@@ -22,10 +23,10 @@ require_once './templates/header.php';
 
             <div class="location">
                 <label for="start_date_reserv" class="label-client">ARRIVÉE</label>
-                <input type="date" min="<?= date('Y-m-d')?>" value="<?= date('Y-m-d')?>" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
+                <input type="date" min="<?= date('Y-m-d') ?>" value="<?= date('Y-m-d') ?>" class="date-placeholder" name="start_date_reserv" id="start_date_reserv">
 
                 <label for="end_date_reserv" class="label-client"> DEPART</label>
-                <input type="date" min="<?= date('Y-m-d', strtotime('+1 day'))?>"  max="<?= date('Y-m-d', strtotime('+3 months'))?>" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
+                <input type="date" min="<?= date('Y-m-d', strtotime('+1 day')) ?>" max="<?= date('Y-m-d', strtotime('+3 months')) ?>" value="" class="date-placeholder" name="end_date_reserv" id="end_date_reserv">
             </div>
 
 
@@ -97,96 +98,9 @@ require_once './templates/header.php';
     <!-- Affichage résultat recherche gite -->
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
-    <ul id="list-gites-user"></ul>
-
-    <!-- <div>
-        <aside class="form-filter">
-            <form action="#" method="GET">
-                <label for="" class="label-category">Filtrer par </label> <br> <br>
-
-                <label for="" class="label-category">Categorie(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-                <div id="categories">
-                    <div class="category-room">
-                        <label for="lodging" class="label-form-filter">Chambre</label> <input type="checkbox" name="lodging">
-                    </div>
-                    <div class="category-room">
-                        <label for="lodging" class="label-form-filter">Appartement</label> <input type="checkbox" name="lodging">
-                    </div>
-                    <div class="category-room">
-                        <label for="lodging" class="label-form-filter">Maison</label>
-                        <input type="checkbox" name="lodging">
-                    </div>
-                    <div class="category-room">
-                        <label for="lodging" class="label-form-filter">Villa</label>
-                        <input type="checkbox" name="lodging">
-                    </div> <br>
-                </div>
-
-                <label for="" class="label-category">Couchage(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-                <div id="categories">
-                    <div class="category-room">
-                        <label for="nbr_sleeping" class="label-form-filter">1-2</label>
-                        <input type="checkbox" name="nbr_sleeping">
-                    </div>
-                    <div class="category-room">
-                        <label for="nbr_sleeping" class="label-form-filter">3-4</label>
-                        <input type="checkbox" name="nbr_sleeping">
-                    </div>
-                    <div class="category-room">
-                        <label for="nbr_sleeping" class="label-form-filter">5-6</label>
-                        <input type="checkbox" name="nbr_sleeping">
-                    </div>
-                    <div class="category-room">
-                        <label for="nbr_sleeping" class="label-form-filter">7+</label>
-                        <input type="checkbox" name="nbr_sleeping">
-                    </div><br>
-                </div>
-
-                <label for="" class="label-category">Option(s)<img src="./templates/img/icon/button.png" alt="button" id="btn-summary"></label>
-
-                <div id="categories">
-                    <div class="category-room">
-                        <label for="option" class="label-form-filter">Piscine</label>
-                        <input type="checkbox" name="option-aside">
-                    </div>
-                    <div class="category-room">
-                        <label for="option" class="label-form-filter">Jardin</label>
-                        <input type="checkbox" name="option-aside">
-                    </div>
-                    <div class="category-room">
-                        <label for="option" class="label-form-filter">Parking</label>
-                        <input type="checkbox" name="option-aside">
-                    </div>
-                    <div class="category-room">
-                        <label for="option" class="label-form-filter">Animaux</label>
-                        <input type="checkbox" name="option-aside">
-                    </div> 
-
-                    <br>
-
-                </div>
-                <label for="" class="label-category"> Prix / nuit <img src="./templates/img/icon/button.png" alt="button" id="btn-summary">
-            </label>
-                <div id="categories">
-                    <div class="category-room">
-                        <label for="price_reserv" class="label-form-filter">0 - 50€</label><input type="checkbox" name="price_reserv">
-                    </div>
-                    <div class="category-room">
-                        <label for="price_reserv" class="label-form-filter">51 - 150€</label><input type="checkbox" name="price_reserv">
-                    </div>
-                    <div class="category-room">
-                        <label for="price_reserv" class="label-form-filter">151 - 300€</label><input type="checkbox" name="price_reserv">
-                    </div>
-                    <div class="category-room">
-                        <label for="price_reserv" class="label-form-filter">301€ +</label><input type="checkbox" name="price_reserv">
-                    </div>
-                </div>
-                <button class="btn-util btn-filtrer" type="submit" name="submit">Valider</button>
-            </form>
-        </aside>
-    </div> -->
-
-
+    <form id="giteSelection" action="#" method="GET"></form>
+    <ul id="list-gites-user" class="main-user-gite"></ul>
+   
 
     <?php
 
@@ -194,6 +108,8 @@ require_once './templates/header.php';
 
         $nbSleep = $_GET['nbr_sleeping'];
         $nbBath = $_GET['nbr_bathroom'];
+        $start = $_GET['start_date_reserv'];
+        $end = $_GET['end_date_reserv'];
 
         if (!empty($_GET['gite-type'])) {
 
@@ -211,6 +127,8 @@ require_once './templates/header.php';
 
         $nbSleep = null;
         $nbBath = null;
+        $start = null;
+        $end = null;
     }
 
     if (isset($_GET['destination'])) {
@@ -227,6 +145,8 @@ require_once './templates/header.php';
 
         <input type="hidden" id="nb_sleep" value="<?= $nbSleep ?>">
         <input type="hidden" id="nb_bathroom" value="<?= $nbBath ?>">
+        <input type="hidden" id="start-date" value="<?= $start ?>">
+        <input type="hidden" id="end-date" value="<?= $end ?>">
 
         <input type="hidden" id="cat1" value="<?= (isset($type[0])) ? $type[0] : null ?>">
         <input type="hidden" id="cat2" value="<?= (isset($type[1])) ? $type[1] : null ?>">
@@ -245,5 +165,62 @@ ________________________________________________________________________________
 </main>
 
 <?php
+// if (isset($_GET['submit'])) {
+//     $start_date_reserv = $_GET['start_date_reserv'];
+//     $end_date_reserv = $_GET['end_date_reserv'];
+
+//     $start_date = date_create($start_date_reserv);
+//     $end_date = date_create($end_date_reserv);
+//     $diff = date_diff($start_date, $end_date);
+//     $nights = $diff->format('%a') - 1;
+
+//     function parseDate($date)
+//     {
+//         $parse = date_parse($date);
+//         $day = $parse['day'];
+//         $month = $parse['month'];
+//         $year = $parse['year'];
+
+//         $mktime = mktime(0, 0, 0, $month, $day, $year);
+
+//         return $mktime;
+//     }
+
+//     $first_date = parseDate($start_date_reserv);
+//     $last_date = parseDate($end_date_reserv);
+
+//     for ($i = $first_date; $i <= $last_date; $i += 86400) {
+//         $stay[] = date("Y-m-d", $i);
+//     }
+// } else {
+//     $stay = null;
+// }
+
+// $id_gite_selec = $_GET['id_gite_selec'];
+// var_dump($id_gite_selec);
+
+
+// $idGiteResa = 75;
+// $reqResa = $db->prepare('SELECT `id_detail_booking`, `id_gite`, `id_client`, `id_reserv`, `day_booked` FROM `detail_booking` WHERE `id_gite` = :id_gite ORDER BY id_detail_booking');
+
+// $reqResa->bindParam('id_gite', $idGiteResa, PDO::PARAM_STR);
+// $reqResa->execute();
+// $valueResa = $reqResa->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($valueResa);
+
+
+
+// if ($stay != null) {
+//     foreach ($valueResa as $dayBooked) {
+//         foreach ($stay as $dayWished) {
+//             if($dayBooked['day_booked'] == $dayWished){
+//                 break 2;
+//             } else {
+
+//             }
+//         }
+//     }
+// }
+
 require_once './templates/footer.php';
 ?>

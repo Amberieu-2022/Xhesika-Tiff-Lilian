@@ -10,7 +10,7 @@ if (!isset($_SESSION['adminId'])) {
 
 $id_gite = $_GET['id'];
 
-$req = $db->prepare("SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom` FROM `cottages` WHERE `id_gite` = :id_gite");
+$req = $db->prepare("SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` WHERE `id_gite` = :id_gite");
 
 $req->bindParam('id_gite', $id_gite, PDO::PARAM_STR);
 
@@ -61,6 +61,11 @@ $valueOptions = $reqOptions->fetchAll(PDO::FETCH_ASSOC);
             <button id="non">NON !</button>
         </div>
     </div>
+
+    <br><br>
+
+    <label for="price_night" class="label-ajout">Prix par nuit en €</label>
+    <input type="number" name="price_night">
 
     <br><br>
 
@@ -320,6 +325,7 @@ if (isset($_POST['submit'])) {
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
+    $price_night = $_POST['price_night'];
     $option = $_POST['option'];
 
     ?>

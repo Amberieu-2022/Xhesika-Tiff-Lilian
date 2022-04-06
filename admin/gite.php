@@ -91,11 +91,7 @@ require_once '../templates/header-admin.php';
 
     <h1 class="list-gite-modal">Liste de vos gites</h1>
 
-    <button>
-        <a href="ajout.php">Ajouter un nouveau gîte</a>
-    </button>
-
-    <p>Vous avez actuellement <kbd id="nb-posts">X</kbd> gîtes en base correspondant à vos critères</p>
+    <p class="list-gite-modal">Vous avez actuellement <kbd id="nb-posts">X</kbd> gîtes en base correspondant à vos critères</p>
 
     <div class="list-style-ul">
         

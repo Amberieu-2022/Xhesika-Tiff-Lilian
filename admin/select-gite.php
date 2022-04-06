@@ -116,7 +116,7 @@ if (!empty($optUnique)) {
 
     $searchByName = '%' . $search . '%';
 
-    $reqGite = $db->prepare('SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom` FROM `cottages` WHERE `name_gite` LIKE :search');
+    $reqGite = $db->prepare('SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` WHERE `name_gite` LIKE :search');
 
     $reqGite->bindParam('search', $searchByName, PDO::PARAM_STR);
     $reqGite->execute();
