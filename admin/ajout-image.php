@@ -7,6 +7,6 @@ $reqImages->bindParam('id_gite', $idGite, PDO::PARAM_INT);
 $reqImages->bindParam('name_image', $name_image, PDO::PARAM_STR);
 $reqImages->execute();
 
-var_dump($name_image);
+// var_dump($name_image);
 
-var_dump($idGite);
+// var_dump($idGite);

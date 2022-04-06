@@ -91,7 +91,7 @@ if (!empty($optUnique)) {
 
     for($i = 0; $i < $lenghtOptUnique; $i++){
 
-    $jsonArray[] = '{"id_gite":"' . $valueReq[$i][0]['id_gite'] . '","id_categ":"' . $valueReq[$i][0]['id_categ'] . '","name_gite":"' . $valueReq[$i][0]['name_gite'] . '","name_simple_gite":"' . $valueReq[$i][0]['name_simple_gite'] . '","location_gite":"' . $valueReq[$i][0]['location_gite'] . '","profil_gite":"' . $valueReq[$i][0]['profil_gite'] . '","desc_gite":"' . $valueReq[$i][0]['desc_gite'] . '","nbr_sleeping":"' . $valueReq[$i][0]['nbr_sleeping'] . '","nbr_bathroom":"' . $valueReq[$i][0]['nbr_bathroom'] . $valueReq[0]['price_night'] . '"';
+    $jsonArray[] = '{"id_gite":"' . $valueReq[$i][0]['id_gite'] . '","id_categ":"' . $valueReq[$i][0]['id_categ'] . '","name_gite":"' . $valueReq[$i][0]['name_gite'] . '","name_simple_gite":"' . $valueReq[$i][0]['name_simple_gite'] . '","location_gite":"' . $valueReq[$i][0]['location_gite'] . '","profil_gite":"' . $valueReq[$i][0]['profil_gite'] . '","desc_gite":"' . $valueReq[$i][0]['desc_gite'] . '","nbr_sleeping":"' . $valueReq[$i][0]['nbr_sleeping'] . '","nbr_bathroom":"' . $valueReq[$i][0]['nbr_bathroom'] . $valueReq[$i][0]['price_night'] . '"';
 
     // var_dump($jsonArray);
     }

@@ -18,4 +18,4 @@ $req->execute();
 
 $idGite = $db->lastInsertId();
 
-var_dump($idGite);
+// var_dump($idGite);

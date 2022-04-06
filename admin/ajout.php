@@ -1,11 +1,12 @@
 <?php
-
-require_once '../templates/header-admin.php';
-
 session_start();
 if (!isset($_SESSION['adminId'])) {
     header('Location: index.php');
 }
+
+require_once '../templates/header-admin.php';
+
+
 ?>
 <h1 class="nb-gite-modal">AJOUTER UN NOUVEAU GÎTE</h1>
 
