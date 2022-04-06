@@ -63,7 +63,7 @@ function giteDisplay() {
 
 
             for (let data of datas) {
-                listDom += '<li  data-id="' + data.id_gite + '"><div class="gites" id="parent-node-' + data.id_gite + '"><h2 class="titre-page-user">' + data.name_gite + '</h2><h3 class="titre-lieu-p-user">' + data.location_gite + '</h3><div class="img-para-user"><img class="img-gite-user-index" src="./img/pdp/' + data.profil_gite + '" alt="photo du gite" class="img-div-gite"><div class="right-index-user-gite"><p class="description-main-page">' + data.desc_gite + '</p><div class="button-index-user"><p class="user-gite-prix">Prix / nuit : ' + data.price_night + '</p><button class="btn-reserver-user" id="child-node-' + data.id_gite + '"><a href="./resa-user-form.php?id=' + data.id_gite + '">RESERVER</a></button></div></div></div></div></li>'
+                listDom += '<li  data-id="' + data.id_gite + '"><div class="gites" id="parent-node-' + data.id_gite + '"><h2 class="titre-page-user">' + data.name_gite + '</h2><h3 class="titre-lieu-p-user">' + data.location_gite + '</h3><div class="img-para-user"><img class="img-gite-user-index" src="./img/pdp/' + data.profil_gite + '" alt="photo du gite" class="img-div-gite"><div class="right-index-user-gite"><p class="description-main-page">' + data.desc_gite + '</p><div class="button-index-user"><p class="user-gite-prix">Prix / nuit : ' + data.price_night + '</p><button class="btn-reserver-user" id="child-node-' + data.id_gite + '"><a href="./resa-user-form.php?id=' + data.id_gite + '" id="lien-resa">RESERVER</a></button></div></div></div></div></li><hr id="hr-index">'
 
                 // giteSelection.push(data.id_gite);
 
