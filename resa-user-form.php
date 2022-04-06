@@ -42,7 +42,7 @@ require_once './templates/header.php';
             <label for="" class="label-form-filter">DATE DE RESERVATION</label> <br>
         </div>
         <div class="flex-btw around">
-            <label for="start_date_reserv"" class=" label-form-filter">ARRIVÉE</label>
+            <label for="start_date_reserv" class=" label-form-filter">ARRIVÉE</label>
             <input type="date" min="<?= date('Y-m-d') ?>" value="<?= date('Y-m-d') ?>" class="date-input-resa" name="start_date_reserv" id="start_date_reserv">
 
             <label for="end_date_reserv" class="label-form-filter">DÉPART</label>
@@ -63,12 +63,17 @@ if (isset($_GET['submit'])) {
     $phone_client = $_GET['phone_client'];
     $mail_client = $_GET['mail_client'];
     $nbr_traveller = $_GET['nbr_traveller'];
-
+    $msg;
     // Date Réservation
     $start_date_reserv = $_GET['start_date_reserv'];
     $end_date_reserv = $_GET['end_date_reserv'];
     var_dump($start_date_reserv);
     var_dump($end_date_reserv);
+    preg_match('~^[a-zA-Z]{3,15}$~', $firstname_client);
+    preg_match('~^[a-zA-Z]{3,15}$~', $lastname_client);
+    preg_match('~(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}~', $phone_client);
+    preg_match('~[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})~', $mail_client);
+
 
 //     $debut_jour = 31;
 //     $debut_mois = 03;

@@ -1,8 +1,6 @@
 <?php
 
 require_once '../templates/header-admin.php';
-
-require_once '../templates/footer-admin.php';
 require_once '../connect.php';
 
 session_start();
@@ -19,7 +17,11 @@ if(isset($_POST['submit'])){
     echo'les données ont bien été récupérer';
     
 }
-?>
+?> 
+
+
+
+
 <!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +78,10 @@ if(isset($_POST['submit'])){
 -->
  <!-- <?php echo date("Y-m-d"); ?> -->
 <!-- <?php echo date("Y-m-d"); ?>  -->
+
+<?php 
+require_once '../templates/footer-admin.php';
+?>
 
 
 
