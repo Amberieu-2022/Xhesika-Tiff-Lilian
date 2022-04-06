@@ -42,6 +42,7 @@ require_once '../templates/header-admin.php';
 
     <label class="label-ajout" for="price_night">Prix par nuit en €</label>
     <input type="number" name="price_night">
+    <br><br>
 
     <label class="label-ajout" for="nbr_sleeping">
         Nombre de couchage :

@@ -53,7 +53,7 @@ table {
 }
 
 .form-connexion {
-  margin: 150px auto;
+  margin: 100px auto;
   max-width: 800px;
   width: 80%;
   border: 2px solid #9DE1BC;
@@ -523,6 +523,48 @@ li.gites {
   font-family: 'Montserrat';
 }
 
+#img-container {
+  border: solid 2px #9DE1BC;
+  max-width: 100%;
+  width: 700px;
+  margin: 20px auto;
+}
+
+#list-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.li-image {
+  list-style-type: none;
+  margin: 1%;
+  position: relative;
+}
+
+.image-gite {
+  height: 120px;
+  width: 120px;
+}
+
+.icon-del > img {
+  width: 16px;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-del:hover > img {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1060px) {
   #logo img {
     width: 300px;
@@ -541,9 +583,6 @@ li.gites {
 }
 
 @media screen and (max-width: 1025px) {
-  .form-add-search {
-    padding-bottom: 30px;
-  }
   .titre-form-connexion {
     font-size: 1.6rem;
   }
@@ -581,6 +620,9 @@ li.gites {
   .div-search-btn .btn-ajout-gite {
     width: 120px;
   }
+  #img-container {
+    width: 500px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -607,6 +649,9 @@ li.gites {
   }
   .div-search-btn .input-p-ajout {
     width: 230px;
+  }
+  .form-add-search {
+    padding-bottom: 30px;
   }
   .id-connect {
     font-size: 1.2rem;
@@ -805,6 +850,9 @@ li.gites {
   .btn-ajout-gite {
     margin-left: 20px;
   }
+  .list-gite-modal {
+    font-size: .9rem;
+  }
 }
 
 @media screen and (max-width: 432px) {
@@ -887,6 +935,9 @@ li.gites {
   .div-search-btn .btn-ajout-gite {
     font-size: .7rem;
     width: 90px;
+  }
+  #list-images {
+    padding: 2px;
   }
 }
 /*# sourceMappingURL=style-admin.css.map */

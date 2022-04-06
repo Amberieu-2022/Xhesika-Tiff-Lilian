@@ -6,6 +6,9 @@ require './connect.php';
 
 ?>
 <main>
+    <figure class="background-main-user">
+        <img src="./templates/img/slider/background.jpg" alt="background">
+    </figure>
     <h1 class="titre-h1">Bienvenue</h1>
     <!-- FORMULAIRE UTILISATEUR : TROUVER VOTRE GITE  -->
     <section class="form-page-client">
@@ -31,64 +34,78 @@ require './connect.php';
 
 
             <div class="first-flex">
-                <label class="label-client" for="nbr_sleeping"> Nombre de couchages </label>
-                <select name="nbr_sleeping" id="nbr_sleeping" class="nb-personnes">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                </select>
-                <label class="label-client" for="nbr_bathroom"> Nombre de salle de bain </label>
-                <select name="nbr_bathroom" id="nbr_bathroom" class="nb-personnes">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
+                <div class="form-lieu-flex">
+                    <label class="label-client" for="nbr_sleeping"> Nombre de couchages </label>
+                    <select name="nbr_sleeping" id="nbr_sleeping" class="nb-personnes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+                <div class="form-lieu-flex">
+                    <label class="label-client" for="nbr_bathroom"> Nombre de salle de bain </label>
+                    <select name="nbr_bathroom" id="nbr_bathroom" class="nb-personnes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
 
             </div>
             <br>
             <label for="type" class="label-client">Type de logement</label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="gite-type[]" value="1" class="input-option">
-                <label class="label-client"> Chambre </label>
-
-                <input type="checkbox" name="gite-type[]" value="2" class="input-option">
-                <label class="label-client"> Appartement </label>
-
-                <input type="checkbox" name="gite-type[]" value="3" class="input-option">
-                <label class="label-client"> Maison </label>
-
-                <input type="checkbox" name="gite-type[]" value="4" class="input-option">
-                <label class="label-client"> Villa </label>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="gite-type[]" value="1" class="input-option">
+                    <label class="label-client"> Chambre </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="gite-type[]" value="2" class="input-option">
+                    <label class="label-client"> Appartement </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="gite-type[]" value="3" class="input-option">
+                    <label class="label-client"> Maison </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="gite-type[]" value="4" class="input-option">
+                    <label class="label-client"> Villa </label>
+                </div>
             </div>
             <br>
             <label for="name_suppl" class="label-client"> Option(s) </label> <br>
             <div class="first-flex flex-2">
-                <input type="checkbox" name="option[]" value="1" class="input-option">
-                <label class="label-client"> Piscine </label>
-
-                <input type="checkbox" name="option[]" value="2" class="input-option">
-                <label class="label-client"> Jardin </label>
-
-                <input type="checkbox" name="option[]" value="3" class="input-option">
-                <label class="label-client"> Parking </label>
-
-                <input type="checkbox" name="option[]" value="4" class="input-option">
-                <label class="label-client"> Animaux acceptée </label>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="option[]" value="1" class="input-option">
+                    <label class="label-client"> Piscine </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="option[]" value="2" class="input-option">
+                    <label class="label-client"> Jardin </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="option[]" value="3" class="input-option">
+                    <label class="label-client"> Parking </label>
+                </div>
+                <div class="form-lieu-flex">
+                    <input type="checkbox" name="option[]" value="4" class="input-option">
+                    <label class="label-client"> Animaux acceptée </label>
+                </div>
             </div>
             <br>
 
@@ -99,7 +116,7 @@ require './connect.php';
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
     <ul id="list-gites-user" class="main-user-gite"></ul>
-   
+
 
     <?php
 
@@ -157,8 +174,7 @@ require './connect.php';
         <input type="hidden" id="option3" value="<?= (isset($option[2])) ? $option[2] : null ?>">
         <input type="hidden" id="option4" value="<?= (isset($option[3])) ? $option[3] : null ?>">
 
-        <input type="hidden" id="search" value="<?=$searchByCity?>">
-_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+        <input type="hidden" id="search" value="<?= $searchByCity ?>">
     </form>
 
 </main>
