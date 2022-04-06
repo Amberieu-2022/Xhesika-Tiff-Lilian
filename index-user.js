@@ -60,7 +60,6 @@ function giteDisplay() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let datas = JSON.parse(this.responseText)
             let listDom = ''
-            let giteSelection = [];
 
 
             for (let data of datas) {

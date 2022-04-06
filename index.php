@@ -132,7 +132,7 @@ require './connect.php';
 
     if (isset($_GET['destination'])) {
         $searchByCity = $_GET['destination'];
-        preg_match('^.{3,32}([A-Za-z]){4}$', $searchByCity);
+        preg_match('~^.{3,32}([A-Za-z]){4}$~', $searchByCity);
     } else {
         $searchByCity = null;
     }

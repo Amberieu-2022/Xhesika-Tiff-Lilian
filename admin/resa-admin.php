@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
 require_once '../templates/header-admin.php';
 require_once '../connect.php';
 
