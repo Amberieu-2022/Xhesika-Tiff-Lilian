@@ -158,7 +158,6 @@ require './connect.php';
         <input type="hidden" id="option4" value="<?= (isset($option[3])) ? $option[3] : null ?>">
 
         <input type="hidden" id="search" value="<?=$searchByCity?>">
-
     </form>
 
 </main>
