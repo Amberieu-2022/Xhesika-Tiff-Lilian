@@ -56,7 +56,7 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
 
 </header>
 <div id="slider">
-    <img src="./img/gite/<?=$valueImage[0]['name_image']?>" alt="image du slider" id="slide">
+    <div id="slider-container"><img src="./img/gite/<?=$valueImage[0]['name_image']?>" alt="image du slider" id="slide"></div>
     <div id="left"><img src="./templates/img/icon/left.png" alt="Bouton fleche gauche"></div>
     <div id="right"><img src="./templates/img/icon/right.png" alt="Bouton fleche droite"></div>
 </div>
