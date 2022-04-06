@@ -2,147 +2,422 @@
 
 require_once '../templates/header-admin.php';
 
+require_once '../connect.php';
+session_start();
+if (!isset($_SESSION['adminId'])) {
+    header('Location: index.php');
+}
+
+$id_gite = $_GET['id'];
+
+$req = $db->prepare("SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` WHERE `id_gite` = :id_gite");
+
+$req->bindParam('id_gite', $id_gite, PDO::PARAM_STR);
+
+$req->execute();
+
+$value = $req->fetch(PDO::FETCH_ASSOC);
+
+$reqOptions = $db->prepare("SELECT `id_suppl` FROM `gite_option` WHERE `id_gite` = :id_gite");
+
+$reqOptions->bindParam('id_gite', $id_gite, PDO::PARAM_STR);
+
+$reqOptions->execute();
+
+$valueOptions = $reqOptions->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+<h1 class="nb-gite-modal">MODIFIER VOTRE GÎTE</h1>
+<form action="#" method="POST" enctype="multipart/form-data" class="form-ajout-new-gite">
+
+
+    <label for="name_gite" class="label-ajout">Nom du gîte :</label>
+    <input class="input-ajout" type="text" name="name_gite" id="name_gite" value="<?= $value['name_gite'] ?>">
+
+    <br><br>
+
+    <label for="location_gite" class="label-ajout">Adresse du gîte :</label>
+    <input class="input-ajout" type="text" name="location_gite" id="location_gite" value="<?= $value['location_gite'] ?>">
+
+    <br><br>
+
+    <label class="label-ajout" for="profil_gite">Modifier l'mage de profil du gîte :</label>
+    <input class="label-ajout" type="file" name="profil_gite" accept="image/png, image/jpeg, image/jpg">
+
+    <br><br>
+
+    <label class="label-ajout" for="image_gite">Modifier les images du gîte</label>
+    <input class="label-ajout" type="file" name="myimg[]" multiple accept="image/png, image/jpeg, image/jpg">
+    <input type="submit" name="submit-image" value="Soumettre">
+
+    <div id="img-container">
+        <ul id="list-images"></ul>
+    </div>
+
+    <div class="confirm">
+        <p class="font-modal verif">Voulez-vous vraiment supprimer cette image ?</p>
+        <div class="flex-around">
+            <button id="oui">OUI !</button>
+            <button id="non">NON !</button>
+        </div>
+    </div>
+
+    <br><br>
+
+    <label for="price_night" class="label-ajout">Prix par nuit en €</label>
+    <input type="number" name="price_night">
+
+    <br><br>
+
+    <label for="nbr_sleeping">
+        Nombre de couchage :
+    </label>
+    <input type="number" name="nbr_sleeping" id="nbr_sleeping" min="1" value="<?= $value['nbr_sleeping'] ?>">
+
+    <br><br>
+
+    <label for="nbr_bathroom">
+        Nombre de salle de bain :
+    </label>
+    <input type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" value="<?= $value['nbr_bathroom'] ?>">
+
+    <br><br>
+
+    <label for="type" class="label-ajout">Catégorie</label>
+    <br>
+    <div class="first-flex flex-2">
+
+<?php
+if(!empty($value) && $value['id_categ'] == 1){ 
+?>
+<input type="radio" name="gite-type" value="1" class="input-option" checked><label class="label-no"> Chambre </label>
+<?php
+} else {
+?>
+<input type="radio" name="gite-type" value="1" class="input-option"><label class="label-no"> Chambre </label>
+<?php
+}
 ?>
 
-<form action="#" method="POST" enctype='multipart/form-data'>
+<?php
+if(!empty($value) && $value['id_categ'] == 2){
+?>
+<input type="radio" name="gite-type" value="2" class="input-option" checked><label class="label-no">Appartement</label>
+<?php
+} else {
+?>
+<input type="radio" name="gite-type" value="2" class="input-option"><label class="label-no">Appartement</label>
+<?php
+}
+?>
 
-<label for="name_gite">
-    Nom du gîte :
-</label>
-<input type="text" name="name_gite" id="name_gite">
+<?php
+if(!empty($value) && $value['id_categ'] == 3){
+?>
+<input type="radio" name="gite-type" value="3" class="input-option" checked><label class="label-no">Maison</label>
+<?php
+} else {
+?>
+<input type="radio" name="gite-type" value="3" class="input-option"><label class="label-no">Maison</label>
+<?php
+}
+?>
 
-<br><br>
+<?php
+if(!empty($value) && $value['id_categ'] == 4){
+?>
+<input type="radio" name="gite-type" value="4" class="input-option" checked><label class="label-no">Villa</label>
+<?php
+} else {
+?>
+<input type="radio" name="gite-type" value="4" class="input-option"><label class="label-no">Villa</label>
+<?php
+}
+?>
+    </div>
+    <br>
+    <label for="option" class="label-ajout">Option(s)</label> 
+    <br>
+    <div class="first-flex flex-2">
 
-<label for="location_gite">
-    Adresse du gîte :
-</label>
-<input type="text" name="location_gite" id="location_gite">
+<?php
 
-<br><br>
+        if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 1){
+?>
+        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<?php
+        } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 1){
+?>
+        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<?php
+        } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 1){
+?>
+        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<?php  
+        } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 1){
+?>
+        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<?php
+        } else {
+?>
+        <input type="checkbox" name="option[]" value="1" class="input-option"><label class="label-no"> Piscine </label>
+<?php
+        }
+?>
 
-<label for="profil_gite">
-    Image du gîte :
-</label>
-<input type="file" name="profil_gite" accept="image/png, image/jpeg, image/jpg">
+<?php
 
-<br><br>
+        if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 2){
+?>
+        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<?php
+        } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 2){
+?>
+        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<?php
+        } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 2){
+?>
+        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<?php  
+        } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 2){
+?>
+        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<?php
+        } else {
+?>
+        <input type="checkbox" name="option[]" value="2" class="input-option"><label class="label-no"> Jardin </label>
+<?php
+        }
+?>
 
-<label for="desc_gite">
-    Description du gîte :
-</label>
-<textarea name="desc_gite" id="desc_gite" cols="30" rows="10" placeholder="Veuillez entrer une description de l'artcile"></textarea>
+<?php
 
-<br><br>
+        if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 3){
+?>
+        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+<?php
+        } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 3){
+?>
+        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+<?php
+        } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 3){
+?>
+        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+<?php  
+        } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 3){
+?>
+        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+<?php
+        } else {
+?>
+        <input type="checkbox" name="option[]" value="3" class="input-option"><label class="label-no"> Parking </label>
+<?php
+        }
+?>
 
-<label for="nbr_sleeping">
-    Nombre de couchage :
-</label>
-<input type="number" name="nbr_sleeping" id="nbr_sleeping" min="1">
+<?php
 
-<br><br>
+        if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 4){
+?>
+        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<?php
+        } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 4){
+?>
+        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<?php
+        } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 4){
+?>
+        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<?php  
+        } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 4){
+?>
+        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<?php
+        } else {
+?>
+        <input type="checkbox" name="option[]" value="4" class="input-option"><label class="label-no"> Animaux acceptés </label>
+<?php
+        }
+?>
+    </div>
 
-<label for="nbr_bedroom">
-    Nombre de chambre :
-</label>
-<input type="number" name="nbr_bedroom" id="nbr_bedroom" min="1">
+    <br><br>
 
-<br><br>
+    <label class="label-ajout" for="desc_gite">
+        Description du gîte :
+    </label>
+    <br><br>
+    <textarea class="input-ajout descript-in" name="desc_gite" id="desc_gite" cols="30" rows="10"><?= $value['desc_gite'] ?></textarea>
 
-<label for="nbr_bedroom">
-    Nombre de salle de bain :
-</label>
-<input type="number" name="nbr_bathroom" id="nbr_bathroom" min="1">
-<input type="hidden" name="id_gite" id="id_gite" value="">
-<input type="submit" name="submit" value="Valider la modification">
+    <br><br>
 
+    <input type="hidden" name="id_gite" id="id_gite" value="<?= $value['id_gite'] ?>">
+    <input type="submit" name="submit" value="Valider la modification">
 </form>
 
 
+
+
 <?php
-if(isset($_POST['submit'])){
-$finalString;
-$extensionUpload;
+// Photo Profil Gite
+if (isset($_POST['submit'])) {
+    $ref = null;
+    $extensionUpload = null;
 
-// On vérifie que le fichier a été envoyé
-if(isset($_FILES['profil_gite']) && $_FILES['profil_gite']['error'] == 0){
+    //On transforme le nom du gîte en minuscule
 
-//On vérifie le poids du fichier envoyé
+    $minuscule = strtolower($_POST['name_gite']);
 
-if (isset($_FILES['profil_gite']['size']) <= 1000000) {
-    
-    //on récupère les infos du fichier
+    //On supprime les espaces du nom du gîte
 
-    $infosFichier = pathinfo($_FILES['profil_gite']['name']);
+    $searchString = " ";
 
-    //On récupère l'extension du fichier
+    $replaceString = "";
 
-    $extensionUpload = $infosFichier['extension'];
+    $finalString = str_replace($searchString, $replaceString, $minuscule);
 
-    //On définit les extensions autorisées
+    //On vérifie que le fichier a été envoyé et qu'il n'y a pas d'erreur
 
-    $extensionsAutorisees = ['jpg', 'jpeg', 'png'];
+    if (isset($_FILES['profil_gite']) and $_FILES['profil_gite']['error'] == 0) {
 
-    //On test l'extension du fichier
+        //On vérifie le poids du fichier envoyé
 
-    if (in_array($extensionUpload, $extensionsAutorisees)) {
+        if (isset($_FILES['profil_gite']['size']) <= 1000000) {
 
-        //On transforme le nom du gîte en minuscule
-        
-        $minuscule = strtolower($_POST['name_gite']);
+            //On récupère les infos du fichier
 
-        //On supprime les espaces du nom du gîte
+            $infosFichier = pathinfo($_FILES['profil_gite']['name']);
 
-        $searchString = " ";
+            //On récupère l'extension du fichier
 
-        $replaceString = "";
+            $extensionUpload = $infosFichier['extension'];
 
-        $finalString = str_replace($searchString, $replaceString, $minuscule);
-        var_dump($finalString);
+            //On définit les extensions autorisées
 
-        //On crée le nouveau dossier s'il n'existe pas
+            $extensionsAutorisees = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
 
-        $newDir = '../img/' . $finalString;
+            //On test l'extension du fichier
 
-        if (!file_exists($newDir)){
-            mkdir($newDir, 0777, true);
+            if (in_array($extensionUpload, $extensionsAutorisees)) {
+
+                //On récupère date et heure 
+
+                $date = date('dmyhis');
+
+                //On créer le nouveau nom du fichier
+
+                $ref = $finalString . '_' . $date . '_pdp';
+
+                //On déplace le fichier dans le dossier de destination
+
+                move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/pdp/' . $ref . '.' . $extensionUpload);
+            }
         }
-        
-        //On récupère date et heure 
+    }
 
-        $date = date('dmyhis');
+    //On stocke les données du formulaire dans une variable pour l'insertion dans la table
 
-        //On créer le nouveau nom du fichier
+    $id_categ = $_POST['gite-type'];
+    $name_gite = $_POST['name_gite'];
+    $name_simple_gite = $finalString;
+    $location_gite = $_POST['location_gite'];
+    $profil_gite  = $ref . '.' . $extensionUpload;
+    $desc_gite = $_POST['desc_gite'];
+    $nbr_sleeping = $_POST['nbr_sleeping'];
+    $nbr_bathroom = $_POST['nbr_bathroom'];
+    $price_night = $_POST['price_night'];
+    $option = $_POST['option'];
 
-        $ref = $finalString. '_' . $date;
+    ?>
 
-        var_dump($finalString);
-        var_dump($ref);
-        //On déplace le fichier dans le dossier de destination
+    <form action="#" method="GET">
+        <input type="hidden" id="option1" value="<?= (isset($option[0])) ? $option[0] : null ?>">
+        <input type="hidden" id="option2" value="<?= (isset($option[1])) ? $option[1] : null ?>">
+        <input type="hidden" id="option3" value="<?= (isset($option[2])) ? $option[2] : null ?>">
+        <input type="hidden" id="option4" value="<?= (isset($option[3])) ? $option[3] : null ?>">
+    </form>
 
-        move_uploaded_file($_FILES['profil_gite']['tmp_name'], '../img/' . $finalString . '/' . $ref . '.' . $extensionUpload);
-        
+<?php
+
+    //Connexion à la BDD
+
+    require_once 'update-gite.php';
+
+}
+
+
+if (isset($_POST['submit-image'])) {
+    //Boucle traitement des images et insertion dans la table
+
+    //On initialise la boucle, on compte le nombre d'image envoyée avec $i < count($_FILES['myimg']['name']
+
+    for ($i = 0; $i < count($_FILES['myimg']['name']); $i++) {
+
+        //On vérifie que le fichier a été envoyé et qu'il n'y a pas d'erreur
+
+        if (isset($_FILES['myimg']['name'][$i]) && $_FILES['myimg']['error'][$i] == 0) {
+
+            ////On vérifie le poids du fichier envoyé
+
+            if (isset($_FILES['myimg']['size'][$i]) <= 1000000) {
+
+                //On récupère les infos du fichier
+
+                $infosFichier = pathinfo($_FILES['myimg']['name'][$i]);
+
+                //On récupère l'extension du fichier
+
+                $extensionUpload = $infosFichier['extension'];
+
+                //On définit les extensions autorisées
+
+                $extensionsAutorisees = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
+
+                //On test l'extension du fichier
+
+                if (in_array($extensionUpload, $extensionsAutorisees)) {
+
+                    //On récupère date et heure
+
+                    $date = date('dmyhis');
+
+                    //On transforme le nom du gîte en minuscule
+
+                    $minuscule = strtolower($_POST['name_gite']);
+
+                    //On supprime les espaces du nom du gîte
+
+                    $searchString = " ";
+
+                    $replaceString = "";
+
+                    $finalString = str_replace($searchString, $replaceString, $minuscule);
+
+                    //On créer le nouveau nom du fichier
+
+                    $ref = $finalString . "_" . $date . "_" . $i;
+
+                    //On déplace le fichier dans le dossier de destination
+
+                    move_uploaded_file($_FILES['myimg']['tmp_name'][$i], "../img/gite/" . $ref . "." . $extensionUpload);
+
+                    //On stocke le nom de l'image dans une variable pour l'envoi dans la table
+
+                    $name_image =  $ref . "." . $extensionUpload;
+                    $idGite = $_GET['id'];
+
+                    //Connexion à la BDD
+
+                    require 'ajout-image.php';
+                }
+            }
+        }
     }
 }
-}
-
-$name_gite = $_POST['name_gite'];
-$location_gite = $_POST['location_gite'];
-$profil_gite = $finalString . '_' . date('dmyhis') . '.' . $extensionUpload;
-$desc_gite = $_POST['desc_gite'];
-$nbr_sleeping = $_POST['nbr_sleeping'];
-$nbr_bedroom = $_POST['nbr_bedroom'];
-$nbr_bathroom = $_POST['nbr_bathroom']; 
-
-var_dump($name_gite);
-
-require_once 'update-gite.php';
-
-header('Location: http://localhost/php/Xhesika-Tiff-Lilian-main/admin/gite.php?id='.$id_gite);
-}else{
-$message = 'Veuillez remplir tous les champs';
-}
-
-
-require_once '../templates/footer-admin.php';
 
 ?>
+
+<script src="../admin/modif-admin.js"></script>
+</body>
+
+</html>

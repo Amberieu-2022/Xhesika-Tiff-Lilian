@@ -1,5 +1,5 @@
 <?php
-require_once '../connect.php';
+require_once 'connect.php';
 
 //On récupère en GET les valeurs du formualaire de recherche
 
@@ -21,12 +21,12 @@ $opt4 = $_GET['opt4'];
 
 //Recherche par nom
 $search = $_GET['search'];
+// var_dump($search);
 
 //On push les valeurs des options dans un tableau
 $option = [];
 
 array_push($option, $opt1, $opt2, $opt3, $opt4);
-
 
 //Requête SQL option
 
@@ -48,17 +48,13 @@ foreach ($option as $suppl) {
 // var_dump($opt);
 if(!empty($opt)){
     $optUnique = array_unique($opt);
-    // var_dump($optUnique);
     $lenghtOptUnique = count($optUnique);
-    // var_dump($lenghtOptUnique);
-  }
-
-
-
+    // var_dump($optUnique);
+}
 
 if (!empty($optUnique)) {
     foreach ($optUnique as $id) {
-        $sql = 'SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom` FROM `cottages` ';
+        $sql = 'SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` ';
 
 
         $sql .= (null != $id) ? 'WHERE `id_gite` = :id ' : '';
@@ -93,10 +89,9 @@ if (!empty($optUnique)) {
 
     // var_dump($valueReq);
 
-
     for($i = 0; $i < $lenghtOptUnique; $i++){
 
-    $jsonArray[] = '{"id_gite":"' . $valueReq[$i][0]['id_gite'] . '","id_categ":"' . $valueReq[$i][0]['id_categ'] . '","name_gite":"' . $valueReq[$i][0]['name_gite'] . '","name_simple_gite":"' . $valueReq[$i][0]['name_simple_gite'] . '","location_gite":"' . $valueReq[$i][0]['location_gite'] . '","profil_gite":"' . $valueReq[$i][0]['profil_gite'] . '","desc_gite":"' . $valueReq[$i][0]['desc_gite'] . '","nbr_sleeping":"' . $valueReq[$i][0]['nbr_sleeping'] . '","nbr_bathroom":"' . $valueReq[$i][0]['nbr_bathroom'] . '"';
+    $jsonArray[] = '{"id_gite":"' . $valueReq[$i][0]['id_gite'] . '","id_categ":"' . $valueReq[$i][0]['id_categ'] . '","name_gite":"' . $valueReq[$i][0]['name_gite'] . '","name_simple_gite":"' . $valueReq[$i][0]['name_simple_gite'] . '","location_gite":"' . $valueReq[$i][0]['location_gite'] . '","profil_gite":"' . $valueReq[$i][0]['profil_gite'] . '","desc_gite":"' . $valueReq[$i][0]['desc_gite'] . '","nbr_sleeping":"' . $valueReq[$i][0]['nbr_sleeping'] . '","nbr_bathroom":"' . $valueReq[$i][0]['nbr_bathroom'] . $valueReq[0]['price_night'] . '"';
 
     // var_dump($jsonArray);
     }
@@ -115,18 +110,18 @@ if (!empty($optUnique)) {
 
 } else if (null != $search) {
 
-    $searchByName = '%' . $search . '%';
+    $searchByCity = '%' . $search . '%';
 
-    $reqGite = $db->prepare('SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` WHERE `name_gite` LIKE :search');
+    $reqGite = $db->prepare('SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` WHERE `location_gite` LIKE :search');
 
-    $reqGite->bindParam('search', $searchByName, PDO::PARAM_STR);
+    $reqGite->bindParam('search', $searchByCity, PDO::PARAM_STR);
     $reqGite->execute();
 
     echo json_encode($reqGite->fetchAll(PDO::FETCH_ASSOC));
-    
+
 } else {
 
-    $sql = 'SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom` FROM `cottages` ';
+    $sql = 'SELECT `id_gite`, `id_categ`, `name_gite`, `name_simple_gite`, `location_gite`, `profil_gite`, `desc_gite`, `nbr_sleeping`, `nbr_bathroom`, `price_night` FROM `cottages` ';
 
     $sql .= (null != $nbSleep && null != $nbBath) ? 'WHERE `nbr_sleeping` >= :nb_sleep AND `nbr_bathroom` >= :nb_bathroom ' : '';
     $sql .= (null != $cat2) ? 'AND (' : ((null != $cat1) ? 'AND' : ''); 
@@ -152,4 +147,3 @@ if (!empty($optUnique)) {
 
     echo json_encode($reqGite->fetchAll(PDO::FETCH_ASSOC));
 }
-

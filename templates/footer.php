@@ -23,7 +23,7 @@
 
     </footer>
 
-    
+    <script src="./index-user.js"></script>
     </body>
 
     </html>
