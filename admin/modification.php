@@ -65,7 +65,7 @@ $valueOptions = $reqOptions->fetchAll(PDO::FETCH_ASSOC);
     <br><br>
 
     <label for="price_night" class="label-ajout">Prix par nuit en €</label>
-    <input type="number" name="price_night">
+    <input type="number" name="price_night" value="<?= $value['price_night']?>">
 
     <br><br>
 
