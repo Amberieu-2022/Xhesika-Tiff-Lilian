@@ -225,15 +225,23 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
 </section>
 <?php
 
-if (isset($_POST['submit'])) {
-    //Récupération des données du formulaire
-    $firstname_client = $_POST['firstname_client'];
-    $lastname_client = $_POST['lastname_client'];
-    $phone_client = $_POST['phone_client'];
-    $mail_client = $_POST['mail_client'];
-    $nbr_traveller = $_POST['nbr_traveller'];
-    $start_date_reserv = $_POST['start_date_reserv'];
-    $end_date_reserv = $_POST['end_date_reserv'];
+if (isset($_GET['submit'])) {
+    $idGite = $_GET['id_gite'];
+    $firstname_client = $_GET['firstname_client'];
+    $lastname_client = $_GET['lastname_client'];
+    $phone_client = $_GET['phone_client'];
+    $mail_client = $_GET['mail_client'];
+    $nbr_traveller = $_GET['nbr_traveller'];
+    
+    // Date Réservation
+    $start_date_reserv = $_GET['start_date_reserv'];
+    $end_date_reserv = $_GET['end_date_reserv'];
+    var_dump($start_date_reserv);
+    var_dump($end_date_reserv);
+    preg_match('~^[a-zA-Z]{3,15}$~', $firstname_client);
+    preg_match('~^[a-zA-Z]{3,15}$~', $lastname_client);
+    preg_match('~(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}~', $phone_client);
+    preg_match('~[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})~', $mail_client);
 
     //Calcul du nombre de nuit de la réservation
     $start_date = date_create($start_date_reserv);

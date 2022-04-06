@@ -1,7 +1,6 @@
 <?php
 
 require_once '../templates/header-admin.php';
-
 require_once '../connect.php';
 
 $reqResa = $db->query('SELECT `id_gite`, `id_client`, `date_reserv`, `end_date_reserv`, `nbr_nuit`, `nbr_people`, `price_reserv` FROM `bookings`');
