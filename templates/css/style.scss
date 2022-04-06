@@ -368,7 +368,23 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-left: 2%;
 }
+
+#list-gites-user{
+    .unavailable{
+        filter: grayscale(1);
+        background-color: rgba(200, 200, 200, .5);
+    }
+}
+
+.pas-dispo{
+    position: absolute;
+    right: 4.5%;
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+}
+
 
 .main-user-gite{
     margin: 0 auto;
@@ -379,7 +395,7 @@ footer{
         margin: 0 auto;
         list-style-type: none;
         position: relative;
-        margin-bottom: 50px;
+        padding: 50px;
         
         .titre-page-user{
             font-family: 'Montserrat';
@@ -393,9 +409,11 @@ footer{
         
     }
     
+ 
     .img-para-user{
         display: flex;
         justify-content: space-between;
+        position: relative;
         .description-main-page{
             font-family: 'Roboto Slab';
             text-align: justify;
@@ -405,7 +423,6 @@ footer{
 
     .img-gite-user-index {
         width: 500px;
-        height: 250px;
     }
 
     .img-div-gite{

@@ -510,6 +510,20 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-left: 2%;
+}
+
+#list-gites-user .unavailable {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+.pas-dispo {
+  position: absolute;
+  right: 4.5%;
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
 }
 
 .main-user-gite {
@@ -522,7 +536,7 @@ footer {
   margin: 0 auto;
   list-style-type: none;
   position: relative;
-  margin-bottom: 50px;
+  padding: 50px;
 }
 
 .main-user-gite .gites .titre-page-user {
@@ -543,6 +557,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .main-user-gite .img-para-user .description-main-page {
@@ -552,7 +567,6 @@ footer {
 
 .main-user-gite .img-gite-user-index {
   width: 500px;
-  height: 250px;
 }
 
 .main-user-gite .img-div-gite {

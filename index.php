@@ -98,7 +98,6 @@ require './connect.php';
     <!-- Affichage résultat recherche gite -->
 
     <h2 class="titre-past-form">NOUS AVONS TROUVÉ LES GÎTES SUIVANTS POUR VOUS</h2>
-    <form id="giteSelection" action="#" method="GET"></form>
     <ul id="list-gites-user" class="main-user-gite"></ul>
    
 

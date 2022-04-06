@@ -1,10 +1,39 @@
 // SLIDER PAGE RESERVATION USER
+let getId = document.getElementById('id-gite-resa');
+let idGite = getId.value;
+console.log(idGite);
 
-let slide = ["./templates/img/slider/background.jpg", "./templates/img/slider/room.jpg", "./templates/img/slider/chamb.jpg"];
+let slide = [];
 let slideNb = 0;
 
 const right = document.getElementById("right");
 const left = document.getElementById("left");
+
+
+giteDisplay();
+
+function giteDisplay() {
+    
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', './select-slider.php?id=' + idGite, true);
+
+    xhr.onreadystatechange = function () {
+
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            let datas = JSON.parse(this.responseText)
+
+
+            for (let data of datas) {
+                slide.push("./img/gite/" + data.name_image);
+            }
+            
+        }
+    }
+    xhr.send();
+}
+
+console.log(slide);
 
 right.addEventListener('click', function () {
 

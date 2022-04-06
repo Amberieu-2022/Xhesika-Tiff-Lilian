@@ -16,6 +16,12 @@ $redgGiteOpt->bindParam('id_gite', $idGite, PDO::PARAM_STR);
 $redgGiteOpt->execute();
 
 $valuegGiteOpt = $redgGiteOpt->fetchAll(PDO::FETCH_ASSOC);
+
+$reqImage = $db->prepare('SELECT `name_image` FROM `image` WHERE `id_gite` = :id_gite');
+$reqImage->bindParam('id_gite', $idGite, PDO::PARAM_INT);
+$reqImage->execute();
+
+$valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +41,7 @@ $valuegGiteOpt = $redgGiteOpt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body class="body-resa">
+    <input type="hidden" value="<?=$idGite?>" id="id-gite-resa">
 <header>
     <figure class="justify-header">
         <a href="#"><img src="./templates/img/icon/logo.png" alt="Logo du Site"></a>
@@ -49,7 +56,7 @@ $valuegGiteOpt = $redgGiteOpt->fetchAll(PDO::FETCH_ASSOC);
 
 </header>
 <div id="slider">
-    <img src="./templates/img/slider/background.jpg" alt="image du slider" id="slide">
+    <img src="./img/gite/<?=$valueImage[0]['name_image']?>" alt="image du slider" id="slide">
     <div id="left"><img src="./templates/img/icon/left.png" alt="Bouton fleche gauche"></div>
     <div id="right"><img src="./templates/img/icon/right.png" alt="Bouton fleche droite"></div>
 </div>
