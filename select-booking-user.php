@@ -42,7 +42,7 @@ $json = '';
 
 if ($stay != null) {
     foreach ($valueResa as $giteResa) {
-        foreach ($giteResa as $dayBooked)
+        foreach ($giteResa as $dayBooked) {
             foreach ($stay as $dayWished) {
                 if ($dayBooked['day_booked'] == $dayWished) {
                     $json .= ',{"id_gite":"' . $dayBooked['id_gite'] . '"}';
@@ -50,6 +50,7 @@ if ($stay != null) {
                 } else {
                 }
             }
+        }
     }
 }
 

@@ -16,7 +16,7 @@ require './connect.php';
 
         <form action="#" method="GET">
             <div class="location">
-                <label class="label-client" for="destination">DESTINATION</label>
+                <label class="label-client" for="destination" id="search-bar">DESTINATION</label>
                 <input type="search" placeholder="Choisissez votre destination" class="input-local" name="destination">
 
             </div>

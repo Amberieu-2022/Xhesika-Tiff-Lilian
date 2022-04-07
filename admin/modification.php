@@ -263,6 +263,7 @@ if(!empty($value) && $value['id_categ'] == 4){
 if (isset($_POST['submit'])) {
     $ref = null;
     $extensionUpload = null;
+    var_dump($extensionUpload);
 
     //On transforme le nom du gîte en minuscule
 
@@ -322,6 +323,7 @@ if (isset($_POST['submit'])) {
     $name_simple_gite = $finalString;
     $location_gite = $_POST['location_gite'];
     $profil_gite  = $ref . '.' . $extensionUpload;
+    var_dump($extensionUpload);
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];
