@@ -4,7 +4,7 @@ require_once '../connect.php';
 
 $id = $_GET['id'];
 
-if ($ref == null || $extensionsUpload == null) {
+if ($ref == null || $extensionUpload == null) {
 
     $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping, `nbr_bathroom`= :nbr_bathroom, `price_night` = :price_night WHERE `id_gite` = :id');
 

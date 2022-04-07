@@ -224,6 +224,25 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
     </form>
 </section>
 <?php
+// // Envoie du mail de confirmation de la réservation
+    $dest = "particulier.flore@gmail.com";
+    $sujet = "Ceci est un test";
+    $message = "Ceci est un test de la fonction mail()";
+    $header = "From: $dest";
+
+    /* test 1 */
+    $envoi = mail($dest, $sujet, $message, $header);
+
+    if ($envoi == true)
+    echo "<p>Test 1 : la fonction mail() fonctionne. Un e-mail a ete envoye a l'adresse $dest.
+    <br />S'il ne vous parvient pas, il y a probablement un blocage au niveau du serveur SMTP de l'hebergeur</p>";
+    else
+    echo "<p>Test 1 : l'envoi par la fonction PHP mail() ne fonctionne pas ou est desactivee</p>";
+
+    /* test 2 */
+    echo "<p>Test 2 : Si bool(false) le mail ne part pas
+    <br />Si bool(true) l'e mail a bien ete envoye (donc il est bloque apres)</p>";
+    var_dump(mail($dest, $sujet, $message, $header));
 
 if (isset($_GET['submit'])) {
     $idGite = $_GET['id_gite'];
@@ -233,6 +252,8 @@ if (isset($_GET['submit'])) {
     $mail_client = $_GET['mail_client'];
     $nbr_traveller = $_GET['nbr_traveller'];
     
+    
+
     // Date Réservation
     $start_date_reserv = $_GET['start_date_reserv'];
     $end_date_reserv = $_GET['end_date_reserv'];
@@ -267,6 +288,8 @@ if (isset($_GET['submit'])) {
     for($i = $first_date; $i <= $last_date; $i += 86400){
         $stay[] = date("Y-m-d ", $i);
     }
+
+
 
     //Calcul prix du séjour
     $price_reserv = $nights * $value['price_night'];
