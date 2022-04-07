@@ -327,6 +327,7 @@ li.gites{
     margin-top: 10px;
     .label-ajout{
         padding-left: 30px;
+        text-align: center;
     }
 }
 
@@ -548,7 +549,7 @@ li.gites{
         display: flex;
         flex-direction: column;
         .label-no{
-            padding-left: 0;
+            padding-left: 20px;
         }
     }
     .form-add-search{

@@ -451,6 +451,7 @@ li.gites {
 
 .ajout-lab-in .label-ajout {
   padding-left: 30px;
+  text-align: center;
 }
 
 .row-limit-size-resa-user {
@@ -693,7 +694,7 @@ li.gites {
             flex-direction: column;
   }
   .first-flex .label-no {
-    padding-left: 0;
+    padding-left: 20px;
   }
   .form-add-search {
     display: -webkit-box;

@@ -44,7 +44,7 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
     <input type="hidden" value="<?=$idGite?>" id="id-gite-resa">
 <header>
     <figure class="justify-header">
-        <a href="#"><img src="./templates/img/icon/logo.png" alt="Logo du Site"></a>
+        <a href="./index.php"><img src="./templates/img/icon/logo.png" alt="Logo du Site"></a>
     </figure>
 </header>
 </div>
@@ -314,7 +314,7 @@ if (isset($_GET['submit'])) {
 
 ?>
     <footer>
-        <figure class="row-limit-size"><a href="#"><img class="footer-logo" src="./templates/img/icon/logo.png" alt="Logo du site"></a></figure>
+        <figure class="row-limit-size"><a href="./index.php"><img class="footer-logo" src="./templates/img/icon/logo.png" alt="Logo du site"></a></figure>
         <div class="row-limit-size justify-footer absolut">
             <figure class="reseaux-s"><a href="#"><img class="reseaux-sociaux" src="./templates/img/icon/instagram1.png" alt="Logo d'instagram"></a></figure>
             <figure class="reseaux-s"><a href="#"><img class="reseaux-sociaux" src="./templates/img/icon/facebook1.png" alt="Logo du facebook"></a></figure>

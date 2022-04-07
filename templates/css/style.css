@@ -563,6 +563,7 @@ footer {
   font-family: 'Roboto Slab';
   text-align: justify;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .main-user-gite .img-gite-user-index {
@@ -611,6 +612,7 @@ footer {
   line-height: 40px;
   font-size: .9rem;
   font-family: 'Roboto Slab';
+  padding-right: 20px;
 }
 
 #hr-index {
@@ -676,7 +678,7 @@ footer {
   .form-page-client {
     margin: 50px auto;
   }
-  #main-user-gite .gites .titre-page-user {
+  .main-user-gite .gites .titre-page-user {
     font-size: 1.5rem;
   }
 }
@@ -694,7 +696,6 @@ footer {
   }
   .input-local {
     width: 360px;
-    height: 15px;
     line-height: 20px;
   }
   .titre-form-client {
@@ -712,11 +713,11 @@ footer {
 }
 
 @media screen and (max-width: 765px) {
-  #main-user-gite .gites {
+  .main-user-gite .gites {
     padding-bottom: 65px;
     margin-right: 30px;
   }
-  #main-user-gite .gites .titre-page-user {
+  .main-user-gite .gites .titre-page-user {
     font-size: 1.2rem;
   }
   .label-category {
@@ -867,7 +868,7 @@ footer {
   .titre-form-client {
     font-size: .8rem;
   }
-  #main-user-gite aside.form-filter .label-category {
+  .main-user-gite aside.form-filter .label-category {
     width: 150px;
   }
   .date-input-resa {
@@ -879,7 +880,7 @@ footer {
 }
 
 @media screen and (max-width: 586px) {
-  #main-user-gite {
+  .main-user-gite {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -894,14 +895,14 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
-  #main-user-gite aside.form-filter {
+  .main-user-gite aside.form-filter {
     width: 300px;
     margin-left: 0;
   }
-  #main-user-gite aside.form-filter .label-category {
+  .main-user-gite aside.form-filter .label-category {
     width: 300px;
   }
-  #main-user-gite .gites {
+  .main-user-gite .gites {
     margin-right: 0;
   }
 }
@@ -909,6 +910,12 @@ footer {
 @media screen and (max-width: 520px) {
   .img-para-user .img-gite-user-index {
     width: 300px;
+  }
+  .main-user-gite .button-index-user {
+    padding-top: 10px;
+  }
+  .main-user-gite .button-index-user .btn-reserver-user a {
+    width: 100px;
   }
 }
 
@@ -945,10 +952,11 @@ footer {
 }
 
 @media screen and (max-width: 457px) {
-  .gites {
-    padding-bottom: 130px;
+  .main-user-gite .gites {
+    padding-right: 5px;
+    padding-left: 5px;
   }
-  .gites .btn-reserver-user {
+  .main-user-gite .gites .btn-reserver-user {
     max-width: 150px;
   }
 }
@@ -962,7 +970,6 @@ footer {
   }
   .location .input-local {
     width: 120px;
-    height: 10px;
   }
   .btn-util {
     font-size: .5rem;
@@ -1031,22 +1038,23 @@ footer {
   .section-padding {
     width: 100%;
   }
-  #main-user-gite aside.form-filter {
+  .main-user-gite {
+    margin: 0;
+    width: 100%;
+  }
+  .main-user-gite aside.form-filter {
     width: 250px;
   }
-  #main-user-gite aside.form-filter .label-category {
+  .main-user-gite aside.form-filter .label-category {
     width: 250px;
   }
-  #main-user-gite .gites {
-    margin-bottom: 100px;
-  }
-  #main-user-gite .gites .titre-page-user {
+  .main-user-gite .gites .titre-page-user {
     font-size: 1rem;
   }
-  #main-user-gite .gites .titre-lieu-p-user {
+  .main-user-gite .gites .titre-lieu-p-user {
     font-size: .9rem;
   }
-  #main-user-gite .img-para-user .img-gite-user-index {
+  .main-user-gite .img-para-user .img-gite-user-index {
     width: 250px;
   }
   .titre-form-client {
@@ -1062,12 +1070,15 @@ footer {
   .footer-logo {
     left: 55px;
   }
-  #main-user-gite aside.form-filter {
+  .main-user-gite aside.form-filter {
     width: 220px;
   }
-  #main-user-gite aside.form-filter .label-category {
+  .main-user-gite aside.form-filter .label-category {
     width: 220px;
     font-size: .8rem;
+  }
+  .equip-figcap {
+    font-size: .4rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
