@@ -73,4 +73,13 @@ setInterval(function(){
 }, 3000)
 
 
+//Fermeture modal reservation
+let btn = document.getElementById('btn-close-modal-resa');
+let modal = document.getElementById('modal-resa-denied');
+
+btn.addEventListener('click', function(){
+    modal.classList.add('none')
+})
+
+
 

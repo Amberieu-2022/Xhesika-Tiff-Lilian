@@ -14,9 +14,11 @@ require_once '../templates/header-admin.php';
 
     <!-- FORMULAIRE DU PAGE GESTION GITES -->
     <form action="#" method="GET" class="form-add-search">
-        <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un nouveau gîte</a></button>
-        <input type="text" name="nom" id="nom" placeholder="Recherche par nom" class="input-p-ajout" required>
-        <button type="submit" class="btn-ajout-gite" name="submit-name">Rechercher</button>
+        <button type="submit" class="btn-ajout-gite"><a href="ajout.php">Ajouter un gîte</a></button>
+        <div class="div-search-btn">
+            <input type="text" name="nom" id="nom" placeholder="Recherche par nom" class="input-p-ajout" required>
+            <button type="submit" class="btn-ajout-gite" name="submit-name">Rechercher</button>
+        </div>    
     </form>
 
     <!-- FORMULAIRE RECHERCHE AVANCEE  -->

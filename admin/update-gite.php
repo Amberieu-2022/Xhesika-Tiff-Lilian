@@ -43,6 +43,7 @@ if ($ref == null || $extensionUpload == null) {
     $req = $db->prepare('UPDATE `cottages` SET `id_categ` = :id_categ, `name_gite`= :name_gite, `name_simple_gite` = :name_simple_gite,`location_gite`= :location_gite, `profil_gite` = :profil_gite, `desc_gite`= :desc_gite,`nbr_sleeping`=  :nbr_sleeping,`nbr_bathroom`= :nbr_bathroom, `price_night` = :price_night WHERE `id_gite` = :id');
 
     $req->bindParam('id', $id, PDO::PARAM_STR);
+    $req->bindParam('id_categ', $id_categ, PDO::PARAM_STR);
     $req->bindParam('name_gite', $name_gite, PDO::PARAM_STR);
     $req->bindParam('name_simple_gite', $name_simple_gite, PDO::PARAM_STR);
     $req->bindParam('location_gite', $location_gite, PDO::PARAM_STR);

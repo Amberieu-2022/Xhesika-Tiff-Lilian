@@ -69,14 +69,14 @@ $valueOptions = $reqOptions->fetchAll(PDO::FETCH_ASSOC);
 
     <br><br>
 
-    <label for="nbr_sleeping">
+    <label for="nbr_sleeping" class="label-ajout">
         Nombre de couchage :
     </label>
     <input type="number" name="nbr_sleeping" id="nbr_sleeping" min="1" value="<?= $value['nbr_sleeping'] ?>">
 
     <br><br>
 
-    <label for="nbr_bathroom">
+    <label for="nbr_bathroom" class="label-ajout">
         Nombre de salle de bain :
     </label>
     <input type="number" name="nbr_bathroom" id="nbr_bathroom" min="1" value="<?= $value['nbr_bathroom'] ?>">
@@ -90,11 +90,11 @@ $valueOptions = $reqOptions->fetchAll(PDO::FETCH_ASSOC);
 <?php
 if(!empty($value) && $value['id_categ'] == 1){ 
 ?>
-<input type="radio" name="gite-type" value="1" class="input-option" checked><label class="label-no"> Chambre </label>
+<div class="ajout-lab-in"> <input type="radio" name="gite-type" value="1" class="input-option" checked><label class="label-no  label-ajout"> Chambre </label></div>
 <?php
 } else {
 ?>
-<input type="radio" name="gite-type" value="1" class="input-option"><label class="label-no"> Chambre </label>
+<div class="ajout-lab-in"> <input type="radio" name="gite-type" value="1" class="input-option"><label class="label-no label-ajout"> Chambre </label></div>
 <?php
 }
 ?>
@@ -102,11 +102,11 @@ if(!empty($value) && $value['id_categ'] == 1){
 <?php
 if(!empty($value) && $value['id_categ'] == 2){
 ?>
-<input type="radio" name="gite-type" value="2" class="input-option" checked><label class="label-no">Appartement</label>
+<div class="ajout-lab-in"> <input type="radio" name="gite-type" value="2" class="input-option" checked><label class="label-no label-ajout">Appartement</label></div>
 <?php
 } else {
 ?>
-<input type="radio" name="gite-type" value="2" class="input-option"><label class="label-no">Appartement</label>
+<div class="ajout-lab-in"> <input type="radio" name="gite-type" value="2" class="input-option"><label class="label-no label-ajout">Appartement</label></div>
 <?php
 }
 ?>
@@ -114,11 +114,11 @@ if(!empty($value) && $value['id_categ'] == 2){
 <?php
 if(!empty($value) && $value['id_categ'] == 3){
 ?>
-<input type="radio" name="gite-type" value="3" class="input-option" checked><label class="label-no">Maison</label>
+<div class="ajout-lab-in"><input type="radio" name="gite-type" value="3" class="input-option" checked><label class="label-no label-ajout">Maison</label></div>
 <?php
 } else {
 ?>
-<input type="radio" name="gite-type" value="3" class="input-option"><label class="label-no">Maison</label>
+<div class="ajout-lab-in"><input type="radio" name="gite-type" value="3" class="input-option"><label class="label-no label-ajout">Maison</label></div>
 <?php
 }
 ?>
@@ -126,11 +126,11 @@ if(!empty($value) && $value['id_categ'] == 3){
 <?php
 if(!empty($value) && $value['id_categ'] == 4){
 ?>
-<input type="radio" name="gite-type" value="4" class="input-option" checked><label class="label-no">Villa</label>
+<div class="ajout-lab-in"><input type="radio" name="gite-type" value="4" class="input-option" checked><label class="label-no label-ajout">Villa</label></div>
 <?php
 } else {
 ?>
-<input type="radio" name="gite-type" value="4" class="input-option"><label class="label-no">Villa</label>
+<div class="ajout-lab-in"><input type="radio" name="gite-type" value="4" class="input-option"><label class="label-no label-ajout">Villa</label></div>
 <?php
 }
 ?>
@@ -144,23 +144,23 @@ if(!empty($value) && $value['id_categ'] == 4){
 
         if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 1){
 ?>
-        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no label-ajout"> Piscine </label></div>
 <?php
         } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 1){
 ?>
-        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no label-ajout"> Piscine </label></div>
 <?php
         } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 1){
 ?>
-        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no label-ajout"> Piscine </label></div>
 <?php  
         } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 1){
 ?>
-        <input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no"> Piscine </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="1" class="input-option" checked><label class="label-no label-ajout"> Piscine </label></div>
 <?php
         } else {
 ?>
-        <input type="checkbox" name="option[]" value="1" class="input-option"><label class="label-no"> Piscine </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="1" class="input-option"><label class="label-no label-ajout"> Piscine </label></div>
 <?php
         }
 ?>
@@ -169,23 +169,23 @@ if(!empty($value) && $value['id_categ'] == 4){
 
         if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 2){
 ?>
-        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no label-ajout"> Jardin </label></div>
 <?php
         } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 2){
 ?>
-        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no label-ajout"> Jardin </label></div>
 <?php
         } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 2){
 ?>
-        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no label-ajout"> Jardin </label></div>
 <?php  
         } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 2){
 ?>
-        <input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no"> Jardin </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="2" class="input-option" checked><label class="label-no label-ajout"> Jardin </label></div>
 <?php
         } else {
 ?>
-        <input type="checkbox" name="option[]" value="2" class="input-option"><label class="label-no"> Jardin </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="2" class="input-option"><label class="label-no label-ajout"> Jardin </label></div>
 <?php
         }
 ?>
@@ -194,23 +194,23 @@ if(!empty($value) && $value['id_categ'] == 4){
 
         if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 3){
 ?>
-        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+        <div class="ajout-lab-in"><input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no label-ajout"> Parking </label></div>
 <?php
         } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 3){
 ?>
-        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+        <div class="ajout-lab-in"><input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no label-ajout"> Parking </label></div>
 <?php
         } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 3){
 ?>
-        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+        <div class="ajout-lab-in"><input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no label-ajout"> Parking </label></div>
 <?php  
         } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 3){
 ?>
-        <input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no"> Parking </label>
+        <div class="ajout-lab-in"><input type="checkbox" name="option[]" value="3" class="input-option" checked><label class="label-no label-ajout"> Parking </label></div>
 <?php
         } else {
 ?>
-        <input type="checkbox" name="option[]" value="3" class="input-option"><label class="label-no"> Parking </label>
+       <div class="ajout-lab-in"> <input type="checkbox" name="option[]" value="3" class="input-option"><label class="label-no label-ajout"> Parking </label></div>
 <?php
         }
 ?>
@@ -219,23 +219,23 @@ if(!empty($value) && $value['id_categ'] == 4){
 
         if(!empty($valueOptions) && $valueOptions[0]['id_suppl'] == 4){
 ?>
-        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<div class="ajout-lab-in"> <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no label-ajout"> Animaux acceptés </label></div>
 <?php
         } else if(!empty($valueOptions[1]) && $valueOptions[1]['id_suppl'] == 4){
 ?>
-        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no label-ajout"> Animaux acceptés </label></div>
 <?php
         } else if(!empty($valueOptions[2]) && $valueOptions[2]['id_suppl'] == 4){
 ?>
-        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no label-ajout"> Animaux acceptés </label></div>
 <?php  
         } else if(!empty($valueOptions[3]) && $valueOptions[3]['id_suppl'] == 4){
 ?>
-        <input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no"> Animaux acceptés </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="4" class="input-option" checked><label class="label-no label-ajout"> Animaux acceptés </label></div>
 <?php
         } else {
 ?>
-        <input type="checkbox" name="option[]" value="4" class="input-option"><label class="label-no"> Animaux acceptés </label>
+<div class="ajout-lab-in"><input type="checkbox" name="option[]" value="4" class="input-option"><label class="label-no label-ajout"> Animaux acceptés </label></div>
 <?php
         }
 ?>
@@ -263,6 +263,7 @@ if(!empty($value) && $value['id_categ'] == 4){
 if (isset($_POST['submit'])) {
     $ref = null;
     $extensionUpload = null;
+    var_dump($extensionUpload);
 
     //On transforme le nom du gîte en minuscule
 
@@ -322,6 +323,7 @@ if (isset($_POST['submit'])) {
     $name_simple_gite = $finalString;
     $location_gite = $_POST['location_gite'];
     $profil_gite  = $ref . '.' . $extensionUpload;
+    var_dump($extensionUpload);
     $desc_gite = $_POST['desc_gite'];
     $nbr_sleeping = $_POST['nbr_sleeping'];
     $nbr_bathroom = $_POST['nbr_bathroom'];

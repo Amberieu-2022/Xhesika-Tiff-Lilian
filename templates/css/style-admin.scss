@@ -5,7 +5,7 @@
     background: linear-gradient(90deg, rgb(147,239,189),rgb(112, 158, 189),#6d72af 95%);
 }
 .form-connexion{
-    margin: 150px auto;
+    margin: 100px auto;
     max-width: 800px;
     width: 80%;
     border: 2px solid #9DE1BC;
@@ -327,6 +327,7 @@ li.gites{
     margin-top: 10px;
     .label-ajout{
         padding-left: 30px;
+        text-align: center;
     }
 }
 
@@ -390,6 +391,43 @@ li.gites{
     font-size: 1.8rem;
     font-family: 'Montserrat';
 }
+#img-container{
+    border: solid 2px #9DE1BC;
+    max-width: 100%;
+    width: 700px;
+    margin: 20px auto;
+}
+
+#list-images{
+    display: flex;
+    justify-content: baseline;
+    flex-wrap: wrap;
+}
+
+.li-image {
+    list-style-type: none;
+    margin: 1%;
+    position: relative;
+}
+
+.image-gite {
+    height : 120px;
+    width: 120px;
+}
+
+.icon-del > img {
+    width: 16px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    background-color: rgba(255,255,255,0.3)
+}
+
+.icon-del:hover > img{
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
 // MEDIA QUERY HEADER________________________________________________
 @media screen and (max-width: 1060px) {
     // MEDIA QUERY FORMULAIRE CONNEXION
@@ -410,9 +448,7 @@ li.gites{
 }
 
 @media screen and (max-width: 1025px) {
-    .form-add-search{
-        padding-bottom: 30px;
-    }
+    
     .titre-form-connexion{
         font-size: 1.6rem;
     }
@@ -451,6 +487,9 @@ li.gites{
             width: 120px;
         }
     }    
+    #img-container{
+        width: 500px;
+    }
 }
 @media screen and (max-width: 800px) {
     .titre-form-connexion{
@@ -480,6 +519,9 @@ li.gites{
             width: 230px;
         }
     }  
+    .form-add-search{
+        padding-bottom: 30px;
+    }
     // MEDIA QUERY FORMULAIRE CONNEXION
     .id-connect{
         font-size: 1.2rem;
@@ -507,7 +549,7 @@ li.gites{
         display: flex;
         flex-direction: column;
         .label-no{
-            padding-left: 0;
+            padding-left: 20px;
         }
     }
     .form-add-search{
@@ -660,6 +702,9 @@ li.gites{
     .btn-ajout-gite {
         margin-left: 20px;
     }
+    .list-gite-modal{
+        font-size: .9rem;
+    }
 }
 @media screen and (max-width: 432px) {
     ul {
@@ -756,5 +801,8 @@ li.gites{
             font-size: .7rem;
             width: 90px;
         }
+    }
+    #list-images{
+        padding: 2px;
     }
 }
