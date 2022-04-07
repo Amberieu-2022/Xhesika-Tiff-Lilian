@@ -63,6 +63,10 @@ table {
   width: 100%;
 }
 
+.none {
+  display: none;
+}
+
 .titre-h1 {
   font-family: 'Cinzel';
   font-size: 3rem;
@@ -132,7 +136,7 @@ table {
   border: 2px solid #9DE1BC;
   border-radius: 5px 5px;
   width: 480px;
-  height: 20px;
+  height: 30px;
 }
 
 .location {
@@ -149,6 +153,7 @@ table {
   border: 2px solid #9DE1BC;
   border-radius: 5px;
   color: #7c7c7c;
+  height: 30px;
 }
 
 .first-flex {
@@ -239,7 +244,8 @@ table {
 }
 
 .section-padding {
-  padding-bottom: 30px;
+  padding-bottom: 5%;
+  position: relative;
 }
 
 #categories, #categoriesR, #categoriesP, #categoriesO, #categoriesN {
@@ -338,8 +344,6 @@ table {
 
 .btn-btn:hover {
   background-color: #9DE1BC;
-  -webkit-box-shadow: inset 0 0 7px #7c7c7c;
-          box-shadow: inset 0 0 7px #7c7c7c;
 }
 
 #slider {
@@ -623,6 +627,32 @@ footer {
   height: 400px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+#search-bar {
+  height: 30px;
+  line-height: 30px;
+}
+
+.modal-resa {
+  width: 100%;
+  padding: 2% 0;
+  background-color: white;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+}
+
+.modal-resa .font-modal-resa {
+  font-size: 1.2rem;
+  font-family: 'Montserrat';
+  padding: 1% 2%;
+}
+
+.modal-resa #btn-close-modal-resa {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1%;
 }
 
 @media screen and (max-width: 1305px) {
