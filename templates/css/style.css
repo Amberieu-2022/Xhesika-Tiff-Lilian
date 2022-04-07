@@ -657,6 +657,27 @@ footer {
   margin-bottom: 1%;
 }
 
+#date-non-dispo-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2%;
+}
+
+#date-non-dispo {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+}
+
 @media screen and (max-width: 1305px) {
   .gites {
     display: -webkit-box;

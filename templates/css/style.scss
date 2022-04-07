@@ -506,6 +506,20 @@ footer{
     }
 }
 
+#date-non-dispo-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+#date-non-dispo{
+    flex-grow: 0;
+    flex-basis: 1;
+}
+
+
 // MEDIA QUERY PAGE UTILISATEUR______________________________§§
 
 // MEDIA QUERY MAIN PAGE USER

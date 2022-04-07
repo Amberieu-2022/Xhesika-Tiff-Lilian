@@ -222,7 +222,7 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
                 <button class="btn-util btn-filtrer" type="submit" name="submit">Valider</button>
 
             </form>
-        </section>
+        
         <?php
         if (isset($_POST['submit'])) {
             $firstname_client = $_POST['firstname_client'];
@@ -340,43 +340,45 @@ $valueImage = $reqImage->fetchAll(PDO::FETCH_ASSOC);
 
                     $reqDetail->execute();
                 }
-                // // Envoie du mail de confirmation de la réservation
-                $dest = "particulier.flore@gmail.com";
-                $sujet = "Ceci est un test";
-                $message = "Ceci est un test de la fonction mail()";
-                $header = "From: $dest";
+                // Envoie du mail de confirmation de la réservation
 
-                /* test 1 */
-                $envoi = mail($dest, $sujet, $message, $header);
+                $destinataire = 'particulier.flore@hotmail.com';
+                $expediteur = 'contact@guesthouse.com';
+                $copie = 'contact@guesthouse.com';
+                $copie_cachee = 'contact@guesthouse.com';
+                $objet = 'Confirmation de reservation';
+                $headers = 'MIME-Version: 1.0' . "\n"; //Version du standard MIME utilisée dans le message
+                $headers .= 'Reply-To: ' . $expediteur . "\n"; //Mail de réponse
+                $headers .= 'From: "Nom_de_expediteur"<' . $expediteur . '>' . "\n"; //Expediteur
+                $headers .= 'Delivered-to: ' . $destinataire . "\n"; //Destinataire
+                $headers .= 'Cc: ' . $copie . "\n";
+                $headers .= 'Bcc: ' . $copie_cachee . "\n\n";
+                $message = "Bonjour " . $firstname_client . ", \n\n Nous sommes ravi de vous confirmer votre réservation sur le site de GUESTHOUSE. Vos dates de réservation sont les suivantes : " . $start_date_reserv . "au" . $end_date_reserv . ".\n\n GUESTHOUSE vous remercie de votre confiance !";
 
-                if ($envoi == true) {
-                    echo "<p>Test 1 : la fonction mail() fonctionne. Un e-mail a ete envoye a l'adresse $dest.
-    <br />S'il ne vous parvient pas, il y a probablement un blocage au niveau du serveur SMTP de l'hebergeur</p>";
+                if (mail($destinataire, $objet, $message, $headers)) //Envoi du messgae
+                {
+                    echo 'Votre message à bien été envoyé.';
                 } else {
-                    echo "<p>Test 1 : l'envoi par la fonction PHP mail() ne fonctionne pas ou est desactivee</p>";
-
-                    /* test 2 */
-                    echo "<p>Test 2 : Si bool(false) le mail ne part pas
-    <br />Si bool(true) l'e mail a bien ete envoye (donc il est bloque apres)</p>";
-                    var_dump(mail($dest, $sujet, $message, $header));
+                    echo 'Votre message n\'as pas pu être envoyé.';
                 }
             } else {
-                $reversed = array_reverse($unavailable);
         ?>
                 <div class="modal-resa" id="modal-resa-denied">
                     <p class="font-modal-resa">Bonjour <?= $firstname_client ?> !</p>
                     <p class="font-modal-resa">Le gîte que vous essayez de réserver n'est malheureusement pas disponible aux dates de séjours indiquées.</p>
                     <p class="font-modal-resa">Voici la liste des dates indisponibles pour le séjour que vous avez sélectionné :</p>
+                    <div id="date-non-dispo-container">
                     <?php
-                    foreach ($reversed as $dayUnavailable) {
+                    foreach ($unavailable as $dayUnavailable) {
                     ?>
-                        <p class="font-modal-resa">
+                        <p class="font-modal-resa" id="date-non-dispo">
                             <?php
                             $newDate = new DateTime($dayUnavailable);
                             echo $stringDate = $newDate->format('d/m/Y') ?></p>
                     <?php
                     }
                     ?>
+                    </div>
                     <button id="btn-close-modal-resa" class="btn-btn">Fermer</button>
                 </div>
         <?php
