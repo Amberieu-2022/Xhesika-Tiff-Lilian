@@ -277,9 +277,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    //Redirection vers la page gite de l'admin
-
-    // header('Location: gite.php');
 }
 
 ?>
